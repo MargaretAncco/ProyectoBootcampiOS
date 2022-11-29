@@ -20,12 +20,17 @@ class LoginViewController: UIViewController {
     @IBAction func doLogin(_ sender: Any) {
         // login
         let alertaMessageWritten = UIAlertController(title: "Login", message: "Se inicio sesion correctamente", preferredStyle: .alert)
-        let action = {
-            self.performSegue(withIdentifier: "goToHome", sender: nil)
+        let moveToHome = {
+            guard let homeTabBarController = self.storyboard?.instantiateViewController(withIdentifier: "HomeTabBarController") as? HomeTabBarController else {
+                return
+            }
+            homeTabBarController.modalPresentationStyle = .fullScreen
+            self.present(homeTabBarController, animated: true)
+            //self.performSegue(withIdentifier: "goToHome", sender: nil)
         }
         let actionOk = UIAlertAction(title:"ok", style: .default){(_) in
             print("se clickeo ok")
-            action()
+            moveToHome()
         }
         alertaMessageWritten.addAction(actionOk)
         present(alertaMessageWritten, animated: true, completion: nil)
