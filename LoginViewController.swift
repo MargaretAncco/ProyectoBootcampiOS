@@ -21,13 +21,14 @@ class LoginViewController: UIViewController {
         // login
         let alertaMessageWritten = UIAlertController(title: "Login", message: "Se inicio sesion correctamente", preferredStyle: .alert)
         let action = {
-            self.performSegue(withIdentifier: "GoToHome", sender: nil)
+            self.performSegue(withIdentifier: "goToHome", sender: nil)
         }
         let actionOk = UIAlertAction(title:"ok", style: .default){(_) in
             print("se clickeo ok")
+            action()
         }
         alertaMessageWritten.addAction(actionOk)
-        present(alertaMessageWritten, animated: true, completion: action)
+        present(alertaMessageWritten, animated: true, completion: nil)
 
     }
     
