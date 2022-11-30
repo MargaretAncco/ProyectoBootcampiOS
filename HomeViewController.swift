@@ -9,34 +9,40 @@ import UIKit
 
 class HomeViewController: UIViewController {
     var datasource: [Pet] = [Pet(name: "Paco", typePet: "Jerbo", likesCount: 3, race: "", imageUrl: "", userLiked: true),
-                             Pet(name: "Paco", typePet: "Jerbo", likesCount: 3, race: "", imageUrl: ""),
-                             Pet(name: "Paco", typePet: "Jerbo", likesCount: 3, race: "", imageUrl: "")]
+                             Pet(name: "Rodolfo", typePet: "Reno", likesCount: 4, race: "", imageUrl: ""),
+                             Pet(name: "Rodolfo", typePet: "Reno", likesCount: 4, race: "", imageUrl: ""),
+                             Pet(name: "Rodolfo", typePet: "Reno", likesCount: 4, race: "", imageUrl: ""),
+                             Pet(name: "Rodolfo", typePet: "Reno", likesCount: 4, race: "", imageUrl: ""),
+                             Pet(name: "Rodolfo", typePet: "Reno", likesCount: 4, race: "", imageUrl: ""),
+                             Pet(name: "Rodolfo", typePet: "Reno", likesCount: 4, race: "", imageUrl: ""),
+                             Pet(name: "Firulais", typePet: "Perro", likesCount: 2, race: "", imageUrl: "")]
     @IBOutlet weak private var petCollectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
         petCollectionView.dataSource = self
-        // Do any additional setup after loading the view.
+        petCollectionView.delegate = self
     }
+    
     
 }
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate{
-    
-    
-    
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2//datasource.count
+        return datasource.count
     }
+    
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        
+      return CGSize(width: collectionView.frame.size.width/2, height: collectionView.frame.size.width/2)
+     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         var cell = UICollectionViewCell()
         if let petCell = petCollectionView.dequeueReusableCell(withReuseIdentifier: "petCell", for: indexPath) as? PetCollectionViewCell{
             petCell.setUp(with: datasource[indexPath.row])
             cell = petCell
-            print("dfaddsffvdfvdsf")
         }
         return cell
     }
+    
 }

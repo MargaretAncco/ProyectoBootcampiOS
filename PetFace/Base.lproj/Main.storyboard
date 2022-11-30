@@ -247,16 +247,16 @@
             </objects>
             <point key="canvasLocation" x="3933.5877862595416" y="-474.64788732394368"/>
         </scene>
-        <!--View Controller-->
+        <!--Pet Detail View Controller-->
         <scene sceneID="JMd-9C-0NC">
             <objects>
-                <viewController id="uDH-fz-fau" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PetDetailViewController" id="uDH-fz-fau" customClass="PetDetailViewController" customModule="PetFace" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZVV-Cu-2eL">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0gL-aN-ZB8">
-                                <rect key="frame" x="110" y="84" width="172" height="205"/>
+                                <rect key="frame" x="115" y="85" width="172" height="205"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nombre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qzr-Lk-RNk">
@@ -267,19 +267,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="heart" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="eQj-EM-vg3">
-                                <rect key="frame" x="162" y="224" width="44" height="47"/>
+                                <rect key="frame" x="204" y="226" width="44" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" systemColor="labelColor"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="13" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8pq-ss-sIt">
-                                <rect key="frame" x="214" y="232" width="26" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vzi-aw-Taw">
-                                <rect key="frame" x="42" y="309" width="317" height="492"/>
+                                <rect key="frame" x="42" y="318" width="317" height="492"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hBa-uF-zA3">
@@ -300,17 +293,31 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="13" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8pq-ss-sIt">
+                                <rect key="frame" x="170" y="224" width="26" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xak-u6-S0C"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="mmt-HG-rdu"/>
                     <connections>
+                        <outlet property="isFavoriteImage" destination="eQj-EM-vg3" id="Kvy-iU-P1w"/>
+                        <outlet property="likesCount" destination="8pq-ss-sIt" id="6Ta-9c-Sfx"/>
+                        <outlet property="nameLabel" destination="qzr-Lk-RNk" id="mm9-Ay-gsT"/>
+                        <outlet property="petCollection" destination="vzi-aw-Taw" id="1fu-6L-ot1"/>
+                        <outlet property="petImage" destination="0gL-aN-ZB8" id="InC-7N-WdW"/>
+                        <outlet property="petPhotoCollectionView" destination="vzi-aw-Taw" id="LiT-fh-dsI"/>
                         <segue destination="i7W-Fz-MM8" kind="show" id="cJs-Ro-gRB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Dm-bO-Nah" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4781" y="-475"/>
+            <point key="canvasLocation" x="4780.9160305343512" y="-475.35211267605638"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="flM-T4-L0E">
