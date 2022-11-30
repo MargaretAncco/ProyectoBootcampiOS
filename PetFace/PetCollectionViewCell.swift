@@ -16,10 +16,9 @@ class PetCollectionViewCell: UICollectionViewCell {
     func setUp(with pet: Pet){
         nameLabel.text = pet.name
         likesCountLabel.text = String(pet.likesCount)
-//        isFavoriteImage.image = UIImage(systemName: "heart.fill")
         isFavoriteImage.image = UIImage(systemName: pet.userLiked ? "heart.fill": "heart")
-        func setUp(name: String){
-            nameLabel.text = name
-        }
+        
     }
+    
+    
 }

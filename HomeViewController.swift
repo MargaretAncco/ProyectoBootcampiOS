@@ -19,7 +19,10 @@ class HomeViewController: UIViewController {
     }
     
 }
-extension HomeViewController: UICollectionViewDataSource{
+extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate{
+    
+    
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -36,5 +39,4 @@ extension HomeViewController: UICollectionViewDataSource{
         }
         return cell
     }
-    
 }
