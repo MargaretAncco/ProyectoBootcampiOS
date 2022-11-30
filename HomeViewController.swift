@@ -23,7 +23,16 @@ class HomeViewController: UIViewController {
         petCollectionView.delegate = self
     }
     
-    
+    func moveToDetail(with pet: Pet) {
+        guard let petDetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "PetDetailViewController") as? PetDetailViewController else {
+            return
+        }
+        petDetailViewController.selectedPet = pet
+        petDetailViewController.modalPresentationStyle = .fullScreen
+        self.present(petDetailViewController, animated: false)
+        //self.performSegue(withIdentifier: "goToHome", sender: nil)
+    }
+
 }
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -44,5 +53,11 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         }
         return cell
     }
-    
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let pet = datasource[indexPath.row]
+        print("item at \(indexPath.section)/\(indexPath.item) \(pet.name) tapped")
+        moveToDetail(with: pet)
+
+     }
 }

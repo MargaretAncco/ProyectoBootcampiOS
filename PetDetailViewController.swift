@@ -11,7 +11,6 @@ class PetDetailViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var petImage: UIImageView!
     @IBOutlet weak var isFavoriteImage: UIImageView!
-    @IBOutlet weak var petCollection: UICollectionView!
     @IBOutlet weak var likesCount: UILabel!
     var selectedPet: Pet!
     override func viewDidLoad() {
@@ -20,9 +19,8 @@ class PetDetailViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     func setUp(with selectedPet: Pet){
-        
+        nameLabel.text = selectedPet.name
     }
-
     /*
     // MARK: - Navigation
 
