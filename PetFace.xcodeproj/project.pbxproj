@@ -13,6 +13,7 @@
 		854B27D3293126F200D65718 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 854B27D1293126F200D65718 /* Main.storyboard */; };
 		854B27D5293126F400D65718 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 854B27D4293126F400D65718 /* Assets.xcassets */; };
 		854B27D8293126F400D65718 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 854B27D6293126F400D65718 /* LaunchScreen.storyboard */; };
+		85CCC83B2936B5B300DE5EB0 /* PetCardCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CCC83A2936B5B300DE5EB0 /* PetCardCollectionViewController.swift */; };
 		85E0CB4A29350AFD0061A49C /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E0CB4929350AFD0061A49C /* RegisterViewController.swift */; };
 		85E0CB4C29350BC20061A49C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E0CB4B29350BC20061A49C /* LoginViewController.swift */; };
 		85E0CB76293681FB0061A49C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E0CB75293681FB0061A49C /* HomeViewController.swift */; };
@@ -28,6 +29,7 @@
 		854B27D4293126F400D65718 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		854B27D7293126F400D65718 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		854B27D9293126F400D65718 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		85CCC83A2936B5B300DE5EB0 /* PetCardCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetCardCollectionViewController.swift; sourceTree = "<group>"; };
 		85E0CB4929350AFD0061A49C /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		85E0CB4B29350BC20061A49C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		85E0CB75293681FB0061A49C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 				854B27D4293126F400D65718 /* Assets.xcassets */,
 				854B27D6293126F400D65718 /* LaunchScreen.storyboard */,
 				854B27D9293126F400D65718 /* Info.plist */,
+				85CCC83A2936B5B300DE5EB0 /* PetCardCollectionViewController.swift */,
 			);
 			path = PetFace;
 			sourceTree = "<group>";
@@ -156,6 +159,7 @@
 				854B27CE293126F200D65718 /* SceneDelegate.swift in Sources */,
 				85E0CB4C29350BC20061A49C /* LoginViewController.swift in Sources */,
 				85E0CB4A29350AFD0061A49C /* RegisterViewController.swift in Sources */,
+				85CCC83B2936B5B300DE5EB0 /* PetCardCollectionViewController.swift in Sources */,
 				85E0CB76293681FB0061A49C /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
