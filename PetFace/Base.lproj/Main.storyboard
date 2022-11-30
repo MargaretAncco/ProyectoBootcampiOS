@@ -168,24 +168,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="s1S-PS-kVV">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="s1S-PS-kVV">
                                 <rect key="frame" x="20" y="204" width="353" height="516"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="j66-sA-ZWt">
-                                    <size key="itemSize" width="158" height="232"/>
+                                    <size key="itemSize" width="111" height="125"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="aO1-Ep-O0N">
-                                        <rect key="frame" x="0.0" y="0.0" width="158" height="232"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="petCell" id="aO1-Ep-O0N" customClass="PetCollectionViewCell" customModule="PetFace" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="111" height="125"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="rLz-P4-3ZL">
-                                            <rect key="frame" x="0.0" y="0.0" width="158" height="232"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="111" height="125"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fyd-It-1Ar">
+                                                    <rect key="frame" x="34" y="52" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="Fyd-It-1Ar" secondAttribute="trailing" constant="35" id="Osn-fy-smP"/>
+                                                <constraint firstItem="Fyd-It-1Ar" firstAttribute="leading" secondItem="rLz-P4-3ZL" secondAttribute="leading" constant="34" id="We9-EY-YEb"/>
+                                                <constraint firstAttribute="bottom" secondItem="Fyd-It-1Ar" secondAttribute="bottom" constant="52" id="pZ2-ZH-ZMP"/>
+                                                <constraint firstItem="Fyd-It-1Ar" firstAttribute="top" secondItem="rLz-P4-3ZL" secondAttribute="top" constant="52" id="uO3-xo-5wW"/>
+                                            </constraints>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="158" height="232"/>
+                                        <size key="customSize" width="111" height="125"/>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="Fyd-It-1Ar" id="PG7-vD-iAZ"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -198,17 +215,24 @@
                         <viewLayoutGuide key="safeArea" id="2VA-8K-rRn"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="2VA-8K-rRn" firstAttribute="trailing" secondItem="s1S-PS-kVV" secondAttribute="trailing" constant="20" id="0xU-ld-fQq"/>
+                            <constraint firstItem="s1S-PS-kVV" firstAttribute="leading" secondItem="2VA-8K-rRn" secondAttribute="leading" constant="20" id="3Dw-Hn-WD3"/>
+                            <constraint firstItem="s1S-PS-kVV" firstAttribute="top" secondItem="nEO-im-fHU" secondAttribute="bottom" constant="44" id="7Nb-bX-VfD"/>
                             <constraint firstItem="nEO-im-fHU" firstAttribute="leading" secondItem="2VA-8K-rRn" secondAttribute="leading" constant="20" id="BcD-CA-haB"/>
                             <constraint firstItem="s1S-PS-kVV" firstAttribute="leading" secondItem="2VA-8K-rRn" secondAttribute="leading" constant="20" id="Gh0-5g-K5P"/>
                             <constraint firstItem="nEO-im-fHU" firstAttribute="top" secondItem="2VA-8K-rRn" secondAttribute="top" constant="67" id="Hma-Iq-0GJ"/>
                             <constraint firstItem="2VA-8K-rRn" firstAttribute="trailing" secondItem="s1S-PS-kVV" secondAttribute="trailing" constant="20" id="ZNB-4o-fa4"/>
+                            <constraint firstItem="2VA-8K-rRn" firstAttribute="bottom" secondItem="s1S-PS-kVV" secondAttribute="bottom" constant="49" id="zN6-6R-XIR"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="bW5-Ed-9Sq"/>
+                    <connections>
+                        <outlet property="petCollectionView" destination="s1S-PS-kVV" id="TUu-iG-uOm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X85-e7-Gdk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3935" y="-474"/>
+            <point key="canvasLocation" x="3933.5877862595416" y="-474.64788732394368"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="JMd-9C-0NC">
