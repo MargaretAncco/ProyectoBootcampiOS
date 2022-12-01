@@ -11,12 +11,12 @@ class PetDetailViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var petImage: UIImageView!
     @IBOutlet weak var isFavoriteImage: UIImageView!
+    @IBOutlet weak var seeMoreButton: UIBarButtonItem!
     @IBOutlet weak var likesCount: UILabel!
     var selectedPet: Pet!
     override func viewDidLoad() {
         super.viewDidLoad()
         setUp(with: selectedPet)
-        // Do any additional setup after loading the view.
     }
     func setUp(with selectedPet: Pet){
         //nameLabel.text = selectedPet.name
