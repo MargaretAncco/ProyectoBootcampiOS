@@ -182,7 +182,7 @@
                     <navigationItem key="navigationItem" title="Mis mascotas" id="i0t-Vb-nWn">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="akb-KS-Stj">
                             <connections>
-                                <segue destination="5SH-ay-ETu" kind="show" id="0zg-GO-PQ1"/>
+                                <segue destination="5SH-ay-ETu" kind="presentation" id="0zg-GO-PQ1"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -200,14 +200,14 @@
             <objects>
                 <viewController id="5SH-ay-ETu" customClass="NewPetViewController" customModule="PetFace" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="n16-vJ-O1g">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="869"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fk0-BU-EE4">
-                                <rect key="frame" x="20" y="119" width="388" height="699"/>
+                                <rect key="frame" x="20" y="75" width="388" height="769"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ti-RI-i9S">
-                                        <rect key="frame" x="0.0" y="0.0" width="388" height="699"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="388" height="769"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6z9-Gt-8as">
                                                 <rect key="frame" x="40" y="67" width="61.333333333333343" height="21"/>
@@ -267,12 +267,21 @@
                                                     <constraint firstAttribute="height" constant="204.00000000000003" id="ja1-4l-Qt4"/>
                                                 </constraints>
                                             </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DXV-nR-ZN9">
+                                                <rect key="frame" x="116.66666666666666" y="609" width="154.99999999999997" height="35"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Agregar Mascota"/>
+                                                <connections>
+                                                    <action selector="addPet:" destination="5SH-ay-ETu" eventType="touchUpInside" id="XvR-1b-Ua0"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="im5-8I-bgQ" firstAttribute="leading" secondItem="JL3-vh-BMt" secondAttribute="leading" id="1m3-gY-N1y"/>
                                             <constraint firstItem="Ayj-Xo-7bD" firstAttribute="top" secondItem="PlO-7g-DIu" secondAttribute="top" id="3kI-IY-OCK"/>
                                             <constraint firstItem="9oN-Cd-ybX" firstAttribute="centerX" secondItem="3ti-RI-i9S" secondAttribute="centerX" id="3sL-9L-D39"/>
+                                            <constraint firstItem="DXV-nR-ZN9" firstAttribute="centerX" secondItem="9oN-Cd-ybX" secondAttribute="centerX" id="6Dw-Lh-sq5"/>
                                             <constraint firstItem="JL3-vh-BMt" firstAttribute="centerX" secondItem="zs0-aT-C6b" secondAttribute="centerX" id="AdU-wU-XQ0"/>
                                             <constraint firstItem="zs0-aT-C6b" firstAttribute="top" secondItem="9oN-Cd-ybX" secondAttribute="bottom" constant="8.3333333333333144" id="BHX-4k-jny"/>
                                             <constraint firstItem="Ayj-Xo-7bD" firstAttribute="leading" secondItem="MhO-M0-0MQ" secondAttribute="leading" id="BUn-EC-zbK"/>
@@ -282,6 +291,7 @@
                                             <constraint firstAttribute="trailing" secondItem="im5-8I-bgQ" secondAttribute="trailing" constant="35" id="Lda-OM-h7B"/>
                                             <constraint firstItem="xn5-7Z-tch" firstAttribute="leading" secondItem="MhO-M0-0MQ" secondAttribute="trailing" constant="70.333333333333343" id="P3j-FE-6br"/>
                                             <constraint firstItem="9oN-Cd-ybX" firstAttribute="top" secondItem="PlO-7g-DIu" secondAttribute="bottom" constant="20" id="WUd-Z6-B6J"/>
+                                            <constraint firstItem="DXV-nR-ZN9" firstAttribute="top" secondItem="MhO-M0-0MQ" secondAttribute="bottom" constant="31.333333333333371" id="Yuu-Y9-6v1"/>
                                             <constraint firstItem="JL3-vh-BMt" firstAttribute="top" secondItem="im5-8I-bgQ" secondAttribute="bottom" constant="20" id="bJ5-x2-2fr"/>
                                             <constraint firstItem="Ayj-Xo-7bD" firstAttribute="top" secondItem="JL3-vh-BMt" secondAttribute="bottom" constant="19.666666666666657" id="bnP-kk-kWt"/>
                                             <constraint firstItem="JL3-vh-BMt" firstAttribute="leading" secondItem="Ayj-Xo-7bD" secondAttribute="leading" id="cbm-NZ-Dkl"/>
@@ -316,17 +326,22 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Agregar mascota" id="O3l-Oq-dW1"/>
+                    <connections>
+                        <outlet property="dateOfBirthDatePicker" destination="9oN-Cd-ybX" id="VDz-dk-Zkp"/>
+                        <outlet property="includeBirthdaySwitch" destination="PlO-7g-DIu" id="6bi-bD-oYR"/>
+                        <outlet property="nameTextField" destination="im5-8I-bgQ" id="5Uq-5w-aGG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gu9-Nj-6yT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6679" y="792"/>
+            <point key="canvasLocation" x="6489" y="816"/>
         </scene>
         <!--Seleccionar tipo-->
         <scene sceneID="iMY-ul-d4x">
             <objects>
                 <tableViewController id="Tn3-dL-J1L" customClass="TypePetTableViewController" customModule="PetFace" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="f0W-tA-dHy">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="869"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>

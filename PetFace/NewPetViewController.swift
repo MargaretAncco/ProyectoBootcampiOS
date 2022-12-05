@@ -7,12 +7,32 @@
 
 import UIKit
 
+protocol NewPetViewDelegate{
+    func newPetViewController(_ viewController: NewPetViewController, didAddPet newPet: Pet)
+}
 class NewPetViewController: UIViewController {
     var newPet: Pet = Pet()
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var includeBirthdaySwitch: UISwitch!
+    @IBOutlet weak var dateOfBirthDatePicker: UIDatePicker!
+    
+    var delegate: NewPetViewDelegate!
+    
+    @IBAction func addPet(_ sender: Any) {
+        guard let namePet = nameTextField.text, !namePet.isEmpty else{
+            return
+        }
+        newPet.name =  namePet
+        newPet.subtype = ""
+        
+        newPet.birthday = includeBirthdaySwitch.isOn ? dateOfBirthDatePicker.date : nil
+        newPet.imageUrl = ""
+        delegate?.newPetViewController(self, didAddPet: newPet)
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
     
 

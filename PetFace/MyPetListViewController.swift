@@ -49,5 +49,20 @@ extension MyPetListViewController: UICollectionViewDataSource, UICollectionViewD
         performSegue(withIdentifier: "GoToMyPetDetail", sender: nil)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? NewPetViewController{
+            destination.delegate = self
+        }
+    }
+    
+}
+
+extension MyPetListViewController : NewPetViewDelegate{
+    func newPetViewController(_ viewController: NewPetViewController, didAddPet newPet: Pet) {
+        myPetList.insert(newPet, at: 0)
+        myPetListCollectionView.reloadData()
+        dismiss(animated: true)
+    }
+    
     
 }

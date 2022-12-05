@@ -23,14 +23,16 @@ struct Pet {
     var likesCount: Int = 0
     var subtype: String = ""
     var imageUrl: String = ""
+    var birthday: Date?
     
-    init(name: String, typePet: TypePet, likesCount: Int, subtype: String, imageUrl: String, userLiked:Bool = false) {
+    init(name: String, typePet: TypePet, likesCount: Int, subtype: String, imageUrl: String, userLiked:Bool = false, birthday: Date? = nil) {
         self.name = name
         self.typePet = typePet
         self.likesCount = likesCount
         self.subtype = subtype
         self.imageUrl = imageUrl
         self.userLiked = userLiked
+        self.birthday = birthday
     }
     init(){
         
