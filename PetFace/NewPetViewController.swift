@@ -8,7 +8,7 @@
 import UIKit
 
 class NewPetViewController: UIViewController {
-
+    var newPet: Pet = Pet()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,12 +18,21 @@ class NewPetViewController: UIViewController {
 
     /*
     // MARK: - Navigation
-
+    */
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if let destination = segue.destination as? TypePetTableViewController{
+            destination.delegate = self
+        }
     }
-    */
+    
 
+}
+extension NewPetViewController :TypePetDelegate{
+    func typePetTableViewController(_ viewController: TypePetTableViewController, didSelectType type: TypePet) {
+        print("selectedd = \(type.rawValue)")
+        newPet.typePet = type
+    }
+    
+    
 }

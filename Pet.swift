@@ -32,5 +32,7 @@ struct Pet {
         self.imageUrl = imageUrl
         self.userLiked = userLiked
     }
-
+    init(){
+        
+    }
 }
