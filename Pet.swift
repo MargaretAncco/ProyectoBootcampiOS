@@ -8,19 +8,27 @@
 import Foundation
 
 
+enum TypePet: CaseIterable {
+    case dog
+    case cat
+    case rodent
+    case bird
+    case other
+
+}
 struct Pet {
     var name: String = ""
     var userLiked: Bool = false
-    var typePet: String = ""
+    var typePet: TypePet = TypePet.other
     var likesCount: Int = 0
-    var race: String = ""
+    var subtype: String = ""
     var imageUrl: String = ""
     
-    init(name: String, typePet: String, likesCount: Int, race: String, imageUrl: String, userLiked:Bool = false) {
+    init(name: String, typePet: TypePet, likesCount: Int, subtype: String, imageUrl: String, userLiked:Bool = false) {
         self.name = name
         self.typePet = typePet
         self.likesCount = likesCount
-        self.race = race
+        self.subtype = subtype
         self.imageUrl = imageUrl
         self.userLiked = userLiked
     }

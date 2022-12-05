@@ -8,14 +8,11 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-    var datasource: [Pet] = [Pet(name: "Paco", typePet: "Jerbo", likesCount: 3, race: "", imageUrl: "", userLiked: true),
-                             Pet(name: "Rodolfo", typePet: "Reno", likesCount: 4, race: "", imageUrl: ""),
-                             Pet(name: "Rodolfo", typePet: "Reno", likesCount: 4, race: "", imageUrl: ""),
-                             Pet(name: "Rodolfo", typePet: "Reno", likesCount: 4, race: "", imageUrl: ""),
-                             Pet(name: "Rodolfo", typePet: "Reno", likesCount: 4, race: "", imageUrl: ""),
-                             Pet(name: "Rodolfo", typePet: "Reno", likesCount: 4, race: "", imageUrl: ""),
-                             Pet(name: "Rodolfo", typePet: "Reno", likesCount: 4, race: "", imageUrl: ""),
-                             Pet(name: "Firulais", typePet: "Perro", likesCount: 2, race: "", imageUrl: "")]
+    var datasource: [Pet] = [Pet(name: "Paco", typePet: TypePet.rodent, likesCount: 3, subtype: "", imageUrl: "", userLiked: true),
+                             Pet(name: "Rodolfo", typePet: TypePet.other, likesCount: 4, subtype: "", imageUrl: ""),
+                             Pet(name: "Rodolfo", typePet: TypePet.other, likesCount: 4, subtype: "", imageUrl: ""),
+                             Pet(name: "Rodolfo", typePet: TypePet.other, likesCount: 4, subtype: "", imageUrl: ""),
+                             Pet(name: "Firulais", typePet: TypePet.dog, likesCount: 2, subtype: "", imageUrl: "")]
     @IBOutlet weak private var petCollectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()

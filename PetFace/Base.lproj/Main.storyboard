@@ -227,7 +227,7 @@
                                                     <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="large"/>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <segue destination="ml0-rU-Z9a" kind="show" id="4Ym-na-0zd"/>
+                                                    <segue destination="Tn3-dL-J1L" kind="show" id="FNp-Mg-gSS"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Colocar fecha" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ayj-Xo-7bD">
@@ -321,21 +321,34 @@
             </objects>
             <point key="canvasLocation" x="6679" y="792"/>
         </scene>
-        <!--Select Type Pet View Controller-->
-        <scene sceneID="cFW-gf-YVT">
+        <!--Seleccionar tipo-->
+        <scene sceneID="iMY-ul-d4x">
             <objects>
-                <viewController id="ml0-rU-Z9a" customClass="SelectTypePetViewController" customModule="PetFace" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="RlG-Pc-zz1">
+                <tableViewController id="Tn3-dL-J1L" customClass="TypePetTableViewController" customModule="PetFace" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="f0W-tA-dHy">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="UsE-0a-RxT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="CAg-fu-8eB"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uTT-vD-7F6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="xYZ-uF-WRf">
+                                <rect key="frame" x="0.0" y="50" width="428" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xYZ-uF-WRf" id="c1D-Ue-yfZ">
+                                    <rect key="frame" x="0.0" y="0.0" width="428" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Tn3-dL-J1L" id="azm-hF-muk"/>
+                            <outlet property="delegate" destination="Tn3-dL-J1L" id="Pw9-p4-ibT"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Seleccionar tipo" id="CtH-Yh-J2w"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tJf-LN-V06" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7606.5420560747662" y="791.79265658747306"/>
+            <point key="canvasLocation" x="7763" y="832"/>
         </scene>
         <!--Ver mascotas-->
         <scene sceneID="qZE-Cd-Wmw">

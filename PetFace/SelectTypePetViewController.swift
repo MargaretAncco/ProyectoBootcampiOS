@@ -7,29 +7,42 @@
 
 import UIKit
 
-class SelectTypePetViewController: UIViewController, UITableViewDataSource {
-    let searchController = UISearchController()
+class TypePetTableViewController: UITableViewController {
+    let tableResults = ResultsTypeTableViewController()
+    let typePetList = [
+        "Gato",
+        "Perro",
+        "Ave",
+        "Roedor",
+        "Otro",
+        
+    ]
+    var searchController: UISearchController!
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
-    }
-    
-    @IBOutlet weak var typePetTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Seleccione tipo"
         navigationItem.searchController = searchController
-//        self.navigationItem.hidesSearchBarWhenScrolling = true
-//        self.navigationController?.navigationBar.isTranslucent = false
-//        self.navigationController?.navigationBar.isTranslucent = true
-//        typePetTableView.register(UITableViewCell.self, forCellReuseIdentifier: "typeCell")
-//        typePetTableView.dataSource = self
         
-        
+        searchController = UISearchController(searchResultsController: self)
     }
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        typePetList.count
+    }
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        cell.textLabel?.text = typePetList[indexPath.row]
+        return cell
+    }
+    
+}
+extension TypePetTableViewController : UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let searchedText =  searchController.searchBar.text else{
+            return
+        }
+        print(searchedText)
+    }
+    
     
 }
