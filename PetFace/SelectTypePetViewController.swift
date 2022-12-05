@@ -9,14 +9,7 @@ import UIKit
 
 class TypePetTableViewController: UITableViewController {
     let tableResults = ResultsTypeTableViewController()
-    let typePetList = [
-        "Gato",
-        "Perro",
-        "Ave",
-        "Roedor",
-        "Otro",
-        
-    ]
+    let typePetList: [String] = TypePet.allCases.map{ $0.rawValue}
     var searchController: UISearchController!
     
     override func viewDidLoad() {

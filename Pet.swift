@@ -8,12 +8,12 @@
 import Foundation
 
 
-enum TypePet: CaseIterable {
-    case dog
-    case cat
-    case rodent
-    case bird
-    case other
+enum TypePet: String, CaseIterable {
+    case dog = "Perro"
+    case cat = "Gato"
+    case rodent = "Roedor"
+    case bird = "Ave"
+    case other = "Otro"
 
 }
 struct Pet {
