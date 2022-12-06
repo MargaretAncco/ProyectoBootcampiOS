@@ -114,12 +114,11 @@
 		853C3ABB293E579A00A2F294 /* pets */ = {
 			isa = PBXGroup;
 			children = (
+				853C3AD4293FFC0F00A2F294 /* customCells */,
 				853C3ABC293E57C200A2F294 /* petDetail */,
 				853C3ABD293E57D700A2F294 /* petList */,
 				853C3AB4293E36A500A2F294 /* ResultsTypeTableViewController.swift */,
 				853C3AC4293E98F600A2F294 /* petPhotoList */,
-				853C3AD0293FB13700A2F294 /* PetCollectionViewCell.swift */,
-				853C3AD1293FB13700A2F294 /* PetCollectionViewCell.xib */,
 			);
 			path = pets;
 			sourceTree = "<group>";
@@ -171,6 +170,23 @@
 				853C3ACC293ECED000A2F294 /* EditPetViewController.swift */,
 			);
 			path = editPet;
+			sourceTree = "<group>";
+		};
+		853C3AD4293FFC0F00A2F294 /* customCells */ = {
+			isa = PBXGroup;
+			children = (
+				853C3AD5293FFC2900A2F294 /* petImageCell */,
+			);
+			path = customCells;
+			sourceTree = "<group>";
+		};
+		853C3AD5293FFC2900A2F294 /* petImageCell */ = {
+			isa = PBXGroup;
+			children = (
+				853C3AD0293FB13700A2F294 /* PetCollectionViewCell.swift */,
+				853C3AD1293FB13700A2F294 /* PetCollectionViewCell.xib */,
+			);
+			path = petImageCell;
 			sourceTree = "<group>";
 		};
 		854B27BF293126F200D65718 = {
