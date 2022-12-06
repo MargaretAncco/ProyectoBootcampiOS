@@ -14,7 +14,8 @@ class ImageCollectionViewController: UICollectionViewController {
     var imageList: [PetImage]!
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "petCell")
+        let cellNib = UINib(nibName: "PetCollectionViewCell", bundle: nil)
+        collectionView.register(cellNib, forCellWithReuseIdentifier: "PetCollectionViewCell")
 
     }
 
@@ -35,9 +36,14 @@ class ImageCollectionViewController: UICollectionViewController {
         // #warning Incomplete implementation, return the number of items
         return imageList.count
     }
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        
+      return CGSize(width: collectionView.frame.size.width/2, height: collectionView.frame.size.width/2)
+     }
+
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        var cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        var cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PetCollectionViewCell", for: indexPath)
         if let petCell = cell as? PetCollectionViewCell{
             petCell.setUp(with: imageList[indexPath.row])
             cell = petCell

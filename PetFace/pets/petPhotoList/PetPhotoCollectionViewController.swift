@@ -13,7 +13,8 @@ class PetPhotoCollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        let cellNib = UINib(nibName: "PetCollectionViewCell", bundle: nil)
+        collectionView.register(cellNib, forCellWithReuseIdentifier: "PetCollectionViewCell")
     }
     
     /*
@@ -35,17 +36,15 @@ class PetPhotoCollectionViewController: UICollectionViewController {
     
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoPetCell", for: indexPath)
-        if let petCell  = cell as? PetPhotoCollectionViewCell{
-            petCell.setUp(with: photoPetList[indexPath.row])
-        }
-        return cell
+        let petCell  = collectionView.dequeueReusableCell(withReuseIdentifier: "PetCollectionViewCell", for: indexPath) as! PetCollectionViewCell
+        petCell.setUp(with: photoPetList[indexPath.row])
+        return petCell
     }
 
 }
 
-extension PetPhotoCollectionViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.size.width/3, height: collectionView.frame.size.width/2)
-    }
-}
+//extension PetPhotoCollectionViewController: UICollectionViewDelegateFlowLayout {
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        return CGSize(width: collectionView.frame.size.width/3, height: collectionView.frame.size.width/2)
+//    }
+//}

@@ -23,7 +23,6 @@
 		854B27D5293126F400D65718 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 854B27D4293126F400D65718 /* Assets.xcassets */; };
 		854B27D8293126F400D65718 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 854B27D6293126F400D65718 /* LaunchScreen.storyboard */; };
 		854EFA99293A486100524409 /* MyPetCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854EFA98293A486100524409 /* MyPetCollectionViewCell.swift */; };
-		85CCC84B2937BBB100DE5EB0 /* PetCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CCC84A2937BBB100DE5EB0 /* PetCollectionViewCell.swift */; };
 		85CCC84D2937C8FD00DE5EB0 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CCC84C2937C8FD00DE5EB0 /* Pet.swift */; };
 		85CCC84F2937F8FD00DE5EB0 /* PetDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CCC84E2937F8FD00DE5EB0 /* PetDetailViewController.swift */; };
 		85CCC857293819DC00DE5EB0 /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CCC856293819DC00DE5EB0 /* PersonTableViewCell.swift */; };
@@ -54,7 +53,6 @@
 		854B27D7293126F400D65718 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		854B27D9293126F400D65718 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		854EFA98293A486100524409 /* MyPetCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPetCollectionViewCell.swift; sourceTree = "<group>"; };
-		85CCC84A2937BBB100DE5EB0 /* PetCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetCollectionViewCell.swift; sourceTree = "<group>"; };
 		85CCC84C2937C8FD00DE5EB0 /* Pet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
 		85CCC84E2937F8FD00DE5EB0 /* PetDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetDetailViewController.swift; sourceTree = "<group>"; };
 		85CCC856293819DC00DE5EB0 /* PersonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
@@ -139,7 +137,6 @@
 		853C3ABD293E57D700A2F294 /* petList */ = {
 			isa = PBXGroup;
 			children = (
-				85CCC84A2937BBB100DE5EB0 /* PetCollectionViewCell.swift */,
 				85E0CB75293681FB0061A49C /* HomeViewController.swift */,
 			);
 			path = petList;
@@ -290,7 +287,6 @@
 				853C3ACF293FAD3600A2F294 /* ImageCollectionViewController.swift in Sources */,
 				854B27CC293126F200D65718 /* AppDelegate.swift in Sources */,
 				853C3AC3293E98AF00A2F294 /* PetPhotoCollectionViewController.swift in Sources */,
-				85CCC84B2937BBB100DE5EB0 /* PetCollectionViewCell.swift in Sources */,
 				85CCC8592939005500DE5EB0 /* MyPetViewController.swift in Sources */,
 				85E0CB782936A3950061A49C /* HomeTabBarController.swift in Sources */,
 				853C3AAC293C002100A2F294 /* TypePetViewController.swift in Sources */,

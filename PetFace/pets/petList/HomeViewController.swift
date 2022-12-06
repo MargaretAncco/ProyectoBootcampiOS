@@ -23,6 +23,9 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         petCollectionView.dataSource = self
         petCollectionView.delegate = self
+        let cellNib = UINib(nibName: "PetCollectionViewCell", bundle: nil)
+        petCollectionView.register(cellNib, forCellWithReuseIdentifier: "PetCollectionViewCell")
+
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let petDetailViewController = segue.destination as? PetDetailViewController{
@@ -44,7 +47,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         var cell = UICollectionViewCell()
-        if let petCell = petCollectionView.dequeueReusableCell(withReuseIdentifier: "petCell", for: indexPath) as? PetCollectionViewCell{
+        if let petCell = petCollectionView.dequeueReusableCell(withReuseIdentifier: "PetCollectionViewCell", for: indexPath) as? PetCollectionViewCell{
             petCell.setUp(with: datasource[indexPath.row])
             cell = petCell
         }
