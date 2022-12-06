@@ -8,22 +8,34 @@
 import UIKit
 
 class EditPetViewController: UIViewController {
+    var pet: Pet!
 
+    @IBOutlet weak var subtypeTextField: UITextField!
+    @IBOutlet weak var nameTextField: UIButton!
+    @IBOutlet weak var setDateOfBirthSwitch: UISwitch!
+    @IBOutlet weak var typeButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func deletePet(_ sender: Any) {
+        
     }
-    */
-
+    @IBAction func takeImage(_ sender: Any) {
+        
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "GoToMyPetImageList"{
+            let destination = segue.destination as? ImageCollectionViewController
+            destination?.imageList = [
+                PetImage(name: "Paco", typePet: TypePet.rodent, likesCount: 23, subtype: "jerbo", imageUrl: ""),
+                PetImage(name: "Paloma", typePet: TypePet.bird, likesCount: 13, subtype: "paloma", imageUrl: ""),
+                PetImage(name: "Firulais", typePet: TypePet.dog, likesCount: 2, subtype: "salchicha", imageUrl: "", userLiked: true),
+                PetImage(name: "Firulais", typePet: TypePet.dog, likesCount: 2, subtype: "salchicha", imageUrl: ""),
+                PetImage(name: "Firulais", typePet: TypePet.dog, likesCount: 2, subtype: "salchicha", imageUrl: ""),
+                
+            ]
+        }
+    }
 }

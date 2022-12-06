@@ -26,6 +26,7 @@ struct Pet {
     var userName: String = ""
     var imageUrl: String = ""
     var birthday: Date?
+    var imageUrlList: [PetImage]? = []
     
     init(name: String, typePet: TypePet, likesCount: Int, subtype: String, imageUrl: String, birthday: Date? = nil) {
         self.name = name

@@ -15,6 +15,7 @@ class MyPetListViewController: UIViewController {
                             Pet(name: "Rodolfo", typePet: TypePet.other, likesCount: 4, subtype: "", imageUrl: ""),
                             Pet(name: "Rodolfo", typePet: TypePet.other, likesCount: 4, subtype: "", imageUrl: ""),
                             Pet(name: "Firulais", typePet: TypePet.dog, likesCount: 2, subtype: "", imageUrl: "")]
+    var selectedPet: Pet?
     override func viewDidLoad() {
         super.viewDidLoad()
         myPetListCollectionView.dataSource = self
@@ -46,12 +47,16 @@ extension MyPetListViewController: UICollectionViewDataSource, UICollectionViewD
         return UICollectionViewCell()
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedPet = myPetList[indexPath.row]
         performSegue(withIdentifier: "GoToMyPetDetail", sender: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? NewPetViewController{
             destination.delegate = self
+        }
+        if let destination = segue.destination as? EditPetViewController{
+            destination.pet = selectedPet!
         }
     }
     
