@@ -10,7 +10,7 @@ import UIKit
 class MyPetListViewController: UIViewController {
 
     @IBOutlet weak var myPetListCollectionView: UICollectionView!
-    var myPetList: [Pet] = [Pet(name: "Paco", typePet: TypePet.rodent, likesCount: 3, subtype: "", imageUrl: "", userLiked: true),
+    var myPetList: [Pet] = [Pet(name: "Paco", typePet: TypePet.rodent, likesCount: 3, subtype: "", imageUrl: ""),
                             Pet(name: "Rodolfo", typePet: TypePet.other, likesCount: 4, subtype: "", imageUrl: ""),
                             Pet(name: "Rodolfo", typePet: TypePet.other, likesCount: 4, subtype: "", imageUrl: ""),
                             Pet(name: "Rodolfo", typePet: TypePet.other, likesCount: 4, subtype: "", imageUrl: ""),

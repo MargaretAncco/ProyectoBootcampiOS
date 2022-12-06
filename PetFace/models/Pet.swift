@@ -19,7 +19,6 @@ enum TypePet: String, CaseIterable {
 struct Pet {
     var id: String = ""
     var name: String = ""
-    var userLiked: Bool = false
     var typePet: TypePet = TypePet.other
     var likesCount: Int = 0
     var subtype: String = ""
@@ -28,13 +27,12 @@ struct Pet {
     var imageUrl: String = ""
     var birthday: Date?
     
-    init(name: String, typePet: TypePet, likesCount: Int, subtype: String, imageUrl: String, userLiked:Bool = false, birthday: Date? = nil) {
+    init(name: String, typePet: TypePet, likesCount: Int, subtype: String, imageUrl: String, birthday: Date? = nil) {
         self.name = name
         self.typePet = typePet
         self.likesCount = likesCount
         self.subtype = subtype
         self.imageUrl = imageUrl
-        self.userLiked = userLiked
         self.birthday = birthday
     }
     init(){

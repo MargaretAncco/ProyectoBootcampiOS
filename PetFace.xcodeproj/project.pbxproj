@@ -13,6 +13,7 @@
 		853C3AC1293E797500A2F294 /* PetImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853C3AC0293E797500A2F294 /* PetImage.swift */; };
 		853C3AC3293E98AF00A2F294 /* PetPhotoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853C3AC2293E98AF00A2F294 /* PetPhotoCollectionViewController.swift */; };
 		853C3AC6293EA57100A2F294 /* PetPhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853C3AC5293EA57100A2F294 /* PetPhotoCollectionViewCell.swift */; };
+		853C3ACD293ECED000A2F294 /* EditPetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853C3ACC293ECED000A2F294 /* EditPetViewController.swift */; };
 		854B27CC293126F200D65718 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854B27CB293126F200D65718 /* AppDelegate.swift */; };
 		854B27CE293126F200D65718 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854B27CD293126F200D65718 /* SceneDelegate.swift */; };
 		854B27D3293126F200D65718 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 854B27D1293126F200D65718 /* Main.storyboard */; };
@@ -38,6 +39,7 @@
 		853C3AC0293E797500A2F294 /* PetImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetImage.swift; sourceTree = "<group>"; };
 		853C3AC2293E98AF00A2F294 /* PetPhotoCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetPhotoCollectionViewController.swift; sourceTree = "<group>"; };
 		853C3AC5293EA57100A2F294 /* PetPhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetPhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		853C3ACC293ECED000A2F294 /* EditPetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPetViewController.swift; sourceTree = "<group>"; };
 		854B27C8293126F200D65718 /* PetFace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetFace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		854B27CB293126F200D65718 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		854B27CD293126F200D65718 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				853C3AB6293E562700A2F294 /* myPetList */,
 				853C3AB8293E570D00A2F294 /* petDetail */,
 				853C3AB7293E56AE00A2F294 /* addPet */,
+				853C3AC9293ECAFC00A2F294 /* editPet */,
 			);
 			path = myPets;
 			sourceTree = "<group>";
@@ -158,6 +161,14 @@
 				853C3AC5293EA57100A2F294 /* PetPhotoCollectionViewCell.swift */,
 			);
 			path = petPhotoList;
+			sourceTree = "<group>";
+		};
+		853C3AC9293ECAFC00A2F294 /* editPet */ = {
+			isa = PBXGroup;
+			children = (
+				853C3ACC293ECED000A2F294 /* EditPetViewController.swift */,
+			);
+			path = editPet;
 			sourceTree = "<group>";
 		};
 		854B27BF293126F200D65718 = {
@@ -282,6 +293,7 @@
 				853C3AC1293E797500A2F294 /* PetImage.swift in Sources */,
 				85CCC85B2939007000DE5EB0 /* MyPetListViewController.swift in Sources */,
 				85E0CB4C29350BC20061A49C /* LoginViewController.swift in Sources */,
+				853C3ACD293ECED000A2F294 /* EditPetViewController.swift in Sources */,
 				85E0CB4A29350AFD0061A49C /* RegisterViewController.swift in Sources */,
 				85E0CB76293681FB0061A49C /* HomeViewController.swift in Sources */,
 				85CCC84F2937F8FD00DE5EB0 /* PetDetailViewController.swift in Sources */,
