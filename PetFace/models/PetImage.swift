@@ -18,6 +18,7 @@ struct PetImage {
     var userName: String = ""
     var imageUrl: String = ""
     var createdAt : Date?
+    var peopleLiked:[String] = []
     
     init(){
         
