@@ -1,22 +1,12 @@
 //
-//  Pet.swift
+//  PetImage.swift
 //  PetFace
 //
-//  Created by Margaret Alexia Ancco Calloapaza on 30/11/22.
+//  Created by Margaret Alexia Ancco Calloapaza on 5/12/22.
 //
 
 import Foundation
-
-
-enum TypePet: String, CaseIterable {
-    case dog = "Perro"
-    case cat = "Gato"
-    case rodent = "Roedor"
-    case bird = "Ave"
-    case other = "Otro"
-
-}
-struct Pet {
+struct PetImage {
     var id: String = ""
     var name: String = ""
     var userLiked: Bool = false
@@ -24,20 +14,20 @@ struct Pet {
     var likesCount: Int = 0
     var subtype: String = ""
     var userId: String = ""
+    var petId: String = ""
     var userName: String = ""
     var imageUrl: String = ""
-    var birthday: Date?
+    var createdAt : Date?
     
-    init(name: String, typePet: TypePet, likesCount: Int, subtype: String, imageUrl: String, userLiked:Bool = false, birthday: Date? = nil) {
+    init(){
+        
+    }
+    init(name: String, typePet: TypePet, likesCount: Int, subtype: String, imageUrl: String, userLiked: Bool = false){
         self.name = name
         self.typePet = typePet
         self.likesCount = likesCount
         self.subtype = subtype
         self.imageUrl = imageUrl
         self.userLiked = userLiked
-        self.birthday = birthday
-    }
-    init(){
-        
     }
 }

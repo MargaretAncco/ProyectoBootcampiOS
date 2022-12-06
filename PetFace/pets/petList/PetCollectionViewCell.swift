@@ -13,7 +13,7 @@ class PetCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var isFavoriteImage: UIImageView!
     @IBOutlet weak var likesCountLabel: UILabel!
     
-    func setUp(with pet: Pet){
+    func setUp(with pet: PetImage){
         nameLabel.text = pet.name
         likesCountLabel.text = String(pet.likesCount)
         isFavoriteImage.image = UIImage(systemName: pet.userLiked ? "heart.fill": "heart")

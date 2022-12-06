@@ -8,26 +8,26 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-    var datasource: [Pet] = [Pet(name: "Paco", typePet: TypePet.rodent, likesCount: 3, subtype: "", imageUrl: "", userLiked: true),
-                             Pet(name: "Rodolfo", typePet: TypePet.other, likesCount: 4, subtype: "", imageUrl: ""),
-                             Pet(name: "Rodolfo", typePet: TypePet.other, likesCount: 4, subtype: "", imageUrl: ""),
-                             Pet(name: "Rodolfo", typePet: TypePet.other, likesCount: 4, subtype: "", imageUrl: ""),
-                             Pet(name: "Firulais", typePet: TypePet.dog, likesCount: 2, subtype: "", imageUrl: "")]
+    var datasource: [PetImage] = [
+            PetImage(name: "Paco", typePet: TypePet.rodent, likesCount: 23, subtype: "jerbo", imageUrl: ""),
+            PetImage(name: "Paloma", typePet: TypePet.bird, likesCount: 13, subtype: "paloma", imageUrl: ""),
+            PetImage(name: "Firulais", typePet: TypePet.dog, likesCount: 2, subtype: "salchicha", imageUrl: "", userLiked: true),
+            PetImage(name: "Firulais", typePet: TypePet.dog, likesCount: 2, subtype: "salchicha", imageUrl: ""),
+            PetImage(name: "Firulais", typePet: TypePet.dog, likesCount: 2, subtype: "salchicha", imageUrl: ""),
+            
+        ]
+    var petSelected: PetImage?
     @IBOutlet weak private var petCollectionView: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         petCollectionView.dataSource = self
         petCollectionView.delegate = self
     }
-    
-    func moveToDetail(with pet: Pet) {
-        guard let petDetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "PetDetailViewController") as? PetDetailViewController else {
-            return
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let petDetailViewController = segue.destination as? PetDetailViewController{
+            petDetailViewController.selectedPet = petSelected
         }
-        petDetailViewController.selectedPet = pet
-        petDetailViewController.modalPresentationStyle = .fullScreen
-        self.present(petDetailViewController, animated: false)
-        //self.performSegue(withIdentifier: "goToHome", sender: nil)
     }
 
 }
@@ -53,8 +53,10 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let pet = datasource[indexPath.row]
+        petSelected = pet
         print("item at \(indexPath.section)/\(indexPath.item) \(pet.name) tapped")
-        moveToDetail(with: pet)
+        self.performSegue(withIdentifier: "GoToPetDetailNavigation", sender: self)
 
      }
+    
 }

@@ -445,6 +445,7 @@
                     <navigationItem key="navigationItem" title="Ver mascotas" id="pjc-vA-isI"/>
                     <connections>
                         <outlet property="petCollectionView" destination="s1S-PS-kVV" id="TUu-iG-uOm"/>
+                        <segue destination="uDH-fz-fau" kind="show" identifier="GoToPetDetailNavigation" id="wZh-Va-56I"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X85-e7-Gdk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -459,48 +460,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" backIndicatorTransitionMaskImage="zzz" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="eGl-9j-3r9">
-                                <rect key="frame" x="0.0" y="47" width="428" height="44"/>
-                                <color key="barTintColor" systemColor="systemBackgroundColor"/>
-                                <textAttributes key="titleTextAttributes">
-                                    <color key="textColor" name="AccentColor"/>
-                                </textAttributes>
-                                <textAttributes key="largeTitleTextAttributes">
-                                    <color key="textColor" name="AccentColor"/>
-                                </textAttributes>
-                                <imageReference key="backIndicatorImage" image="square.and.arrow.up.circle.fill" catalog="system" symbolScale="small" renderingMode="original"/>
-                                <items>
-                                    <navigationItem title="Paco" id="TLe-gw-Aok">
-                                        <barButtonItem key="leftBarButtonItem" style="plain" id="JJt-Df-TLL">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="rje-ZN-ytr">
-                                                <rect key="frame" x="20" y="0.0" width="152" height="44"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="chevron.backward" catalog="system">
-                                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="large"/>
-                                                </buttonConfiguration>
-                                            </button>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" style="plain" id="k1Z-iu-MJh">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="QxA-21-F1P">
-                                                <rect key="frame" x="322" y="4.6666666666666679" width="86" height="35"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Ver más"/>
-                                                <connections>
-                                                    <segue destination="TH5-HC-1mr" kind="show" id="6nH-HW-3gX"/>
-                                                </connections>
-                                            </button>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="dgq-3d-JFB">
-                                <rect key="frame" x="10" y="104.66666666666674" width="372" height="506"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
-                                <imageReference key="image" image="photo.artframe" catalog="system" symbolScale="medium"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="17 de nov 2022" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TN2-bZ-cOL">
                                 <rect key="frame" x="26" y="663" width="119" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -545,46 +504,104 @@
                                     </attributedString>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="i7W-Fz-MM8" kind="show" id="3NS-wm-0e1"/>
+                                    <segue destination="i7W-Fz-MM8" kind="presentation" id="3NS-wm-0e1"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="dgq-3d-JFB">
+                                <rect key="frame" x="20" y="92.666666666666515" width="372" height="506"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                <imageReference key="image" image="photo.artframe" catalog="system" symbolScale="medium"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xak-u6-S0C"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="eGl-9j-3r9" firstAttribute="leading" secondItem="xak-u6-S0C" secondAttribute="leading" id="TXc-re-Pax"/>
-                            <constraint firstItem="eGl-9j-3r9" firstAttribute="trailing" secondItem="xak-u6-S0C" secondAttribute="trailing" id="fee-k4-Xxz"/>
-                            <constraint firstItem="eGl-9j-3r9" firstAttribute="top" secondItem="xak-u6-S0C" secondAttribute="top" id="zX7-LS-eZb"/>
-                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="57m-8a-yz6">
+                        <barButtonItem key="rightBarButtonItem" title="Ver más" id="sdf-eU-qdS">
+                            <connections>
+                                <segue destination="TH5-HC-1mr" kind="presentation" id="AFU-Ob-ymA"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="createdAtLabel" destination="TN2-bZ-cOL" id="gXY-r9-HfD"/>
+                        <outlet property="createdByLabel" destination="oio-oq-Hae" id="7Ub-s0-Bqt"/>
+                        <outlet property="isFavoriteButton" destination="C0q-kP-uCB" id="G3I-JB-MfI"/>
+                        <outlet property="likesCountButton" destination="jQc-RC-nCk" id="mfW-pH-eSA"/>
+                        <outlet property="petImage" destination="dgq-3d-JFB" id="0Ec-zX-9Rp"/>
+                        <outlet property="petTypeLabel" destination="bsa-qR-jjo" id="h9B-c6-f7T"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Dm-bO-Nah" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6425" y="-945"/>
+            <point key="canvasLocation" x="7324.7663551401865" y="-945.35637149028082"/>
         </scene>
-        <!--Collection View Controller-->
+        <!--Pet Photo Collection View Controller-->
         <scene sceneID="eLG-hd-u28">
             <objects>
-                <collectionViewController id="TH5-HC-1mr" sceneMemberID="viewController">
+                <collectionViewController id="TH5-HC-1mr" customClass="PetPhotoCollectionViewController" customModule="PetFace" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="v5c-9l-Lb5">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="869"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="DpS-04-Mjn">
-                            <size key="itemSize" width="159" height="231"/>
+                            <size key="itemSize" width="153" height="231"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="A3m-Ti-tMr">
-                                <rect key="frame" x="0.0" y="0.0" width="159" height="231"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoPetCell" id="wKd-gR-ezJ" customClass="PetPhotoCollectionViewCell" customModule="PetFace" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="153" height="231"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ebm-OS-oub">
-                                    <rect key="frame" x="0.0" y="0.0" width="159" height="231"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="153" height="231"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                </collectionViewCellContentView>
-                                <size key="customSize" width="159" height="231"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="8w1-X0-rAg">
+                                            <rect key="frame" x="5" y="2" width="146" height="225"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                            <imageReference key="image" image="photo.artframe" catalog="system" symbolScale="medium"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Fecha" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="55" translatesAutoresizingMaskIntoConstraints="NO" id="cYG-ed-GM8">
+                                            <rect key="frame" x="0.0" y="20" width="148" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HMt-zf-8gp">
+                                            <rect key="frame" x="57" y="188" width="17" height="23"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="17" id="jzi-dr-EcR"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="heart" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="sRY-xZ-MTj">
+                                            <rect key="frame" x="74" y="190" width="18" height="17"/>
+                                        </imageView>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="bottomMargin" secondItem="sRY-xZ-MTj" secondAttribute="bottom" constant="14.666666666666657" id="4te-nK-yBK"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="cYG-ed-GM8" secondAttribute="trailing" constant="-3" id="BfI-5x-qCQ"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="sRY-xZ-MTj" secondAttribute="trailing" constant="64" id="Cn9-AL-fgP"/>
+                                    <constraint firstAttribute="trailing" secondItem="cYG-ed-GM8" secondAttribute="trailing" constant="2" id="Lb1-xz-SwV"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="sRY-xZ-MTj" secondAttribute="bottom" constant="14" id="OrD-7x-6ZR"/>
+                                    <constraint firstItem="HMt-zf-8gp" firstAttribute="leading" secondItem="wKd-gR-ezJ" secondAttribute="leadingMargin" constant="49" id="TsP-Ps-MBg"/>
+                                    <constraint firstItem="HMt-zf-8gp" firstAttribute="top" secondItem="cYG-ed-GM8" secondAttribute="bottom" constant="164" id="Uox-a0-OfC"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="HMt-zf-8gp" secondAttribute="bottom" constant="15" id="VMI-Xr-Ro5"/>
+                                    <constraint firstItem="sRY-xZ-MTj" firstAttribute="leading" secondItem="HMt-zf-8gp" secondAttribute="trailing" id="VOx-mt-dox"/>
+                                    <constraint firstItem="cYG-ed-GM8" firstAttribute="top" secondItem="wKd-gR-ezJ" secondAttribute="top" constant="20" id="Vwd-TW-f7a"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="sRY-xZ-MTj" secondAttribute="trailing" constant="51" id="Y2p-fB-oyA"/>
+                                    <constraint firstItem="cYG-ed-GM8" firstAttribute="top" secondItem="wKd-gR-ezJ" secondAttribute="topMargin" constant="12" id="ZCq-z2-OzE"/>
+                                    <constraint firstItem="cYG-ed-GM8" firstAttribute="leading" secondItem="wKd-gR-ezJ" secondAttribute="leading" constant="2" id="i9S-gf-CdB"/>
+                                    <constraint firstItem="cYG-ed-GM8" firstAttribute="leading" secondItem="wKd-gR-ezJ" secondAttribute="leadingMargin" constant="-8" id="iVV-Cc-fUt"/>
+                                </constraints>
+                                <size key="customSize" width="153" height="231"/>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -592,11 +609,11 @@
                             <outlet property="delegate" destination="TH5-HC-1mr" id="fvs-ff-me1"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="tIC-GO-ntW"/>
+                    <navigationItem key="navigationItem" id="4Ne-Ui-Q8k"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7TJ-I8-3Yv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7511" y="-1551"/>
+            <point key="canvasLocation" x="8409.8130841121492" y="-1551.1879049676027"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="flM-T4-L0E">
@@ -615,7 +632,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qch-ig-hYa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7699" y="-549"/>
+            <point key="canvasLocation" x="8597.663551401869" y="-549.46004319654435"/>
         </scene>
         <!--Home Tab Bar Controller-->
         <scene sceneID="dk8-N1-HPZ">
@@ -825,8 +842,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="photo.artframe" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="tQx-YB-at5">
-                                <rect key="frame" x="55" y="110.66666666666663" width="138" height="200"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="photo.artframe" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="tQx-YB-at5">
+                                <rect key="frame" x="55" y="111" width="103" height="181"/>
                                 <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="tQx-YB-at5" secondAttribute="height" multiplier="138:203" id="lUk-Pe-C0p"/>
@@ -835,6 +852,10 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="kVc-p4-UHb"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="tQx-YB-at5" firstAttribute="leading" secondItem="kVc-p4-UHb" secondAttribute="leading" constant="55" id="5Mm-cD-1bx"/>
+                            <constraint firstItem="tQx-YB-at5" firstAttribute="top" secondItem="kVc-p4-UHb" secondAttribute="top" constant="18" id="V7I-7T-6br"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Mi mascota" id="yeS-4a-PTv"/>
                 </viewController>
@@ -958,16 +979,13 @@
         <image name="arrow.forward" catalog="system" width="128" height="95"/>
         <image name="arrowshape.backward" catalog="system" width="128" height="104"/>
         <image name="camera.fill" catalog="system" width="128" height="93"/>
-        <image name="chevron.backward" catalog="system" width="97" height="128"/>
         <image name="eye" catalog="system" width="128" height="79"/>
         <image name="heart" catalog="system" width="128" height="107"/>
         <image name="house" catalog="system" width="128" height="104"/>
         <image name="img_pet" width="512" height="512"/>
         <image name="pawprint.fill" catalog="system" width="128" height="112"/>
         <image name="photo.artframe" catalog="system" width="128" height="93"/>
-        <image name="square.and.arrow.up.circle.fill" catalog="system" width="128" height="123"/>
         <image name="trash.fill" catalog="system" width="119" height="128"/>
-        <image name="zzz" catalog="system" width="119" height="128"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
