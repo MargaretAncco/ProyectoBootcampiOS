@@ -82,5 +82,19 @@ class ImageCollectionViewController: UICollectionViewController {
     
     }
     */
+    
+}
+extension ImageCollectionViewController: UICollectionViewDelegateFlowLayout {
+    
+ 
 
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
+    {
+        let leftAndRightPaddings: CGFloat = 20.0
+        let numberOfItemsPerRow: CGFloat = 3.0
+    
+        let width = (collectionView.frame.width-leftAndRightPaddings)/numberOfItemsPerRow
+        return CGSize(width: width, height: width) // You can change width and height here as pr your requirement
+    
+    }
 }

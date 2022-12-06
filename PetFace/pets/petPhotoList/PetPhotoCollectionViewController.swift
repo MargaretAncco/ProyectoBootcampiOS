@@ -41,10 +41,18 @@ class PetPhotoCollectionViewController: UICollectionViewController {
         return petCell
     }
 
+        
 }
 
-//extension PetPhotoCollectionViewController: UICollectionViewDelegateFlowLayout {
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        return CGSize(width: collectionView.frame.size.width/3, height: collectionView.frame.size.width/2)
-//    }
-//}
+extension PetPhotoCollectionViewController: UICollectionViewDelegateFlowLayout {
+
+        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
+        {
+            let leftAndRightPaddings: CGFloat = 20.0
+            let numberOfItemsPerRow: CGFloat = 3.0
+        
+            let width = (collectionView.frame.width-leftAndRightPaddings)/numberOfItemsPerRow
+            return CGSize(width: width, height: width) // You can change width and height here as pr your requirement
+        
+        }
+    }

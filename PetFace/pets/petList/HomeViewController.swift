@@ -34,7 +34,7 @@ class HomeViewController: UIViewController {
     }
 
 }
-extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate{
+extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return datasource.count
     }
@@ -53,7 +53,6 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         }
         return cell
     }
-
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let pet = datasource[indexPath.row]
         petSelected = pet

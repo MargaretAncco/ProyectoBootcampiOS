@@ -12,7 +12,6 @@
 		853C3AB5293E36A500A2F294 /* ResultsTypeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853C3AB4293E36A500A2F294 /* ResultsTypeTableViewController.swift */; };
 		853C3AC1293E797500A2F294 /* PetImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853C3AC0293E797500A2F294 /* PetImage.swift */; };
 		853C3AC3293E98AF00A2F294 /* PetPhotoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853C3AC2293E98AF00A2F294 /* PetPhotoCollectionViewController.swift */; };
-		853C3AC6293EA57100A2F294 /* PetPhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853C3AC5293EA57100A2F294 /* PetPhotoCollectionViewCell.swift */; };
 		853C3ACD293ECED000A2F294 /* EditPetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853C3ACC293ECED000A2F294 /* EditPetViewController.swift */; };
 		853C3ACF293FAD3600A2F294 /* ImageCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853C3ACE293FAD3600A2F294 /* ImageCollectionViewController.swift */; };
 		853C3AD2293FB13700A2F294 /* PetCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853C3AD0293FB13700A2F294 /* PetCollectionViewCell.swift */; };
@@ -40,7 +39,6 @@
 		853C3AB4293E36A500A2F294 /* ResultsTypeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsTypeTableViewController.swift; sourceTree = "<group>"; };
 		853C3AC0293E797500A2F294 /* PetImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetImage.swift; sourceTree = "<group>"; };
 		853C3AC2293E98AF00A2F294 /* PetPhotoCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetPhotoCollectionViewController.swift; sourceTree = "<group>"; };
-		853C3AC5293EA57100A2F294 /* PetPhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetPhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		853C3ACC293ECED000A2F294 /* EditPetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPetViewController.swift; sourceTree = "<group>"; };
 		853C3ACE293FAD3600A2F294 /* ImageCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewController.swift; sourceTree = "<group>"; };
 		853C3AD0293FB13700A2F294 /* PetCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -163,7 +161,6 @@
 			isa = PBXGroup;
 			children = (
 				853C3AC2293E98AF00A2F294 /* PetPhotoCollectionViewController.swift */,
-				853C3AC5293EA57100A2F294 /* PetPhotoCollectionViewCell.swift */,
 			);
 			path = petPhotoList;
 			sourceTree = "<group>";
@@ -296,7 +293,6 @@
 				854EFA99293A486100524409 /* MyPetCollectionViewCell.swift in Sources */,
 				853C3AB5293E36A500A2F294 /* ResultsTypeTableViewController.swift in Sources */,
 				853C3AD2293FB13700A2F294 /* PetCollectionViewCell.swift in Sources */,
-				853C3AC6293EA57100A2F294 /* PetPhotoCollectionViewCell.swift in Sources */,
 				85CCC857293819DC00DE5EB0 /* PersonTableViewCell.swift in Sources */,
 				853C3AC1293E797500A2F294 /* PetImage.swift in Sources */,
 				85CCC85B2939007000DE5EB0 /* MyPetListViewController.swift in Sources */,
