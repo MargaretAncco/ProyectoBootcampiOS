@@ -16,6 +16,7 @@ class NewPetViewController: UIViewController {
     @IBOutlet weak var includeBirthdaySwitch: UISwitch!
     @IBOutlet weak var dateOfBirthDatePicker: UIDatePicker!
     
+    @IBOutlet weak var typePetButton: UIButton!
     var delegate: NewPetViewDelegate!
     
     @IBAction func addPet(_ sender: Any) {
@@ -51,6 +52,7 @@ class NewPetViewController: UIViewController {
 extension NewPetViewController :TypePetDelegate{
     func typePetTableViewController(_ viewController: TypePetTableViewController, didSelectType type: TypePet) {
         print("selectedd = \(type.rawValue)")
+        typePetButton.setTitle(type.rawValue, for: .normal) 
         newPet.typePet = type
     }
     
