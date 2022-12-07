@@ -17,18 +17,19 @@ struct PetImage {
     var petId: String = ""
     var userName: String = ""
     var imageUrl: String = ""
-    var createdAt : Date?
+    var createdAt : Date = Date()
     var peopleLiked:[String] = []
     
     init(){
         
     }
-    init(name: String, typePet: TypePet, likesCount: Int, subtype: String, imageUrl: String, userLiked: Bool = false){
+    init(name: String, typePet: TypePet, likesCount: Int, subtype: String, imageUrl: String, userLiked: Bool = false, createdAt: Date = Date()){
         self.name = name
         self.typePet = typePet
         self.likesCount = likesCount
         self.subtype = subtype
         self.imageUrl = imageUrl
         self.userLiked = userLiked
+        self.createdAt = createdAt
     }
 }

@@ -333,6 +333,9 @@
                                 <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="large"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="likePet:" destination="uDH-fz-fau" eventType="touchUpInside" id="QKB-UH-hM6"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jQc-RC-nCk">
                                 <rect key="frame" x="99" y="614" width="109" height="43"/>
@@ -773,7 +776,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="74o-Bw-ILi"/>
+        <segue reference="wZh-Va-56I"/>
         <segue reference="OXP-XB-xSf"/>
     </inferredMetricsTieBreakers>
     <resources>

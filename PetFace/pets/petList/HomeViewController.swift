@@ -40,7 +40,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
     
     
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+    private func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         
       return CGSize(width: collectionView.frame.size.width/2, height: collectionView.frame.size.width/2)
      }

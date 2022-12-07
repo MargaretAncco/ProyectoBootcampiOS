@@ -119,7 +119,6 @@
 				853C3AC4293E98F600A2F294 /* petPhotoList */,
 				853C3ABC293E57C200A2F294 /* petDetail */,
 				853C3ABD293E57D700A2F294 /* petList */,
-				853C3AB4293E36A500A2F294 /* ResultsTypeTableViewController.swift */,
 			);
 			path = pets;
 			sourceTree = "<group>";
@@ -135,6 +134,7 @@
 		853C3ABD293E57D700A2F294 /* petList */ = {
 			isa = PBXGroup;
 			children = (
+				853C3AB4293E36A500A2F294 /* ResultsTypeTableViewController.swift */,
 				85E0CB75293681FB0061A49C /* HomeViewController.swift */,
 			);
 			path = petList;
