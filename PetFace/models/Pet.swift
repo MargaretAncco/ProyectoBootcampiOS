@@ -17,7 +17,7 @@ enum TypePet: String, CaseIterable {
 
 }
 struct Pet {
-    var id: String = ""
+    var id: String = NSUUID().uuidString
     var name: String = ""
     var typePet: TypePet = TypePet.other
     var likesCount: Int = 0
