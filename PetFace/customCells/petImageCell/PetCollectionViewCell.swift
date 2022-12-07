@@ -13,6 +13,10 @@ class PetCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var isFavoriteImage: UIButton!
     @IBOutlet weak var likesCountLabel: UIButton!
     
+    var likeAction: ((UICollectionViewCell) -> Void)?
+    @IBAction func likeDidClick(_ sender: Any) {
+        likeAction?(self)
+    }
     func setUp(with pet: PetImage){
         nameLabel.text = pet.name
         likesCountLabel.setTitle(String(pet.likesCount), for: .normal)

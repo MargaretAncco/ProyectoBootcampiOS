@@ -99,13 +99,13 @@
 				85CCC856293819DC00DE5EB0 /* PersonTableViewCell.swift */,
 				85CCC8582939005500DE5EB0 /* MyPetViewController.swift */,
 			);
-			name = petDetail;
-			path = ../myPets/petDetail;
+			path = petDetail;
 			sourceTree = "<group>";
 		};
 		853C3ABA293E574F00A2F294 /* myPets */ = {
 			isa = PBXGroup;
 			children = (
+				853C3AFA294147BE00A2F294 /* myPetPhotoList */,
 				853C3AB6293E562700A2F294 /* myPetList */,
 				853C3AB7293E56AE00A2F294 /* addPet */,
 				853C3AC9293ECAFC00A2F294 /* editPet */,
@@ -116,12 +116,10 @@
 		853C3ABB293E579A00A2F294 /* pets */ = {
 			isa = PBXGroup;
 			children = (
-				853C3AB8293E570D00A2F294 /* petDetail */,
-				853C3AD4293FFC0F00A2F294 /* customCells */,
+				853C3AC4293E98F600A2F294 /* petPhotoList */,
 				853C3ABC293E57C200A2F294 /* petDetail */,
 				853C3ABD293E57D700A2F294 /* petList */,
 				853C3AB4293E36A500A2F294 /* ResultsTypeTableViewController.swift */,
-				853C3AC4293E98F600A2F294 /* petPhotoList */,
 			);
 			path = pets;
 			sourceTree = "<group>";
@@ -193,6 +191,15 @@
 			path = petImageCell;
 			sourceTree = "<group>";
 		};
+		853C3AFA294147BE00A2F294 /* myPetPhotoList */ = {
+			isa = PBXGroup;
+			children = (
+				853C3AB8293E570D00A2F294 /* petDetail */,
+				853C3ACE293FAD3600A2F294 /* ImageCollectionViewController.swift */,
+			);
+			path = myPetPhotoList;
+			sourceTree = "<group>";
+		};
 		854B27BF293126F200D65718 = {
 			isa = PBXGroup;
 			children = (
@@ -214,6 +221,7 @@
 		854B27CA293126F200D65718 /* PetFace */ = {
 			isa = PBXGroup;
 			children = (
+				853C3AD4293FFC0F00A2F294 /* customCells */,
 				853C3ABF293E586A00A2F294 /* models */,
 				853C3ABE293E584700A2F294 /* home */,
 				853C3ABB293E579A00A2F294 /* pets */,
@@ -221,7 +229,6 @@
 				854B27CB293126F200D65718 /* AppDelegate.swift */,
 				854B27CD293126F200D65718 /* SceneDelegate.swift */,
 				854B27D1293126F200D65718 /* Main.storyboard */,
-				853C3ACE293FAD3600A2F294 /* ImageCollectionViewController.swift */,
 				854B27D4293126F400D65718 /* Assets.xcassets */,
 				854B27D6293126F400D65718 /* LaunchScreen.storyboard */,
 				854B27D9293126F400D65718 /* Info.plist */,

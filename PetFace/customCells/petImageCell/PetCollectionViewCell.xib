@@ -40,6 +40,9 @@
                                         <rect key="frame" x="43.333333333333343" y="0.0" width="50.666666666666657" height="34.333333333333336"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system"/>
+                                        <connections>
+                                            <action selector="likeDidClick:" destination="gTV-IL-0wX" eventType="touchUpInside" id="ITb-ay-tAE"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>

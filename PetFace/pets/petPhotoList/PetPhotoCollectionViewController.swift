@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 class PetPhotoCollectionViewController: UICollectionViewController {
     var photoPetList: [PetImage]!
     
@@ -36,8 +35,23 @@ class PetPhotoCollectionViewController: UICollectionViewController {
     
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let petCell  = collectionView.dequeueReusableCell(withReuseIdentifier: "PetCollectionViewCell", for: indexPath) as! PetCollectionViewCell
-        petCell.setUp(with: photoPetList[indexPath.row])
+        var pet = photoPetList[indexPath.row]
+        let petCell = collectionView.dequeueReusableCell(withReuseIdentifier: "PetCollectionViewCell", for: indexPath) as! PetCollectionViewCell
+        
+        petCell.likeAction = { (cell) in
+            if pet.userLiked {
+                pet.likesCount -= 1
+                pet.userLiked = false
+            }else{
+                pet.likesCount += 1
+                pet.userLiked = true
+            }
+            self.photoPetList[indexPath.row] = pet
+            
+            collectionView.reloadData()
+        }
+        
+        petCell.setUp(with: pet)
         return petCell
     }
 
@@ -46,13 +60,13 @@ class PetPhotoCollectionViewController: UICollectionViewController {
 
 extension PetPhotoCollectionViewController: UICollectionViewDelegateFlowLayout {
 
-        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
-        {
-            let leftAndRightPaddings: CGFloat = 20.0
-            let numberOfItemsPerRow: CGFloat = 3.0
-        
-            let width = (collectionView.frame.width-leftAndRightPaddings)/numberOfItemsPerRow
-            return CGSize(width: width, height: width) // You can change width and height here as pr your requirement
-        
-        }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
+    {
+        let leftAndRightPaddings: CGFloat = 20.0
+        let numberOfItemsPerRow: CGFloat = 3.0
+    
+        let width = (collectionView.frame.width-leftAndRightPaddings)/numberOfItemsPerRow
+        return CGSize(width: width, height: width) // You can change width and height here as pr your requirement
+    
     }
+}
