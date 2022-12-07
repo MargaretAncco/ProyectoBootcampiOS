@@ -679,13 +679,18 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Mi mascota" id="yeS-4a-PTv">
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="Xp2-Gv-CBN"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Xp2-Gv-CBN">
+                            <connections>
+                                <action selector="saveChanges:" destination="KSq-pu-nDP" id="dPu-zl-dRR"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="nameTextField" destination="aNh-Uz-gNm" id="IrA-gc-4Dc"/>
+                        <outlet property="birthdayDatePicker" destination="e55-TS-Lzk" id="VU9-5V-wld"/>
+                        <outlet property="nameTextField" destination="T8R-xV-8OP" id="E2R-Wg-X4d"/>
                         <outlet property="setDateOfBirthSwitch" destination="2Ou-HF-IhK" id="CWh-cM-pVx"/>
                         <outlet property="subtypeTextField" destination="ojy-CO-371" id="H2t-pg-TDd"/>
-                        <outlet property="typeButton" destination="wI8-IT-Fij" id="sWm-wI-qUw"/>
+                        <outlet property="typeButton" destination="aNh-Uz-gNm" id="9Ci-NQ-Mq7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bF3-Qh-YUg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -56,6 +56,7 @@ extension MyPetListViewController: UICollectionViewDataSource, UICollectionViewD
             destination.delegate = self
         }
         if let destination = segue.destination as? EditPetViewController{
+            destination.delegate = self
             destination.pet = selectedPet!
         }
     }
@@ -67,6 +68,28 @@ extension MyPetListViewController : NewPetViewDelegate{
         myPetList.insert(newPet, at: 0)
         myPetListCollectionView.reloadData()
         dismiss(animated: true)
+    }
+    
+    
+}
+
+extension MyPetListViewController: EditPetViewDelegate{
+    func updatePet(_ viewController: EditPetViewController, didUpdatePet pet: Pet) {
+        if let indexToUpload = myPetList.firstIndex(where: {$0.id == pet.id}){
+            myPetList[indexToUpload] = pet
+            myPetListCollectionView.reloadData()
+        }
+    }
+    
+    func deletePet(_ viewController: EditPetViewController, didDeletePet pet: Pet) {
+        if let indexToDelete = myPetList.firstIndex(where: {$0.id == pet.id}){
+            myPetList.remove(at: indexToDelete)
+            myPetListCollectionView.reloadData()
+        }
+    }
+    
+    func uploadImage(_ viewController: EditPetViewController, didUpdateImage imagePath: String) {
+        
     }
     
     
