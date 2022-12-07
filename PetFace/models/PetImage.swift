@@ -7,7 +7,7 @@
 
 import Foundation
 struct PetImage {
-    var id: String = ""
+    var id: String = NSUUID().uuidString
     var name: String = ""
     var userLiked: Bool = false
     var typePet: TypePet = TypePet.other
