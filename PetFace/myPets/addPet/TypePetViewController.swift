@@ -11,7 +11,6 @@ protocol TypePetDelegate{
 }
 
 class TypePetTableViewController: UITableViewController {
-    let tableResults = ResultsTypeTableViewController()
     let typePetList: [String] = TypePet.allCases.map{ $0.rawValue}
     var searchController: UISearchController!
     var delegate: TypePetDelegate!

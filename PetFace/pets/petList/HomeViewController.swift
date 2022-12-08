@@ -16,13 +16,22 @@ class HomeViewController: UIViewController {
             PetImage(name: "Firulais", typePet: TypePet.dog, likesCount: 2, subtype: "salchicha", imageUrl: ""),
             
         ]
+    var resultsList: [PetImage] = []
+    
     var petSelected: PetImage?
+    var searchController: UISearchController!
+    
     @IBOutlet weak private var petCollectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         petCollectionView.dataSource = self
         petCollectionView.delegate = self
+        searchController = UISearchController()
+        navigationItem.searchController  = searchController
+        searchController.searchResultsUpdater = self
+        datasource.forEach{ resultsList.append($0)}
+        
         let cellNib = UINib(nibName: "PetCollectionViewCell", bundle: nil)
         petCollectionView.register(cellNib, forCellWithReuseIdentifier: "PetCollectionViewCell")
 
@@ -36,7 +45,7 @@ class HomeViewController: UIViewController {
 }
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return datasource.count
+        return resultsList.count
     }
     
     
@@ -48,17 +57,40 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         var cell = UICollectionViewCell()
         if let petCell = petCollectionView.dequeueReusableCell(withReuseIdentifier: "PetCollectionViewCell", for: indexPath) as? PetCollectionViewCell{
-            petCell.setUp(with: datasource[indexPath.row])
+            petCell.setUp(with: resultsList[indexPath.row])
             cell = petCell
         }
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let pet = datasource[indexPath.row]
+        let pet = resultsList[indexPath.row]
         petSelected = pet
         print("item at \(indexPath.section)/\(indexPath.item) \(pet.name) tapped")
         self.performSegue(withIdentifier: "GoToPetDetailNavigation", sender: self)
 
      }
+    
+}
+
+extension HomeViewController : UISearchResultsUpdating{
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let text = searchController.searchBar.text?.lowercased() else{
+            return
+        }
+        print(text)
+        if text.isEmpty{
+            resultsList = datasource
+        }else{
+            resultsList = []
+            datasource.forEach{
+                if $0.name.lowercased().contains(text.lowercased()){
+                    resultsList.append($0)
+                }
+            }
+        }
+        self.petCollectionView.reloadData()
+     
+    }
+    
     
 }

@@ -7,72 +7,55 @@
 
 import UIKit
 
-class ResultsTypeTableViewController: UITableViewController {
-    var resultTypeList: [Pet] = []
+class ResultsTypeCollectionViewController: UICollectionViewController {
+    var photoPetList: [PetImage] = []
     override func viewDidLoad() {
         super.viewDidLoad()
+        let cellNib = UINib(nibName: "PetCollectionViewCell", bundle: nil)
+        collectionView.register(cellNib, forCellWithReuseIdentifier: "PetCollectionViewCell")
+
     }
     
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return resultTypeList.count
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return photoPetList.count
     }
     
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = resultTypeList[indexPath.row].name
-        return cell
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        var pet = photoPetList[indexPath.row]
+        let petCell = collectionView.dequeueReusableCell(withReuseIdentifier: "PetCollectionViewCell", for: indexPath) as! PetCollectionViewCell
+        
+        petCell.likeAction = { (cell) in
+            if pet.userLiked {
+                pet.likesCount -= 1
+                pet.userLiked = false
+            }else{
+                pet.likesCount += 1
+                pet.userLiked = true
+            }
+            self.photoPetList[indexPath.row] = pet
+            
+            collectionView.reloadData()
+        }
+        
+        petCell.setUp(with: pet)
+        return petCell
     }
-    
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    
-    
-    /*
-     // Override to support editing the table view.
-     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-     if editingStyle == .delete {
-     // Delete the row from the data source
-     tableView.deleteRows(at: [indexPath], with: .fade)
-     } else if editingStyle == .insert {
-     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-     }
-     }
-     */
-    
-    /*
-     // Override to support rearranging the table view.
-     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-     
-     }
-     */
-    
-    /*
-     // Override to support conditional rearranging of the table view.
-     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the item to be re-orderable.
-     return true
-     }
-     */
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
+
+        
 }
+//
+//extension ResultsTypeCollectionViewController: UICollectionViewDelegateFlowLayout {
+//
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
+//    {
+//        let leftAndRightPaddings: CGFloat = 20.0
+//        let numberOfItemsPerRow: CGFloat = 3.0
+//    
+//        let width = (collectionView.frame.width-leftAndRightPaddings)/numberOfItemsPerRow
+//        return CGSize(width: width, height: width) // You can change width and height here as pr your requirement
+//    
+//    }
+//}
+//

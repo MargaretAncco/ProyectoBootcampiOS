@@ -264,9 +264,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="s1S-PS-kVV">
-                                <rect key="frame" x="20" y="204" width="353" height="516"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="s1S-PS-kVV">
+                                <rect key="frame" x="20" y="119" width="388" height="662"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="j66-sA-ZWt">
                                     <size key="itemSize" width="180" height="216"/>
@@ -277,15 +276,16 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Buscar" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nEO-im-fHU">
-                                <rect key="frame" x="20" y="126" width="73" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2VA-8K-rRn"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="s1S-PS-kVV" firstAttribute="leading" secondItem="2VA-8K-rRn" secondAttribute="leading" constant="20" id="Aqc-LJ-pR2"/>
+                            <constraint firstItem="s1S-PS-kVV" firstAttribute="top" secondItem="2VA-8K-rRn" secondAttribute="top" constant="28" id="jml-uW-0J2"/>
+                            <constraint firstItem="s1S-PS-kVV" firstAttribute="top" secondItem="2VA-8K-rRn" secondAttribute="top" constant="113" id="mRG-kc-dGi"/>
+                            <constraint firstItem="2VA-8K-rRn" firstAttribute="trailing" secondItem="s1S-PS-kVV" secondAttribute="trailing" constant="20" id="o1D-yC-pUb"/>
+                            <constraint firstItem="2VA-8K-rRn" firstAttribute="bottom" secondItem="s1S-PS-kVV" secondAttribute="bottom" constant="62" id="tmP-iP-NWI"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Ver mascotas" id="pjc-vA-isI"/>
                     <connections>
@@ -295,7 +295,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X85-e7-Gdk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4858.7786259541981" y="-474.64788732394368"/>
+            <point key="canvasLocation" x="4857.4766355140182" y="-474.94600431965443"/>
         </scene>
         <!--Pet Detail View Controller-->
         <scene sceneID="JMd-9C-0NC">
@@ -305,65 +305,75 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="17 de nov 2022" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TN2-bZ-cOL">
-                                <rect key="frame" x="26" y="663" width="119" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Roedor " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bsa-qR-jjo">
-                                <rect key="frame" x="26" y="703" width="60" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="subida por usuario23" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oio-oq-Hae">
-                                <rect key="frame" x="26" y="749" width="161" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C0q-kP-uCB">
-                                <rect key="frame" x="216" y="608" width="52" height="54"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system">
-                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="large"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="likePet:" destination="uDH-fz-fau" eventType="touchUpInside" id="QKB-UH-hM6"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jQc-RC-nCk">
-                                <rect key="frame" x="99" y="614" width="109" height="43"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" titleAlignment="automatic">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="13">
-                                            <attributes>
-                                                <font key="NSFont" size="25" name="Helvetica"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="clipping" baseWritingDirection="leftToRight" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </buttonConfiguration>
-                                <connections>
-                                    <segue destination="i7W-Fz-MM8" kind="presentation" id="3NS-wm-0e1"/>
-                                </connections>
-                            </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="dgq-3d-JFB">
                                 <rect key="frame" x="20" y="92.666666666666515" width="372" height="506"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                 <imageReference key="image" image="photo.artframe" catalog="system" symbolScale="medium"/>
                             </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="f21-QU-aPq">
+                                <rect key="frame" x="20" y="607" width="388" height="173"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="IhH-cu-8fn">
+                                        <rect key="frame" x="0.0" y="0.0" width="388" height="43"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jQc-RC-nCk">
+                                                <rect key="frame" x="0.0" y="0.0" width="196.66666666666666" height="43"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" titleAlignment="automatic">
+                                                    <attributedString key="attributedTitle">
+                                                        <fragment content="13">
+                                                            <attributes>
+                                                                <font key="NSFont" size="25" name="Helvetica"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="clipping" baseWritingDirection="leftToRight" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <segue destination="i7W-Fz-MM8" kind="presentation" id="3NS-wm-0e1"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C0q-kP-uCB">
+                                                <rect key="frame" x="196.66666666666663" y="4.3333333333333712" width="191.33333333333337" height="34.333333333333336"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system">
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="large"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="likePet:" destination="uDH-fz-fau" eventType="touchUpInside" id="QKB-UH-hM6"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="17 de nov 2022" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TN2-bZ-cOL">
+                                        <rect key="frame" x="0.0" y="66" width="388" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Roedor " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bsa-qR-jjo">
+                                        <rect key="frame" x="0.0" y="109.33333333333337" width="388" height="20.333333333333343"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="subida por usuario23" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oio-oq-Hae">
+                                        <rect key="frame" x="0.0" y="152.66666666666663" width="388" height="20.333333333333343"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xak-u6-S0C"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="f21-QU-aPq" firstAttribute="leading" secondItem="xak-u6-S0C" secondAttribute="leading" constant="20" id="SwJ-ql-ciK"/>
+                            <constraint firstItem="f21-QU-aPq" firstAttribute="top" secondItem="dgq-3d-JFB" secondAttribute="bottom" constant="7" id="fnW-g8-uWg"/>
+                            <constraint firstItem="xak-u6-S0C" firstAttribute="trailing" secondItem="f21-QU-aPq" secondAttribute="trailing" constant="20" id="ilp-pp-iHH"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="57m-8a-yz6">
                         <barButtonItem key="rightBarButtonItem" title="Ver más" id="sdf-eU-qdS">
