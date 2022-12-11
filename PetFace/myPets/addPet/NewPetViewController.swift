@@ -16,6 +16,7 @@ class NewPetViewController: UIViewController {
     @IBOutlet weak var includeBirthdaySwitch: UISwitch!
     @IBOutlet weak var dateOfBirthDatePicker: UIDatePicker!
     
+    @IBOutlet weak var previewImage: UIImageView!
     @IBOutlet weak var typePetButton: UIButton!
     var delegate: NewPetViewDelegate!
     
@@ -30,6 +31,14 @@ class NewPetViewController: UIViewController {
         newPet.imageUrl = ""
         delegate?.newPetViewController(self, didAddPet: newPet)
         
+    }
+    @IBAction func selectImage(_ sender: Any) {
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.sourceType = .photoLibrary
+        imagePickerController.delegate = self
+        imagePickerController.allowsEditing = true
+        
+        present(imagePickerController, animated: true)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,5 +65,20 @@ extension NewPetViewController :TypePetDelegate{
         newPet.typePet = type
     }
     
+    
+}
+
+extension NewPetViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        if let pickedImage = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")] as? UIImage {
+            previewImage.image = pickedImage
+        }
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion:nil)
+    }
     
 }

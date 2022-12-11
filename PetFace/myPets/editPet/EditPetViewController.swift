@@ -16,6 +16,7 @@ class EditPetViewController: UIViewController {
     @IBOutlet weak var birthdayDatePicker: UIDatePicker!
     @IBOutlet weak var typeButton: UIButton!
     
+    @IBOutlet weak var previewImage: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
         setUp()
@@ -51,6 +52,11 @@ class EditPetViewController: UIViewController {
         delegate?.deletePet(self, didDeletePet: pet)
     }
     @IBAction func takeImage(_ sender: Any) {
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.sourceType = .photoLibrary
+        imagePickerController.delegate = self
+        imagePickerController.allowsEditing = true
+        present(imagePickerController, animated: true)
 //        delegate?.uploadImage(self, didUpdateImage: )
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -63,7 +69,6 @@ class EditPetViewController: UIViewController {
                 PetImage(name: "Firulais", typePet: TypePet.dog, likesCount: 2, subtype: "salchicha", imageUrl: "", userLiked: true),
                 PetImage(name: "Firulais", typePet: TypePet.dog, likesCount: 2, subtype: "salchicha", imageUrl: ""),
                 PetImage(name: "Firulais", typePet: TypePet.dog, likesCount: 2, subtype: "salchicha", imageUrl: ""),
-                
             ]
         }
         if let destination = segue.destination as? TypePetTableViewController{
@@ -78,5 +83,20 @@ extension EditPetViewController : TypePetDelegate{
         
     }
     
+    
+}
+
+extension EditPetViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+
+        if let pickedImage = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")] as? UIImage {
+            previewImage.image = pickedImage
+        }
+        dismiss(animated: true, completion: nil)
+    }
+
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion:nil)
+    }
     
 }
