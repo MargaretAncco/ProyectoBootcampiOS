@@ -14,7 +14,7 @@
         <!--Mis mascotas-->
         <scene sceneID="Dpa-9C-nAh">
             <objects>
-                <viewController id="MOL-Go-JTo" customClass="MyPetListViewController" customModule="PetFace" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" id="MOL-Go-JTo" customClass="MyPetListViewController" customModule="PetFace" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gX8-dV-Bad">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -88,7 +88,7 @@
         <!--Agregar mascota-->
         <scene sceneID="fYA-kr-1RO">
             <objects>
-                <viewController id="5SH-ay-ETu" customClass="NewPetViewController" customModule="PetFace" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewPetViewController" id="5SH-ay-ETu" customClass="NewPetViewController" customModule="PetFace" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="n16-vJ-O1g">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="869"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -147,7 +147,7 @@
                                                 </constraints>
                                             </datePicker>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo.artframe" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="zs0-aT-C6b">
-                                                <rect key="frame" x="0.0" y="198.00000000000003" width="401" height="201.00000000000003"/>
+                                                <rect key="frame" x="0.0" y="198" width="401" height="201.00000000000003"/>
                                                 <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="130" id="OYX-dZ-kmt"/>
@@ -489,10 +489,10 @@
             </objects>
             <point key="canvasLocation" x="8597.663551401869" y="-549.46004319654435"/>
         </scene>
-        <!--Home Tab Bar Controller-->
+        <!--Tab Bar Controller-->
         <scene sceneID="dk8-N1-HPZ">
             <objects>
-                <tabBarController storyboardIdentifier="HomeTabBarController" id="fEY-U1-A6M" customClass="HomeTabBarController" customModule="PetFace" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="HomeTabBarController" id="fEY-U1-A6M" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" style="editor" id="aoQ-7h-7aQ"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Zpi-NY-Ppk">
@@ -512,7 +512,7 @@
         <!--Mi mascota-->
         <scene sceneID="cAV-la-tih">
             <objects>
-                <viewController id="KSq-pu-nDP" customClass="EditPetViewController" customModule="PetFace" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EditPetViewController" id="KSq-pu-nDP" customClass="EditPetViewController" customModule="PetFace" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zqi-qt-7fB">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
