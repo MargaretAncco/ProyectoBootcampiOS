@@ -16,6 +16,4 @@ struct PetResponse : Decodable{
     var userName: String = ""
     var imageUrl: String = ""
     var birthday: String = ""
-    var imageUrlList: [PetImageResponse]? = []
-    
 }
