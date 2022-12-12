@@ -129,9 +129,9 @@
 				853C3ABD293E57D700A2F294 /* petList */,
 				853C3B4B2946A56100A2F294 /* View */,
 				853C3B4C2946A56E00A2F294 /* Interactor */,
-				853C3B4F2946A5D600A2F294 /* Router */,
-				853C3B4E2946A5C600A2F294 /* Entity */,
 				853C3B4D2946A57800A2F294 /* Presenter */,
+				853C3B4E2946A5C600A2F294 /* Entity */,
+				853C3B4F2946A5D600A2F294 /* Router */,
 			);
 			path = pets;
 			sourceTree = "<group>";

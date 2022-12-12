@@ -14,7 +14,7 @@
         <!--Mis mascotas-->
         <scene sceneID="Dpa-9C-nAh">
             <objects>
-                <viewController storyboardIdentifier="HomeViewController" id="MOL-Go-JTo" customClass="MyPetListViewController" customModule="PetFace" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MyPetListViewController" id="MOL-Go-JTo" customClass="MyPetListViewController" customModule="PetFace" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gX8-dV-Bad">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
