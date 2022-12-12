@@ -33,6 +33,30 @@
 		854D487F29479D8E004C43ED /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 854D487E29479D8E004C43ED /* FirebaseDatabase */; };
 		854D488129479D8E004C43ED /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 854D488029479D8E004C43ED /* FirebaseDatabaseSwift */; };
 		854D488329479D8E004C43ED /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 854D488229479D8E004C43ED /* FirebaseStorage */; };
+		854D48852947A977004C43ED /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 854D48842947A977004C43ED /* GoogleService-Info.plist */; };
+		854D48872947BBC2004C43ED /* PetDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854D48862947BBC2004C43ED /* PetDetailRouter.swift */; };
+		854D48892947BBE5004C43ED /* PetDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854D48882947BBE5004C43ED /* PetDetailPresenter.swift */; };
+		854D488B2947BC03004C43ED /* PetDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854D488A2947BC03004C43ED /* PetDetailInteractor.swift */; };
+		854D488D2947BC61004C43ED /* PetListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854D488C2947BC61004C43ED /* PetListRouter.swift */; };
+		854D488F2947BC72004C43ED /* PetListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854D488E2947BC72004C43ED /* PetListPresenter.swift */; };
+		854D48912947BC83004C43ED /* PetListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854D48902947BC83004C43ED /* PetListInteractor.swift */; };
+		854D48932947BCB4004C43ED /* MyPetPhotoListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854D48922947BCB4004C43ED /* MyPetPhotoListRouter.swift */; };
+		854D48952947BCE9004C43ED /* MyPetPhotoListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854D48942947BCE9004C43ED /* MyPetPhotoListPresenter.swift */; };
+		854D48972947BD5D004C43ED /* MyPetPhotoListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854D48962947BD5D004C43ED /* MyPetPhotoListInteractor.swift */; };
+		854D48992947C15C004C43ED /* MyPetListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854D48982947C15C004C43ED /* MyPetListInteractor.swift */; };
+		854D489B2947C182004C43ED /* MyPetListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854D489A2947C182004C43ED /* MyPetListPresenter.swift */; };
+		854D489D2947C211004C43ED /* NewPetInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854D489C2947C211004C43ED /* NewPetInteractor.swift */; };
+		854D489F2947C21A004C43ED /* NewPetPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854D489E2947C21A004C43ED /* NewPetPresenter.swift */; };
+		854D48A12947C225004C43ED /* NewPetRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854D48A02947C225004C43ED /* NewPetRouter.swift */; };
+		854D48A32947C247004C43ED /* EditPetPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854D48A22947C247004C43ED /* EditPetPresenter.swift */; };
+		854D48A52947C252004C43ED /* EditPetInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854D48A42947C252004C43ED /* EditPetInteractor.swift */; };
+		854D48A72947C2CB004C43ED /* EditPetRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854D48A62947C2CB004C43ED /* EditPetRouter.swift */; };
+		854D48B82947CA08004C43ED /* MyPetListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854D48B72947CA08004C43ED /* MyPetListRouter.swift */; };
+		854D48C72947CB76004C43ED /* Configurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854D48C62947CB76004C43ED /* Configurator.swift */; };
+		854D48C92947CB80004C43ED /* Configurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854D48C82947CB7F004C43ED /* Configurator.swift */; };
+		854D48CB2947CB8A004C43ED /* Configurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854D48CA2947CB8A004C43ED /* Configurator.swift */; };
+		854D48CD2947CB99004C43ED /* Configurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854D48CC2947CB99004C43ED /* Configurator.swift */; };
+		854D48CF2947CBA9004C43ED /* Configurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854D48CE2947CBA9004C43ED /* Configurator.swift */; };
 		854EFA99293A486100524409 /* MyPetCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854EFA98293A486100524409 /* MyPetCollectionViewCell.swift */; };
 		85CCC84D2937C8FD00DE5EB0 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CCC84C2937C8FD00DE5EB0 /* Pet.swift */; };
 		85CCC84F2937F8FD00DE5EB0 /* PetDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CCC84E2937F8FD00DE5EB0 /* PetDetailViewController.swift */; };
@@ -67,6 +91,30 @@
 		854B27D4293126F400D65718 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		854B27D7293126F400D65718 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		854B27D9293126F400D65718 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		854D48842947A977004C43ED /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		854D48862947BBC2004C43ED /* PetDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetDetailRouter.swift; sourceTree = "<group>"; };
+		854D48882947BBE5004C43ED /* PetDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetDetailPresenter.swift; sourceTree = "<group>"; };
+		854D488A2947BC03004C43ED /* PetDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetDetailInteractor.swift; sourceTree = "<group>"; };
+		854D488C2947BC61004C43ED /* PetListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetListRouter.swift; sourceTree = "<group>"; };
+		854D488E2947BC72004C43ED /* PetListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetListPresenter.swift; sourceTree = "<group>"; };
+		854D48902947BC83004C43ED /* PetListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetListInteractor.swift; sourceTree = "<group>"; };
+		854D48922947BCB4004C43ED /* MyPetPhotoListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPetPhotoListRouter.swift; sourceTree = "<group>"; };
+		854D48942947BCE9004C43ED /* MyPetPhotoListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPetPhotoListPresenter.swift; sourceTree = "<group>"; };
+		854D48962947BD5D004C43ED /* MyPetPhotoListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPetPhotoListInteractor.swift; sourceTree = "<group>"; };
+		854D48982947C15C004C43ED /* MyPetListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPetListInteractor.swift; sourceTree = "<group>"; };
+		854D489A2947C182004C43ED /* MyPetListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPetListPresenter.swift; sourceTree = "<group>"; };
+		854D489C2947C211004C43ED /* NewPetInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPetInteractor.swift; sourceTree = "<group>"; };
+		854D489E2947C21A004C43ED /* NewPetPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPetPresenter.swift; sourceTree = "<group>"; };
+		854D48A02947C225004C43ED /* NewPetRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPetRouter.swift; sourceTree = "<group>"; };
+		854D48A22947C247004C43ED /* EditPetPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPetPresenter.swift; sourceTree = "<group>"; };
+		854D48A42947C252004C43ED /* EditPetInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPetInteractor.swift; sourceTree = "<group>"; };
+		854D48A62947C2CB004C43ED /* EditPetRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPetRouter.swift; sourceTree = "<group>"; };
+		854D48B72947CA08004C43ED /* MyPetListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPetListRouter.swift; sourceTree = "<group>"; };
+		854D48C62947CB76004C43ED /* Configurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurator.swift; sourceTree = "<group>"; };
+		854D48C82947CB7F004C43ED /* Configurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurator.swift; sourceTree = "<group>"; };
+		854D48CA2947CB8A004C43ED /* Configurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurator.swift; sourceTree = "<group>"; };
+		854D48CC2947CB99004C43ED /* Configurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurator.swift; sourceTree = "<group>"; };
+		854D48CE2947CBA9004C43ED /* Configurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurator.swift; sourceTree = "<group>"; };
 		854EFA98293A486100524409 /* MyPetCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPetCollectionViewCell.swift; sourceTree = "<group>"; };
 		85CCC84C2937C8FD00DE5EB0 /* Pet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
 		85CCC84E2937F8FD00DE5EB0 /* PetDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetDetailViewController.swift; sourceTree = "<group>"; };
@@ -94,8 +142,11 @@
 		853C3AB6293E562700A2F294 /* myPetList */ = {
 			isa = PBXGroup;
 			children = (
-				854EFA98293A486100524409 /* MyPetCollectionViewCell.swift */,
-				85CCC85A2939007000DE5EB0 /* MyPetListViewController.swift */,
+				854D48B42947C9E8004C43ED /* View */,
+				854D48B52947C9F0004C43ED /* Interactor */,
+				854D48B62947C9FB004C43ED /* Presenter */,
+				854D48B92947CA0E004C43ED /* Router */,
+				854D48CE2947CBA9004C43ED /* Configurator.swift */,
 			);
 			path = myPetList;
 			sourceTree = "<group>";
@@ -103,8 +154,10 @@
 		853C3AB7293E56AE00A2F294 /* addMyPet */ = {
 			isa = PBXGroup;
 			children = (
-				853C3AAB293C002100A2F294 /* TypePetViewController.swift */,
-				853C3AA9293BFF7400A2F294 /* NewPetViewController.swift */,
+				854D48BA2947CA5F004C43ED /* View */,
+				854D48BB2947CA65004C43ED /* Interactor */,
+				854D48BC2947CA8B004C43ED /* Presenter */,
+				854D48BD2947CA92004C43ED /* Router */,
 			);
 			path = addMyPet;
 			sourceTree = "<group>";
@@ -135,11 +188,6 @@
 				853C3AC4293E98F600A2F294 /* petPhotoList */,
 				853C3ABC293E57C200A2F294 /* petDetail */,
 				853C3ABD293E57D700A2F294 /* petList */,
-				853C3B4B2946A56100A2F294 /* View */,
-				853C3B4C2946A56E00A2F294 /* Interactor */,
-				853C3B4D2946A57800A2F294 /* Presenter */,
-				853C3B4E2946A5C600A2F294 /* Entity */,
-				853C3B4F2946A5D600A2F294 /* Router */,
 			);
 			path = pets;
 			sourceTree = "<group>";
@@ -147,7 +195,11 @@
 		853C3ABC293E57C200A2F294 /* petDetail */ = {
 			isa = PBXGroup;
 			children = (
-				85CCC84E2937F8FD00DE5EB0 /* PetDetailViewController.swift */,
+				854D48A82947C935004C43ED /* view */,
+				854D48A92947C941004C43ED /* Router */,
+				854D48AA2947C94A004C43ED /* Presenter */,
+				854D48AB2947C953004C43ED /* Interactor */,
+				854D48C82947CB7F004C43ED /* Configurator.swift */,
 			);
 			path = petDetail;
 			sourceTree = "<group>";
@@ -155,8 +207,11 @@
 		853C3ABD293E57D700A2F294 /* petList */ = {
 			isa = PBXGroup;
 			children = (
-				853C3AB4293E36A500A2F294 /* ResultsTypeTableViewController.swift */,
-				85E0CB75293681FB0061A49C /* HomeViewController.swift */,
+				854D48AC2947C962004C43ED /* View */,
+				854D48AD2947C96D004C43ED /* Router */,
+				854D48AE2947C97B004C43ED /* Presenter */,
+				854D48AF2947C983004C43ED /* Interactor */,
+				854D48CA2947CB8A004C43ED /* Configurator.swift */,
 			);
 			path = petList;
 			sourceTree = "<group>";
@@ -173,11 +228,11 @@
 		853C3AC4293E98F600A2F294 /* petPhotoList */ = {
 			isa = PBXGroup;
 			children = (
-				853C3AC2293E98AF00A2F294 /* PetPhotoCollectionViewController.swift */,
-				853C3B502946A5F300A2F294 /* Configurator.swift */,
-				853C3B522946A91300A2F294 /* PetPhotoRouter.swift */,
-				853C3B542946A95A00A2F294 /* PetPhotoPresenter.swift */,
-				853C3B562946A98800A2F294 /* PetPhotoInteractor.swift */,
+				854D48C22947CAE2004C43ED /* View */,
+				854D48C52947CB15004C43ED /* Interactor */,
+				854D48C32947CAEB004C43ED /* Presenter */,
+				854D48C42947CAF9004C43ED /* Router */,
+				854D48C62947CB76004C43ED /* Configurator.swift */,
 			);
 			path = petPhotoList;
 			sourceTree = "<group>";
@@ -185,8 +240,10 @@
 		853C3AC9293ECAFC00A2F294 /* editMyPet */ = {
 			isa = PBXGroup;
 			children = (
-				853C3ACC293ECED000A2F294 /* EditPetViewController.swift */,
-				853C3AD62940017F00A2F294 /* EditPetViewDelegate.swift */,
+				854D48BE2947CAA4004C43ED /* View */,
+				854D48BF2947CAAC004C43ED /* Presenter */,
+				854D48C02947CABB004C43ED /* Interactor */,
+				854D48C12947CAC6004C43ED /* Router */,
 			);
 			path = editMyPet;
 			sourceTree = "<group>";
@@ -211,45 +268,13 @@
 		853C3AFA294147BE00A2F294 /* myPetPhotoList */ = {
 			isa = PBXGroup;
 			children = (
-				853C3AB8293E570D00A2F294 /* myPetDetail */,
-				853C3ACE293FAD3600A2F294 /* ImageCollectionViewController.swift */,
+				854D48CC2947CB99004C43ED /* Configurator.swift */,
+				854D48B22947C9CF004C43ED /* Presenter */,
+				854D48B12947C9C5004C43ED /* Router */,
+				854D48B02947C992004C43ED /* View */,
+				854D48B32947C9D8004C43ED /* Interactor */,
 			);
 			path = myPetPhotoList;
-			sourceTree = "<group>";
-		};
-		853C3B4B2946A56100A2F294 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		853C3B4C2946A56E00A2F294 /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Interactor;
-			sourceTree = "<group>";
-		};
-		853C3B4D2946A57800A2F294 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		853C3B4E2946A5C600A2F294 /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Entity;
-			sourceTree = "<group>";
-		};
-		853C3B4F2946A5D600A2F294 /* Router */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Router;
 			sourceTree = "<group>";
 		};
 		853C3B582946AAD900A2F294 /* Resources */ = {
@@ -272,6 +297,7 @@
 		854B27BF293126F200D65718 = {
 			isa = PBXGroup;
 			children = (
+				853C3B502946A5F300A2F294 /* Configurator.swift */,
 				854B27CA293126F200D65718 /* PetFace */,
 				854B27C9293126F200D65718 /* Products */,
 			);
@@ -300,8 +326,238 @@
 				854B27D4293126F400D65718 /* Assets.xcassets */,
 				854B27D6293126F400D65718 /* LaunchScreen.storyboard */,
 				854B27D9293126F400D65718 /* Info.plist */,
+				854D48842947A977004C43ED /* GoogleService-Info.plist */,
 			);
 			path = PetFace;
+			sourceTree = "<group>";
+		};
+		854D48A82947C935004C43ED /* view */ = {
+			isa = PBXGroup;
+			children = (
+				85CCC84E2937F8FD00DE5EB0 /* PetDetailViewController.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		854D48A92947C941004C43ED /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				854D48862947BBC2004C43ED /* PetDetailRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		854D48AA2947C94A004C43ED /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				854D48882947BBE5004C43ED /* PetDetailPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		854D48AB2947C953004C43ED /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				854D488A2947BC03004C43ED /* PetDetailInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		854D48AC2947C962004C43ED /* View */ = {
+			isa = PBXGroup;
+			children = (
+				853C3AB4293E36A500A2F294 /* ResultsTypeTableViewController.swift */,
+				85E0CB75293681FB0061A49C /* HomeViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		854D48AD2947C96D004C43ED /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				854D488C2947BC61004C43ED /* PetListRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		854D48AE2947C97B004C43ED /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				854D488E2947BC72004C43ED /* PetListPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		854D48AF2947C983004C43ED /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				854D48902947BC83004C43ED /* PetListInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		854D48B02947C992004C43ED /* View */ = {
+			isa = PBXGroup;
+			children = (
+				853C3AB8293E570D00A2F294 /* myPetDetail */,
+				853C3ACE293FAD3600A2F294 /* ImageCollectionViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		854D48B12947C9C5004C43ED /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				854D48922947BCB4004C43ED /* MyPetPhotoListRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		854D48B22947C9CF004C43ED /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				854D48942947BCE9004C43ED /* MyPetPhotoListPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		854D48B32947C9D8004C43ED /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				854D48962947BD5D004C43ED /* MyPetPhotoListInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		854D48B42947C9E8004C43ED /* View */ = {
+			isa = PBXGroup;
+			children = (
+				854EFA98293A486100524409 /* MyPetCollectionViewCell.swift */,
+				85CCC85A2939007000DE5EB0 /* MyPetListViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		854D48B52947C9F0004C43ED /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				854D48982947C15C004C43ED /* MyPetListInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		854D48B62947C9FB004C43ED /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				854D489A2947C182004C43ED /* MyPetListPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		854D48B92947CA0E004C43ED /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				854D48B72947CA08004C43ED /* MyPetListRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		854D48BA2947CA5F004C43ED /* View */ = {
+			isa = PBXGroup;
+			children = (
+				853C3AAB293C002100A2F294 /* TypePetViewController.swift */,
+				853C3AA9293BFF7400A2F294 /* NewPetViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		854D48BB2947CA65004C43ED /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				854D489C2947C211004C43ED /* NewPetInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		854D48BC2947CA8B004C43ED /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				854D489E2947C21A004C43ED /* NewPetPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		854D48BD2947CA92004C43ED /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				854D48A02947C225004C43ED /* NewPetRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		854D48BE2947CAA4004C43ED /* View */ = {
+			isa = PBXGroup;
+			children = (
+				853C3ACC293ECED000A2F294 /* EditPetViewController.swift */,
+				853C3AD62940017F00A2F294 /* EditPetViewDelegate.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		854D48BF2947CAAC004C43ED /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				854D48A22947C247004C43ED /* EditPetPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		854D48C02947CABB004C43ED /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				854D48A42947C252004C43ED /* EditPetInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		854D48C12947CAC6004C43ED /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				854D48A62947C2CB004C43ED /* EditPetRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		854D48C22947CAE2004C43ED /* View */ = {
+			isa = PBXGroup;
+			children = (
+				853C3AC2293E98AF00A2F294 /* PetPhotoCollectionViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		854D48C32947CAEB004C43ED /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				853C3B542946A95A00A2F294 /* PetPhotoPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		854D48C42947CAF9004C43ED /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				853C3B522946A91300A2F294 /* PetPhotoRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		854D48C52947CB15004C43ED /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				853C3B562946A98800A2F294 /* PetPhotoInteractor.swift */,
+			);
+			path = Interactor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -374,6 +630,7 @@
 			files = (
 				854B27D8293126F400D65718 /* LaunchScreen.storyboard in Resources */,
 				854B27D5293126F400D65718 /* Assets.xcassets in Resources */,
+				854D48852947A977004C43ED /* GoogleService-Info.plist in Resources */,
 				853C3AD3293FB13700A2F294 /* PetCollectionViewCell.xib in Resources */,
 				854B27D3293126F200D65718 /* Main.storyboard in Resources */,
 			);
@@ -388,29 +645,52 @@
 			files = (
 				853C3ACF293FAD3600A2F294 /* ImageCollectionViewController.swift in Sources */,
 				853C3B572946A98800A2F294 /* PetPhotoInteractor.swift in Sources */,
+				854D48A52947C252004C43ED /* EditPetInteractor.swift in Sources */,
 				854B27CC293126F200D65718 /* AppDelegate.swift in Sources */,
+				854D48892947BBE5004C43ED /* PetDetailPresenter.swift in Sources */,
+				854D48992947C15C004C43ED /* MyPetListInteractor.swift in Sources */,
+				854D488F2947BC72004C43ED /* PetListPresenter.swift in Sources */,
 				853C3AC3293E98AF00A2F294 /* PetPhotoCollectionViewController.swift in Sources */,
 				853C3B5D2946AD2700A2F294 /* PetResponse.swift in Sources */,
 				85CCC8592939005500DE5EB0 /* MyPetViewController.swift in Sources */,
+				854D488D2947BC61004C43ED /* PetListRouter.swift in Sources */,
 				853C3AAC293C002100A2F294 /* TypePetViewController.swift in Sources */,
+				854D48C72947CB76004C43ED /* Configurator.swift in Sources */,
 				854B27CE293126F200D65718 /* SceneDelegate.swift in Sources */,
+				854D48932947BCB4004C43ED /* MyPetPhotoListRouter.swift in Sources */,
+				854D48912947BC83004C43ED /* PetListInteractor.swift in Sources */,
+				854D48CF2947CBA9004C43ED /* Configurator.swift in Sources */,
 				853C3B5B2946AB1300A2F294 /* Networking.swift in Sources */,
 				853C3B512946A5F300A2F294 /* Configurator.swift in Sources */,
+				854D48A32947C247004C43ED /* EditPetPresenter.swift in Sources */,
 				85CCC84D2937C8FD00DE5EB0 /* Pet.swift in Sources */,
 				853C3AAA293BFF7400A2F294 /* NewPetViewController.swift in Sources */,
+				854D48A72947C2CB004C43ED /* EditPetRouter.swift in Sources */,
+				854D489B2947C182004C43ED /* MyPetListPresenter.swift in Sources */,
 				854EFA99293A486100524409 /* MyPetCollectionViewCell.swift in Sources */,
 				853C3AB5293E36A500A2F294 /* ResultsTypeTableViewController.swift in Sources */,
 				853C3AD2293FB13700A2F294 /* PetCollectionViewCell.swift in Sources */,
 				85CCC857293819DC00DE5EB0 /* PersonTableViewCell.swift in Sources */,
+				854D48A12947C225004C43ED /* NewPetRouter.swift in Sources */,
+				854D48CB2947CB8A004C43ED /* Configurator.swift in Sources */,
+				854D48C92947CB80004C43ED /* Configurator.swift in Sources */,
 				853C3AC1293E797500A2F294 /* PetImage.swift in Sources */,
+				854D48872947BBC2004C43ED /* PetDetailRouter.swift in Sources */,
 				853C3B5F2946ADCE00A2F294 /* PetImageResponse.swift in Sources */,
 				85CCC85B2939007000DE5EB0 /* MyPetListViewController.swift in Sources */,
 				853C3ACD293ECED000A2F294 /* EditPetViewController.swift in Sources */,
+				854D48B82947CA08004C43ED /* MyPetListRouter.swift in Sources */,
+				854D48952947BCE9004C43ED /* MyPetPhotoListPresenter.swift in Sources */,
+				854D489F2947C21A004C43ED /* NewPetPresenter.swift in Sources */,
 				85E0CB76293681FB0061A49C /* HomeViewController.swift in Sources */,
 				853C3B552946A95A00A2F294 /* PetPhotoPresenter.swift in Sources */,
 				853C3AD72940017F00A2F294 /* EditPetViewDelegate.swift in Sources */,
+				854D489D2947C211004C43ED /* NewPetInteractor.swift in Sources */,
+				854D48CD2947CB99004C43ED /* Configurator.swift in Sources */,
 				85CCC84F2937F8FD00DE5EB0 /* PetDetailViewController.swift in Sources */,
 				853C3B532946A91300A2F294 /* PetPhotoRouter.swift in Sources */,
+				854D488B2947BC03004C43ED /* PetDetailInteractor.swift in Sources */,
+				854D48972947BD5D004C43ED /* MyPetPhotoListInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

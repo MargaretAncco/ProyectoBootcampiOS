@@ -7,6 +7,7 @@
 
 import Foundation
 struct PetImageResponse : Decodable {
+    var name: String = ""
     var typePet: String = ""
     var userId: String = ""
     var petId: String = ""

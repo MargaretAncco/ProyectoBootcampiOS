@@ -7,10 +7,8 @@
 
 import Foundation
 struct PetResponse : Decodable{
-    var id: String = NSUUID().uuidString
     var name: String = ""
     var typePet: String = ""
-    var likesCount: Int = 0
     var subtype: String = ""
     var userId: String = ""
     var userName: String = ""
