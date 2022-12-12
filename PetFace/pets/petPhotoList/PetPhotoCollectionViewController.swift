@@ -7,8 +7,13 @@
 
 import UIKit
 
-class PetPhotoCollectionViewController: UICollectionViewController {
+protocol PetPhotoViewProtocol{
+    
+}
+
+class PetPhotoCollectionViewController: UICollectionViewController, PetPhotoViewProtocol {
     var photoPetList: [PetImage]!
+    var presenter: PetPhotoPresenterProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
