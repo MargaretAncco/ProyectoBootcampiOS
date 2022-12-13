@@ -395,7 +395,7 @@
         <!--Pet Photo Collection View Controller-->
         <scene sceneID="eLG-hd-u28">
             <objects>
-                <collectionViewController id="TH5-HC-1mr" customClass="PetPhotoCollectionViewController" customModule="PetFace" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="PetPhotoCollectionViewController" id="TH5-HC-1mr" customClass="PetPhotoCollectionViewController" customModule="PetFace" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="v5c-9l-Lb5">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="869"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -671,10 +671,10 @@
             </objects>
             <point key="canvasLocation" x="5791.1214953271028" y="163.28293736501081"/>
         </scene>
-        <!--Image Collection View Controller-->
+        <!--My Pet Photo Collection View Controller-->
         <scene sceneID="0AX-jm-TQp">
             <objects>
-                <collectionViewController id="S9f-lm-r6R" customClass="ImageCollectionViewController" customModule="PetFace" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController id="S9f-lm-r6R" customClass="MyPetPhotoCollectionViewController" customModule="PetFace" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="gww-H1-fhL">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -747,7 +747,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="wZh-Va-56I"/>
+        <segue reference="74o-Bw-ILi"/>
         <segue reference="OXP-XB-xSf"/>
     </inferredMetricsTieBreakers>
     <resources>

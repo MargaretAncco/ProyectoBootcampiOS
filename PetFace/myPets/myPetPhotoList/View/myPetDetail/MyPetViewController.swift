@@ -7,8 +7,13 @@
 
 import UIKit
 
+protocol MyPetViewProtocol{
+}
+
 class MyPetViewController: UIViewController {
 
+    var presenter: MyPetListPresenterProtocol?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,4 +30,8 @@ class MyPetViewController: UIViewController {
     
     */
 
+}
+
+extension MyPetViewController : MyPetViewProtocol{
+    
 }

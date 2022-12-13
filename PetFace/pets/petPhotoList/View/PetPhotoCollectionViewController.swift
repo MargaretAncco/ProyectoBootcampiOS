@@ -21,19 +21,6 @@ class PetPhotoCollectionViewController: UICollectionViewController, PetPhotoView
         collectionView.register(cellNib, forCellWithReuseIdentifier: "PetCollectionViewCell")
     }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using [segue destinationViewController].
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
-    // MARK: UICollectionViewDataSource
-    
-    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return photoPetList.count
     }
@@ -71,7 +58,7 @@ extension PetPhotoCollectionViewController: UICollectionViewDelegateFlowLayout {
         let numberOfItemsPerRow: CGFloat = 3.0
     
         let width = (collectionView.frame.width-leftAndRightPaddings)/numberOfItemsPerRow
-        return CGSize(width: width, height: width) // You can change width and height here as pr your requirement
+        return CGSize(width: width, height: width)
     
     }
 }

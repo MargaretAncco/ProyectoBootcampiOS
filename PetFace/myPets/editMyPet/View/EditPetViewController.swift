@@ -61,7 +61,7 @@ class EditPetViewController: UIViewController {
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "GoToMyPetImageList"{
-            let destination = segue.destination as? ImageCollectionViewController
+            let destination = segue.destination as? MyPetPhotoCollectionViewController
             
             destination?.imageList = [
                 PetImage(name: "Paco", typePet: TypePet.rodent, likesCount: 23, subtype: "jerbo", imageUrl: ""),

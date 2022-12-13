@@ -6,3 +6,13 @@
 //
 
 import Foundation
+protocol PetDetailPresenterProtocol{
+    
+}
+
+class PetDetailPresenter : PetDetailPresenterProtocol{
+    var interactor: PetDetailInteractorProtocol?
+    var router: PetDetailRouterProtocol?
+    var view: PetDetailViewProtocol?
+
+}

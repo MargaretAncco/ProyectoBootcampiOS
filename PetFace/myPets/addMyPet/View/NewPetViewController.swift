@@ -7,10 +7,15 @@
 
 import UIKit
 
+protocol NewPetViewProtocol{
+    
+}
 protocol NewPetViewDelegate{
     func newPetViewController(_ viewController: NewPetViewController, didAddPet newPet: Pet)
 }
 class NewPetViewController: UIViewController {
+    var presenter : NewPetPresenterProtocol?
+    
     var newPet: Pet = Pet()
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var includeBirthdaySwitch: UISwitch!
@@ -80,5 +85,9 @@ extension NewPetViewController : UIImagePickerControllerDelegate, UINavigationCo
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion:nil)
     }
+    
+}
+
+extension NewPetViewController : NewPetViewProtocol{
     
 }

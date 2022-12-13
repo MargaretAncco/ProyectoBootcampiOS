@@ -9,15 +9,13 @@
 /* Begin PBXBuildFile section */
 		853C3AAA293BFF7400A2F294 /* NewPetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853C3AA9293BFF7400A2F294 /* NewPetViewController.swift */; };
 		853C3AAC293C002100A2F294 /* TypePetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853C3AAB293C002100A2F294 /* TypePetViewController.swift */; };
-		853C3AB5293E36A500A2F294 /* ResultsTypeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853C3AB4293E36A500A2F294 /* ResultsTypeTableViewController.swift */; };
 		853C3AC1293E797500A2F294 /* PetImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853C3AC0293E797500A2F294 /* PetImage.swift */; };
 		853C3AC3293E98AF00A2F294 /* PetPhotoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853C3AC2293E98AF00A2F294 /* PetPhotoCollectionViewController.swift */; };
 		853C3ACD293ECED000A2F294 /* EditPetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853C3ACC293ECED000A2F294 /* EditPetViewController.swift */; };
-		853C3ACF293FAD3600A2F294 /* ImageCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853C3ACE293FAD3600A2F294 /* ImageCollectionViewController.swift */; };
+		853C3ACF293FAD3600A2F294 /* MyPetPhotoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853C3ACE293FAD3600A2F294 /* MyPetPhotoCollectionViewController.swift */; };
 		853C3AD2293FB13700A2F294 /* PetCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853C3AD0293FB13700A2F294 /* PetCollectionViewCell.swift */; };
 		853C3AD3293FB13700A2F294 /* PetCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 853C3AD1293FB13700A2F294 /* PetCollectionViewCell.xib */; };
 		853C3AD72940017F00A2F294 /* EditPetViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853C3AD62940017F00A2F294 /* EditPetViewDelegate.swift */; };
-		853C3B512946A5F300A2F294 /* Configurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853C3B502946A5F300A2F294 /* Configurator.swift */; };
 		853C3B532946A91300A2F294 /* PetPhotoRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853C3B522946A91300A2F294 /* PetPhotoRouter.swift */; };
 		853C3B552946A95A00A2F294 /* PetPhotoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853C3B542946A95A00A2F294 /* PetPhotoPresenter.swift */; };
 		853C3B572946A98800A2F294 /* PetPhotoInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853C3B562946A98800A2F294 /* PetPhotoInteractor.swift */; };
@@ -47,16 +45,18 @@
 		854D489B2947C182004C43ED /* MyPetListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854D489A2947C182004C43ED /* MyPetListPresenter.swift */; };
 		854D489D2947C211004C43ED /* NewPetInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854D489C2947C211004C43ED /* NewPetInteractor.swift */; };
 		854D489F2947C21A004C43ED /* NewPetPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854D489E2947C21A004C43ED /* NewPetPresenter.swift */; };
-		854D48A12947C225004C43ED /* NewPetRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854D48A02947C225004C43ED /* NewPetRouter.swift */; };
 		854D48A32947C247004C43ED /* EditPetPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854D48A22947C247004C43ED /* EditPetPresenter.swift */; };
 		854D48A52947C252004C43ED /* EditPetInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854D48A42947C252004C43ED /* EditPetInteractor.swift */; };
 		854D48A72947C2CB004C43ED /* EditPetRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854D48A62947C2CB004C43ED /* EditPetRouter.swift */; };
 		854D48B82947CA08004C43ED /* MyPetListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854D48B72947CA08004C43ED /* MyPetListRouter.swift */; };
-		854D48C72947CB76004C43ED /* Configurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854D48C62947CB76004C43ED /* Configurator.swift */; };
-		854D48C92947CB80004C43ED /* Configurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854D48C82947CB7F004C43ED /* Configurator.swift */; };
-		854D48CB2947CB8A004C43ED /* Configurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854D48CA2947CB8A004C43ED /* Configurator.swift */; };
-		854D48CD2947CB99004C43ED /* Configurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854D48CC2947CB99004C43ED /* Configurator.swift */; };
-		854D48CF2947CBA9004C43ED /* Configurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854D48CE2947CBA9004C43ED /* Configurator.swift */; };
+		854D48C72947CB76004C43ED /* PetPhotoConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854D48C62947CB76004C43ED /* PetPhotoConfigurator.swift */; };
+		854D48C92947CB80004C43ED /* PetDetailConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854D48C82947CB7F004C43ED /* PetDetailConfigurator.swift */; };
+		854D48CB2947CB8A004C43ED /* PetListConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854D48CA2947CB8A004C43ED /* PetListConfigurator.swift */; };
+		854D48CD2947CB99004C43ED /* MyPetPhotoConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854D48CC2947CB99004C43ED /* MyPetPhotoConfigurator.swift */; };
+		854D48CF2947CBA9004C43ED /* MyPetListConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854D48CE2947CBA9004C43ED /* MyPetListConfigurator.swift */; };
+		854D48D12947D13C004C43ED /* NewPetConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854D48D02947D13C004C43ED /* NewPetConfigurator.swift */; };
+		854D48ED29482D89004C43ED /* EditPetConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854D48EC29482D89004C43ED /* EditPetConfigurator.swift */; };
+		854D48EF2948C1A0004C43ED /* NewPetRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854D48EE2948C1A0004C43ED /* NewPetRouter.swift */; };
 		854EFA99293A486100524409 /* MyPetCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854EFA98293A486100524409 /* MyPetCollectionViewCell.swift */; };
 		85CCC84D2937C8FD00DE5EB0 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CCC84C2937C8FD00DE5EB0 /* Pet.swift */; };
 		85CCC84F2937F8FD00DE5EB0 /* PetDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CCC84E2937F8FD00DE5EB0 /* PetDetailViewController.swift */; };
@@ -69,15 +69,13 @@
 /* Begin PBXFileReference section */
 		853C3AA9293BFF7400A2F294 /* NewPetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPetViewController.swift; sourceTree = "<group>"; };
 		853C3AAB293C002100A2F294 /* TypePetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypePetViewController.swift; sourceTree = "<group>"; };
-		853C3AB4293E36A500A2F294 /* ResultsTypeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsTypeTableViewController.swift; sourceTree = "<group>"; };
 		853C3AC0293E797500A2F294 /* PetImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetImage.swift; sourceTree = "<group>"; };
 		853C3AC2293E98AF00A2F294 /* PetPhotoCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetPhotoCollectionViewController.swift; sourceTree = "<group>"; };
 		853C3ACC293ECED000A2F294 /* EditPetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPetViewController.swift; sourceTree = "<group>"; };
-		853C3ACE293FAD3600A2F294 /* ImageCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewController.swift; sourceTree = "<group>"; };
+		853C3ACE293FAD3600A2F294 /* MyPetPhotoCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPetPhotoCollectionViewController.swift; sourceTree = "<group>"; };
 		853C3AD0293FB13700A2F294 /* PetCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetCollectionViewCell.swift; sourceTree = "<group>"; };
 		853C3AD1293FB13700A2F294 /* PetCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PetCollectionViewCell.xib; sourceTree = "<group>"; };
 		853C3AD62940017F00A2F294 /* EditPetViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPetViewDelegate.swift; sourceTree = "<group>"; };
-		853C3B502946A5F300A2F294 /* Configurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurator.swift; sourceTree = "<group>"; };
 		853C3B522946A91300A2F294 /* PetPhotoRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetPhotoRouter.swift; sourceTree = "<group>"; };
 		853C3B542946A95A00A2F294 /* PetPhotoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetPhotoPresenter.swift; sourceTree = "<group>"; };
 		853C3B562946A98800A2F294 /* PetPhotoInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetPhotoInteractor.swift; sourceTree = "<group>"; };
@@ -105,16 +103,18 @@
 		854D489A2947C182004C43ED /* MyPetListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPetListPresenter.swift; sourceTree = "<group>"; };
 		854D489C2947C211004C43ED /* NewPetInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPetInteractor.swift; sourceTree = "<group>"; };
 		854D489E2947C21A004C43ED /* NewPetPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPetPresenter.swift; sourceTree = "<group>"; };
-		854D48A02947C225004C43ED /* NewPetRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPetRouter.swift; sourceTree = "<group>"; };
 		854D48A22947C247004C43ED /* EditPetPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPetPresenter.swift; sourceTree = "<group>"; };
 		854D48A42947C252004C43ED /* EditPetInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPetInteractor.swift; sourceTree = "<group>"; };
 		854D48A62947C2CB004C43ED /* EditPetRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPetRouter.swift; sourceTree = "<group>"; };
 		854D48B72947CA08004C43ED /* MyPetListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPetListRouter.swift; sourceTree = "<group>"; };
-		854D48C62947CB76004C43ED /* Configurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurator.swift; sourceTree = "<group>"; };
-		854D48C82947CB7F004C43ED /* Configurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurator.swift; sourceTree = "<group>"; };
-		854D48CA2947CB8A004C43ED /* Configurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurator.swift; sourceTree = "<group>"; };
-		854D48CC2947CB99004C43ED /* Configurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurator.swift; sourceTree = "<group>"; };
-		854D48CE2947CBA9004C43ED /* Configurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurator.swift; sourceTree = "<group>"; };
+		854D48C62947CB76004C43ED /* PetPhotoConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetPhotoConfigurator.swift; sourceTree = "<group>"; };
+		854D48C82947CB7F004C43ED /* PetDetailConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetDetailConfigurator.swift; sourceTree = "<group>"; };
+		854D48CA2947CB8A004C43ED /* PetListConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetListConfigurator.swift; sourceTree = "<group>"; };
+		854D48CC2947CB99004C43ED /* MyPetPhotoConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPetPhotoConfigurator.swift; sourceTree = "<group>"; };
+		854D48CE2947CBA9004C43ED /* MyPetListConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPetListConfigurator.swift; sourceTree = "<group>"; };
+		854D48D02947D13C004C43ED /* NewPetConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPetConfigurator.swift; sourceTree = "<group>"; };
+		854D48EC29482D89004C43ED /* EditPetConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPetConfigurator.swift; sourceTree = "<group>"; };
+		854D48EE2948C1A0004C43ED /* NewPetRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewPetRouter.swift; path = ../Configurator/NewPetRouter.swift; sourceTree = "<group>"; };
 		854EFA98293A486100524409 /* MyPetCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPetCollectionViewCell.swift; sourceTree = "<group>"; };
 		85CCC84C2937C8FD00DE5EB0 /* Pet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
 		85CCC84E2937F8FD00DE5EB0 /* PetDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetDetailViewController.swift; sourceTree = "<group>"; };
@@ -146,7 +146,7 @@
 				854D48B52947C9F0004C43ED /* Interactor */,
 				854D48B62947C9FB004C43ED /* Presenter */,
 				854D48B92947CA0E004C43ED /* Router */,
-				854D48CE2947CBA9004C43ED /* Configurator.swift */,
+				854D48CE2947CBA9004C43ED /* MyPetListConfigurator.swift */,
 			);
 			path = myPetList;
 			sourceTree = "<group>";
@@ -158,6 +158,7 @@
 				854D48BB2947CA65004C43ED /* Interactor */,
 				854D48BC2947CA8B004C43ED /* Presenter */,
 				854D48BD2947CA92004C43ED /* Router */,
+				854D48F02948C1A8004C43ED /* Configurator */,
 			);
 			path = addMyPet;
 			sourceTree = "<group>";
@@ -199,7 +200,7 @@
 				854D48A92947C941004C43ED /* Router */,
 				854D48AA2947C94A004C43ED /* Presenter */,
 				854D48AB2947C953004C43ED /* Interactor */,
-				854D48C82947CB7F004C43ED /* Configurator.swift */,
+				854D48C82947CB7F004C43ED /* PetDetailConfigurator.swift */,
 			);
 			path = petDetail;
 			sourceTree = "<group>";
@@ -211,7 +212,7 @@
 				854D48AD2947C96D004C43ED /* Router */,
 				854D48AE2947C97B004C43ED /* Presenter */,
 				854D48AF2947C983004C43ED /* Interactor */,
-				854D48CA2947CB8A004C43ED /* Configurator.swift */,
+				854D48CA2947CB8A004C43ED /* PetListConfigurator.swift */,
 			);
 			path = petList;
 			sourceTree = "<group>";
@@ -232,7 +233,7 @@
 				854D48C52947CB15004C43ED /* Interactor */,
 				854D48C32947CAEB004C43ED /* Presenter */,
 				854D48C42947CAF9004C43ED /* Router */,
-				854D48C62947CB76004C43ED /* Configurator.swift */,
+				854D48C62947CB76004C43ED /* PetPhotoConfigurator.swift */,
 			);
 			path = petPhotoList;
 			sourceTree = "<group>";
@@ -244,6 +245,7 @@
 				854D48BF2947CAAC004C43ED /* Presenter */,
 				854D48C02947CABB004C43ED /* Interactor */,
 				854D48C12947CAC6004C43ED /* Router */,
+				854D48EC29482D89004C43ED /* EditPetConfigurator.swift */,
 			);
 			path = editMyPet;
 			sourceTree = "<group>";
@@ -268,7 +270,7 @@
 		853C3AFA294147BE00A2F294 /* myPetPhotoList */ = {
 			isa = PBXGroup;
 			children = (
-				854D48CC2947CB99004C43ED /* Configurator.swift */,
+				854D48CC2947CB99004C43ED /* MyPetPhotoConfigurator.swift */,
 				854D48B22947C9CF004C43ED /* Presenter */,
 				854D48B12947C9C5004C43ED /* Router */,
 				854D48B02947C992004C43ED /* View */,
@@ -297,7 +299,6 @@
 		854B27BF293126F200D65718 = {
 			isa = PBXGroup;
 			children = (
-				853C3B502946A5F300A2F294 /* Configurator.swift */,
 				854B27CA293126F200D65718 /* PetFace */,
 				854B27C9293126F200D65718 /* Products */,
 			);
@@ -366,7 +367,6 @@
 		854D48AC2947C962004C43ED /* View */ = {
 			isa = PBXGroup;
 			children = (
-				853C3AB4293E36A500A2F294 /* ResultsTypeTableViewController.swift */,
 				85E0CB75293681FB0061A49C /* HomeViewController.swift */,
 			);
 			path = View;
@@ -400,7 +400,7 @@
 			isa = PBXGroup;
 			children = (
 				853C3AB8293E570D00A2F294 /* myPetDetail */,
-				853C3ACE293FAD3600A2F294 /* ImageCollectionViewController.swift */,
+				853C3ACE293FAD3600A2F294 /* MyPetPhotoCollectionViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -490,7 +490,7 @@
 		854D48BD2947CA92004C43ED /* Router */ = {
 			isa = PBXGroup;
 			children = (
-				854D48A02947C225004C43ED /* NewPetRouter.swift */,
+				854D48EE2948C1A0004C43ED /* NewPetRouter.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -558,6 +558,14 @@
 				853C3B562946A98800A2F294 /* PetPhotoInteractor.swift */,
 			);
 			path = Interactor;
+			sourceTree = "<group>";
+		};
+		854D48F02948C1A8004C43ED /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				854D48D02947D13C004C43ED /* NewPetConfigurator.swift */,
+			);
+			path = Configurator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -643,7 +651,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				853C3ACF293FAD3600A2F294 /* ImageCollectionViewController.swift in Sources */,
+				853C3ACF293FAD3600A2F294 /* MyPetPhotoCollectionViewController.swift in Sources */,
 				853C3B572946A98800A2F294 /* PetPhotoInteractor.swift in Sources */,
 				854D48A52947C252004C43ED /* EditPetInteractor.swift in Sources */,
 				854B27CC293126F200D65718 /* AppDelegate.swift in Sources */,
@@ -655,26 +663,25 @@
 				85CCC8592939005500DE5EB0 /* MyPetViewController.swift in Sources */,
 				854D488D2947BC61004C43ED /* PetListRouter.swift in Sources */,
 				853C3AAC293C002100A2F294 /* TypePetViewController.swift in Sources */,
-				854D48C72947CB76004C43ED /* Configurator.swift in Sources */,
+				854D48C72947CB76004C43ED /* PetPhotoConfigurator.swift in Sources */,
 				854B27CE293126F200D65718 /* SceneDelegate.swift in Sources */,
 				854D48932947BCB4004C43ED /* MyPetPhotoListRouter.swift in Sources */,
 				854D48912947BC83004C43ED /* PetListInteractor.swift in Sources */,
-				854D48CF2947CBA9004C43ED /* Configurator.swift in Sources */,
+				854D48CF2947CBA9004C43ED /* MyPetListConfigurator.swift in Sources */,
 				853C3B5B2946AB1300A2F294 /* Networking.swift in Sources */,
-				853C3B512946A5F300A2F294 /* Configurator.swift in Sources */,
 				854D48A32947C247004C43ED /* EditPetPresenter.swift in Sources */,
 				85CCC84D2937C8FD00DE5EB0 /* Pet.swift in Sources */,
 				853C3AAA293BFF7400A2F294 /* NewPetViewController.swift in Sources */,
 				854D48A72947C2CB004C43ED /* EditPetRouter.swift in Sources */,
+				854D48ED29482D89004C43ED /* EditPetConfigurator.swift in Sources */,
 				854D489B2947C182004C43ED /* MyPetListPresenter.swift in Sources */,
 				854EFA99293A486100524409 /* MyPetCollectionViewCell.swift in Sources */,
-				853C3AB5293E36A500A2F294 /* ResultsTypeTableViewController.swift in Sources */,
 				853C3AD2293FB13700A2F294 /* PetCollectionViewCell.swift in Sources */,
 				85CCC857293819DC00DE5EB0 /* PersonTableViewCell.swift in Sources */,
-				854D48A12947C225004C43ED /* NewPetRouter.swift in Sources */,
-				854D48CB2947CB8A004C43ED /* Configurator.swift in Sources */,
-				854D48C92947CB80004C43ED /* Configurator.swift in Sources */,
+				854D48CB2947CB8A004C43ED /* PetListConfigurator.swift in Sources */,
+				854D48C92947CB80004C43ED /* PetDetailConfigurator.swift in Sources */,
 				853C3AC1293E797500A2F294 /* PetImage.swift in Sources */,
+				854D48D12947D13C004C43ED /* NewPetConfigurator.swift in Sources */,
 				854D48872947BBC2004C43ED /* PetDetailRouter.swift in Sources */,
 				853C3B5F2946ADCE00A2F294 /* PetImageResponse.swift in Sources */,
 				85CCC85B2939007000DE5EB0 /* MyPetListViewController.swift in Sources */,
@@ -685,8 +692,9 @@
 				85E0CB76293681FB0061A49C /* HomeViewController.swift in Sources */,
 				853C3B552946A95A00A2F294 /* PetPhotoPresenter.swift in Sources */,
 				853C3AD72940017F00A2F294 /* EditPetViewDelegate.swift in Sources */,
+				854D48EF2948C1A0004C43ED /* NewPetRouter.swift in Sources */,
 				854D489D2947C211004C43ED /* NewPetInteractor.swift in Sources */,
-				854D48CD2947CB99004C43ED /* Configurator.swift in Sources */,
+				854D48CD2947CB99004C43ED /* MyPetPhotoConfigurator.swift in Sources */,
 				85CCC84F2937F8FD00DE5EB0 /* PetDetailViewController.swift in Sources */,
 				853C3B532946A91300A2F294 /* PetPhotoRouter.swift in Sources */,
 				854D488B2947BC03004C43ED /* PetDetailInteractor.swift in Sources */,

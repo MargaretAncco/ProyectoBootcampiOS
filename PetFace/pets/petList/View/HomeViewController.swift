@@ -7,7 +7,11 @@
 
 import UIKit
 
+protocol PetListViewProtocol{
+    
+}
 class HomeViewController: UIViewController {
+    var presenter: PetListPresenterProtocol?
     var datasource: [PetImage] = [
             PetImage(name: "Paco", typePet: TypePet.rodent, likesCount: 23, subtype: "jerbo", imageUrl: ""),
             PetImage(name: "Paloma", typePet: TypePet.bird, likesCount: 13, subtype: "paloma", imageUrl: ""),
@@ -92,5 +96,8 @@ extension HomeViewController : UISearchResultsUpdating{
      
     }
     
+    
+}
+extension HomeViewController : PetListViewProtocol{
     
 }

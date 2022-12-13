@@ -6,3 +6,19 @@
 //
 
 import Foundation
+
+protocol MyPetPhotoListInteractorProtocol{
+    
+}
+
+class MyPetPhotoListInteractor{
+    var presenter: MyPetPhotoListPresenterProtocol
+    var api: RemoteRepository
+    required init(presenter: MyPetPhotoListPresenterProtocol, api: RemoteRepository) {
+        self.presenter = presenter
+        self.api = api
+    }
+}
+extension MyPetPhotoListInteractor: MyPetPhotoListInteractorProtocol{
+    
+}

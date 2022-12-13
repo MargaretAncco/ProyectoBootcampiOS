@@ -7,8 +7,12 @@
 
 import UIKit
 
-class MyPetListViewController: UIViewController {
+protocol MyPetListViewProtocol{
+    
+}
 
+class MyPetListViewController: UIViewController {
+    var presenter: MyPetListPresenterProtocol?
     @IBOutlet weak var myPetListCollectionView: UICollectionView!
     var myPetList: [Pet] = [Pet(name: "Paco", typePet: TypePet.rodent, likesCount: 3, subtype: "", imageUrl: ""),
                             Pet(name: "Rodolfo", typePet: TypePet.other, likesCount: 4, subtype: "", imageUrl: ""),
@@ -92,5 +96,8 @@ extension MyPetListViewController: EditPetViewDelegate{
         
     }
     
+    
+}
+extension MyPetListViewController : MyPetListViewProtocol{
     
 }

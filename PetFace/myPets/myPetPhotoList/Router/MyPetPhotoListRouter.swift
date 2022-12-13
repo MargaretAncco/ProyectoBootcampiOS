@@ -6,3 +6,16 @@
 //
 
 import Foundation
+
+protocol MyPetPhotoListRouterProtocol{
+    
+}
+
+class MyPetPhotoListRouter: MyPetPhotoListRouterProtocol{
+    var presenter: MyPetPhotoListPresenterProtocol?
+    var view: MyPetPhotoCollectionViewController?
+    
+    required init(presenter: MyPetPhotoListPresenterProtocol) {
+        self.presenter = presenter
+    }
+}

@@ -17,4 +17,5 @@ class PetPhotoInteractor : PetPhotoInteractorProtocol{
         self.presenter = presenter
         self.api = api
     }
+
 }

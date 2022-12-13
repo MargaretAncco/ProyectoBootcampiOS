@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol PetDetailViewProtocol{
+    
+}
 class PetDetailViewController: UIViewController {
+    
+    var presenter: PetDetailPresenter?
+    
     @IBOutlet weak var petImage: UIImageView!
     @IBOutlet weak var isFavoriteButton: UIButton!
     
@@ -77,3 +83,6 @@ class PetDetailViewController: UIViewController {
 
 }
 
+extension PetDetailViewController : PetDetailViewProtocol{
+    
+}

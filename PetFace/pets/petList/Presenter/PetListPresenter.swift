@@ -6,3 +6,14 @@
 //
 
 import Foundation
+
+protocol PetListPresenterProtocol{
+    
+}
+
+class PetListPresenter : PetListPresenterProtocol{
+    var interactor: PetListInteractorProtocol?
+    var router: PetListRouterProtocol?
+    var view: PetListViewProtocol?
+
+}

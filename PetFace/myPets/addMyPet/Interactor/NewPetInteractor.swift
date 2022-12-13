@@ -6,3 +6,21 @@
 //
 
 import Foundation
+
+protocol NewPetInteractorProtocol{
+    
+}
+
+class NewPetInteractor{
+    var presenter: NewPetPresenterProtocol?
+    var api: RemoteRepository?
+
+    required init(presenter: NewPetPresenterProtocol, api: RemoteRepository) {
+        self.presenter = presenter
+        self.api = api
+    }
+}
+
+extension NewPetInteractor : NewPetInteractorProtocol{
+    
+}

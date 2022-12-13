@@ -8,8 +8,13 @@
 import UIKit
 
 private let reuseIdentifier = "Cell"
+protocol MyPetPhotoListViewProtocol{
+    
+}
 
-class ImageCollectionViewController: UICollectionViewController {
+class MyPetPhotoCollectionViewController: UICollectionViewController {
+    
+    var presenter: MyPetPhotoListPresenter?
     var petId: Int = 0
     var imageList: [PetImage]!
     override func viewDidLoad() {
@@ -84,7 +89,7 @@ class ImageCollectionViewController: UICollectionViewController {
     */
     
 }
-extension ImageCollectionViewController: UICollectionViewDelegateFlowLayout {
+extension MyPetPhotoCollectionViewController: UICollectionViewDelegateFlowLayout {
     
  
 
@@ -97,4 +102,8 @@ extension ImageCollectionViewController: UICollectionViewDelegateFlowLayout {
         return CGSize(width: width, height: width) // You can change width and height here as pr your requirement
     
     }
+}
+
+extension MyPetPhotoCollectionViewController : MyPetPhotoListViewProtocol{
+    
 }

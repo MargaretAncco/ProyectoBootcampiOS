@@ -6,3 +6,18 @@
 //
 
 import Foundation
+import UIKit
+
+protocol MyPetListRouterProtocol{
+    
+}
+
+class MyPetListRouter : MyPetListRouterProtocol{
+    var presenter: MyPetListPresenterProtocol?
+    var view: UIViewController?
+    
+    required init(presenter: MyPetListPresenterProtocol) {
+        self.presenter = presenter
+    }
+}
+
