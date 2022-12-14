@@ -14,6 +14,13 @@ enum TypePet: String, CaseIterable {
     case rodent = "Roedor"
     case bird = "Ave"
     case other = "Otro"
+    
+    
+    static func withLabel(_ label: String) -> TypePet? {
+        return self.allCases.first{
+            $0.rawValue == label
+        }
+        }
 
 }
 struct Pet {

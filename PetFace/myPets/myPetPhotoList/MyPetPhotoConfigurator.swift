@@ -12,7 +12,7 @@ class MyPetPhotoConfigurator{
     
     static func makeMyPetPhoto() -> UIViewController {
         let presenter = MyPetPhotoListPresenter()
-        let api = PetsMockAPI()
+        let api = FirebaseApi()
         let interactor = MyPetPhotoListInteractor(presenter: presenter, api: api)
         let router = MyPetPhotoListRouter(presenter: presenter)
     

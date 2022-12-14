@@ -489,10 +489,10 @@
             </objects>
             <point key="canvasLocation" x="8597.663551401869" y="-549.46004319654435"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Home Tab View Controller-->
         <scene sceneID="dk8-N1-HPZ">
             <objects>
-                <tabBarController storyboardIdentifier="HomeTabBarController" id="fEY-U1-A6M" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="HomeTabViewController" id="fEY-U1-A6M" customClass="HomeTabViewController" customModule="PetFace" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" style="editor" id="aoQ-7h-7aQ"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Zpi-NY-Ppk">
@@ -501,6 +501,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
+                        <outlet property="tabBar" destination="Zpi-NY-Ppk" id="HJO-eq-8Nk"/>
                         <segue destination="emQ-Ic-8OT" kind="relationship" relationship="viewControllers" id="crQ-dt-K2z"/>
                         <segue destination="rKa-YI-MRC" kind="relationship" relationship="viewControllers" id="f3N-tx-ssa"/>
                     </connections>

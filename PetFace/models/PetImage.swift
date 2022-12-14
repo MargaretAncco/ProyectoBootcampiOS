@@ -18,7 +18,7 @@ struct PetImage {
     var userName: String = ""
     var imageUrl: String = ""
     var createdAt : Date = Date()
-    var peopleLiked:[String] = []
+    var peopleLiked:[String : [String: String]] = [:]
     
     init(){
         
@@ -32,4 +32,5 @@ struct PetImage {
         self.userLiked = userLiked
         self.createdAt = createdAt
     }
+    
 }

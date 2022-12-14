@@ -11,7 +11,7 @@ import UIKit
 class MyPetListConfigurator{
     static func makeListMyPet() -> UIViewController {
         let presenter = MyPetListPresenter()
-        let api = PetsMockAPI()
+        let api = FirebaseApi()
         let interactor = MyPetListInteractor(presenter: presenter, api: api)
         let router = MyPetListRouter(presenter: presenter)
 

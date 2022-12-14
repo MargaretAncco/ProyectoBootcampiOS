@@ -12,7 +12,7 @@ class PetDetailConfigurator{
     
     static func makePetDetail() -> UIViewController {
         let presenter = PetDetailPresenter()
-        let api = PetsMockAPI()
+        let api = FirebaseApi()
         let interactor = PetDetailInteractor(presenter: presenter, api: api)
         let router = PetDetailRouter(presenter: presenter)
     
