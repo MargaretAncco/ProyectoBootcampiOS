@@ -8,18 +8,11 @@
 import UIKit
 
 protocol PetListViewProtocol{
-    
+    func showFavoritePets(petList list: [PetImage])
 }
 class HomeViewController: UIViewController {
     var presenter: PetListPresenterProtocol?
-    var datasource: [PetImage] = [
-            PetImage(name: "Paco", typePet: TypePet.rodent, likesCount: 23, subtype: "jerbo", imageUrl: ""),
-            PetImage(name: "Paloma", typePet: TypePet.bird, likesCount: 13, subtype: "paloma", imageUrl: ""),
-            PetImage(name: "Firulais", typePet: TypePet.dog, likesCount: 2, subtype: "salchicha", imageUrl: "", userLiked: true),
-            PetImage(name: "Firulais", typePet: TypePet.dog, likesCount: 2, subtype: "salchicha", imageUrl: ""),
-            PetImage(name: "Firulais", typePet: TypePet.dog, likesCount: 2, subtype: "salchicha", imageUrl: ""),
-            
-        ]
+    var datasource: [PetImage] = []
     var resultsList: [PetImage] = []
     
     var petSelected: PetImage?
@@ -35,9 +28,9 @@ class HomeViewController: UIViewController {
         navigationItem.searchController  = searchController
         searchController.searchResultsUpdater = self
         datasource.forEach{ resultsList.append($0)}
-        
         let cellNib = UINib(nibName: "PetCollectionViewCell", bundle: nil)
         petCollectionView.register(cellNib, forCellWithReuseIdentifier: "PetCollectionViewCell")
+        presenter?.favoriteList()
 
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -99,5 +92,11 @@ extension HomeViewController : UISearchResultsUpdating{
     
 }
 extension HomeViewController : PetListViewProtocol{
+    func showFavoritePets(petList list: [PetImage]) {
+        self.datasource.append(contentsOf: list)
+        resultsList = datasource
+        petCollectionView.reloadData()
+    }
+    
     
 }
