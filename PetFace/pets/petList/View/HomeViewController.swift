@@ -9,6 +9,7 @@ import UIKit
 
 protocol PetListViewProtocol{
     func showFavoritePets(petList list: [PetImage])
+    func showUser(id: String ,user: UserLiked)
 }
 class HomeViewController: UIViewController {
     var presenter: PetListPresenterProtocol?
@@ -30,7 +31,7 @@ class HomeViewController: UIViewController {
         datasource.forEach{ resultsList.append($0)}
         let cellNib = UINib(nibName: "PetCollectionViewCell", bundle: nil)
         petCollectionView.register(cellNib, forCellWithReuseIdentifier: "PetCollectionViewCell")
-        presenter?.favoriteList()
+        presenter?.favoriteList(withPetId: nil)
 
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -84,7 +85,12 @@ extension HomeViewController : UISearchResultsUpdating{
                     resultsList.append($0)
                 }
             }
+            
         }
+        for (index, item) in resultsList.enumerated(){
+            resultsList[index].peopleLiked = []
+        }
+        
         self.petCollectionView.reloadData()
      
     }
@@ -92,6 +98,15 @@ extension HomeViewController : UISearchResultsUpdating{
     
 }
 extension HomeViewController : PetListViewProtocol{
+    func showUser(id: String, user: UserLiked) {
+        for (index, item) in datasource.enumerated(){
+            if item.id == id{
+                resultsList[index].peopleLiked.append(user.name)
+            }
+        }
+    }
+    
+    
     func showFavoritePets(petList list: [PetImage]) {
         self.datasource.append(contentsOf: list)
         resultsList = datasource

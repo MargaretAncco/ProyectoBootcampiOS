@@ -6,14 +6,24 @@
 //
 
 import Foundation
-struct PetImageResponse : Decodable {
-    var name: String = ""
-    var typePet: String = ""
-    var userId: String = ""
-    var petId: String = ""
-    var userName: String = ""
-    var imageUrl: String = ""
-    var createdAt : String = ""
-    var peopleLiked:[String: [String: String]]?
-    
+struct PetImageResponse: Codable {
+    let createAt, imageURL: String
+    let likesCount: Int
+    let name, petID, typePet, userID: String
+    let userName: String
+    let peopleLiked: [PeopleLiked?]?
+
+    enum CodingKeys: String, CodingKey {
+        case createAt
+        case imageURL = "imageUrl"
+        case likesCount, name
+        case petID = "petId"
+        case typePet
+        case userID = "userId"
+        case userName, peopleLiked
+    }
+}
+
+struct PeopleLiked: Codable {
+    let name: String
 }

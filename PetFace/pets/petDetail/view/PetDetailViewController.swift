@@ -67,6 +67,18 @@ class PetDetailViewController: UIViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? UserListTableViewController{
+            if(selectedPet.userLiked){
+                selectedPet.peopleLiked.append("Yo")
+            }else{
+                for (index, user) in selectedPet.peopleLiked.enumerated(){
+                    if user == "Yo"{
+                        selectedPet.peopleLiked.remove(at: index)
+                    }
+                }
+            }
+            destination.userList = selectedPet.peopleLiked
+        }
         if let destination = segue.destination as? PetPhotoCollectionViewController{
             destination.photoPetList = [
                 PetImage(name: "Paco", typePet: TypePet.rodent, likesCount: 23, subtype: "jerbo", imageUrl: ""),

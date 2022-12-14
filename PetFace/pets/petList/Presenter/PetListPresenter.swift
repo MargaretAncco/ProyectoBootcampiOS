@@ -8,22 +8,27 @@
 import Foundation
 
 protocol PetListPresenterProtocol{
-    func favoriteList()
+    func favoriteList(withPetId petId: String?)
     func viewDidLoad()
     func showFavoritePets(petList list: [PetImage])
+    func showUser(id: String,user: UserLiked)
 }
 
 class PetListPresenter : PetListPresenterProtocol{
-    func viewDidLoad() {
-        
-    }
-    
     var interactor: PetListInteractorProtocol?
     var router: PetListRouterProtocol?
     var view: PetListViewProtocol?
+    
+    func showUser(id: String,user: UserLiked) {
+        view?.showUser(id: id,user: user)
+    }
+    
+    func viewDidLoad() {
+        
+    }
 
-    func favoriteList() {
-        interactor?.favoritePetList()
+    func favoriteList(withPetId petId: String?) {
+        interactor?.favoritePetList(withPetId: petId)
     }
     
     func showFavoritePets(petList list: [PetImage]) {

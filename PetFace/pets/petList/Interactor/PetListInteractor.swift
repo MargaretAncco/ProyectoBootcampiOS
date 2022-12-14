@@ -10,9 +10,16 @@ import FirebaseDatabase
 import FirebaseDatabaseSwift
 
 protocol PetListInteractorProtocol{
-    func favoritePetList()
+    func favoritePetList(withPetId petId: String?)
+    func userLikedList(withPhotoId photoId: String)
 }
 class PetListInteractor : PetListInteractorProtocol{
+    func userLikedList(withPhotoId photoId: String) {
+        api.fetchPetPhotoUserList(petPhotoid: photoId, addUser: {
+            self.presenter.showUser(id: photoId, user: $0)
+        })
+    }
+    
     var presenter: PetListPresenterProtocol
     var api: RemoteRepository
     required init(presenter: PetListPresenterProtocol, api: RemoteRepository) {
@@ -20,11 +27,17 @@ class PetListInteractor : PetListInteractorProtocol{
         self.api = api
     }
     
-    func favoritePetList() {
-        api.fetchFavoritePets(addPet: {
-            self.presenter.showFavoritePets(petList: [$0])
-            
-        })
-        
+    func favoritePetList(withPetId petId: String?) {
+        if let id = petId{
+            api.fetchFavoritePets(withPetId: id, addPet: {
+                self.presenter.showFavoritePets(petList: [$0])
+                
+            })
+        }else{
+            api.fetchFavoritePets(addPet: {
+                self.presenter.showFavoritePets(petList: [$0])
+                
+            })
+        }
     }
 }

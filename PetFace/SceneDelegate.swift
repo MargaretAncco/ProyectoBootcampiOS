@@ -23,8 +23,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         petListViewController.title = "Home"
         myPetListViewController.title = "Mis mascotas"
 
-        tabViewController.setViewControllers([petListViewController,myPetListViewController], animated: false)
-        tabViewController.addChild(MyPetListConfigurator.makeListMyPet())
+        tabViewController.setViewControllers([UINavigationController(rootViewController: petListViewController),UINavigationController(rootViewController: myPetListViewController)], animated: false)
+        
         print (tabViewController.tabBar.items?.count ?? 0)
         guard let items = tabViewController.tabBar.items else {
             return
