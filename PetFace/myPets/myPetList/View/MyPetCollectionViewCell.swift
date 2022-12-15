@@ -16,5 +16,8 @@ class MyPetCollectionViewCell: UICollectionViewCell {
     func setUp(with pet : Pet){
         //petImage. pet.imageUrl
         nameLabel.text = pet.name
+        if !pet.imageUrl.isEmpty{
+            petImage.downloaded(from: pet.imageUrl)
+        }
     }
 }

@@ -32,7 +32,7 @@ struct Pet {
     var userId: String = ""
     var userName: String = ""
     var imageUrl: String = ""
-    var birthday: Date?
+    var birthday: Date? = Date()
     var imageUrlList: [PetImage]? = []
     
     init(name: String, typePet: TypePet, likesCount: Int, subtype: String, imageUrl: String, birthday: Date? = nil) {

@@ -9,7 +9,7 @@ import FirebaseDatabase
 import FirebaseDatabaseSwift
 
 protocol RemoteRepository{
-    func fetchMypets() -> [PetResponse]
+    func fetchMypets(with userID : String, addPet: @escaping(Pet) -> Void?)
     func fetchFavoritePets(addPet: @escaping(PetImage) -> Void?)
     func fetchPetPhotoList() -> [PetImageResponse]
     func fetchFavoritePets(withPetId petId: String, addPet: @escaping(PetImage) -> Void?)
@@ -86,8 +86,35 @@ class FirebaseApi : RemoteRepository{
     }
     
     
-    func fetchMypets() -> [PetResponse] {
-        []
+   func fetchMypets(with userID : String , addPet: @escaping(Pet) -> Void?) {
+       ref.child("Pet").getData(completion:  { error, snapshot in
+           guard error == nil else {
+               print(error!.localizedDescription)
+               return
+           }
+           snapshot?.children.forEach{
+               if let petSnapShot = ($0 as? DataSnapshot){
+                   if let petRaw = petSnapShot.value as? NSDictionary{
+                       if (petRaw["userId"] as! String) == userID{
+                           var petImage = Pet(name: petRaw["name"] as! String,
+                                                   typePet: TypePet.withLabel(petRaw["typePet"] as! String) ?? TypePet.other, likesCount: petRaw["likesCount"] as? Int ?? 0,
+                                                   subtype: petRaw["subtype"] as! String, imageUrl: petRaw["imageUrl"] as! String)
+                           let dateFormatter = DateFormatter()
+                           dateFormatter.dateFormat = "dd/MM/yyyy"
+                           if let birthday = dateFormatter.date(from: petRaw["birthday"] as? String ?? ""){
+                                petImage.birthday = birthday
+                           }
+                            petImage.id = petSnapShot.key
+                           addPet(petImage)
+                           
+                       }
+                   }
+               }
+               
+           }
+           
+           
+       })
         
     }
     

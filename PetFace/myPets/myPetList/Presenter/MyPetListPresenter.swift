@@ -8,12 +8,21 @@
 import Foundation
 
 protocol MyPetListPresenterProtocol{
-    
+    func addMyPet(_ pet: Pet)
+    func loadMyPets()
 }
 
 class MyPetListPresenter : MyPetListPresenterProtocol{
+    func loadMyPets() {
+        interactor?.showMyPets()
+    }
+    
+    func addMyPet(_ pet: Pet) {
+        view?.showMyPet(pet)
+    }
+    
     var interactor: MyPetListInteractorProtocol?
     var router: MyPetListRouterProtocol?
     var view: MyPetListViewProtocol?
-
+    
 }

@@ -32,6 +32,9 @@ class EditPetViewController: UIViewController {
         }else{
             setDateOfBirthSwitch.setOn(false, animated: false)
         }
+        if !pet.imageUrl.isEmpty{
+            previewImage.downloaded(from: pet.imageUrl)
+        }
     }
     
     @IBAction func saveChanges(_ sender: Any) {
