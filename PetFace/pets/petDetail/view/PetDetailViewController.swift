@@ -65,6 +65,7 @@ class PetDetailViewController: UIViewController {
         createdAtLabel.text = dateFormat
         createdByLabel.text = "Subido por \(selectedPet.userName.isEmpty ? "Unkown" : selectedPet.userName)"
         setLike(userDidLike: selectedPet.userLiked)
+        petImage.downloaded(from: selectedPet.imageUrl)
     }
     
     // MARK: - Navigation

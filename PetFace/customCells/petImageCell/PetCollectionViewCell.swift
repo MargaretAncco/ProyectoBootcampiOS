@@ -20,7 +20,10 @@ class PetCollectionViewCell: UICollectionViewCell {
     func setUp(with pet: PetImage){
         nameLabel.text = pet.name
         likesCountLabel.setTitle(String(pet.likesCount), for: .normal)
-        isFavoriteImage.setImage(UIImage(systemName: pet.userLiked ? "heart.fill": "heart"), for: .normal) 
+        isFavoriteImage.setImage(UIImage(systemName: pet.userLiked ? "heart.fill": "heart"), for: .normal)
+        if !pet.imageUrl.isEmpty{
+            profileImage.downloaded(from: pet.imageUrl)
+        }
         
     }
     override func awakeFromNib() {

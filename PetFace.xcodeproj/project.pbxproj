@@ -60,6 +60,7 @@
 		854D48F6294976DF004C43ED /* UserLiked.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854D48F5294976DF004C43ED /* UserLiked.swift */; };
 		854D48F8294A4EBD004C43ED /* UserListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854D48F7294A4EBD004C43ED /* UserListTableViewController.swift */; };
 		854EFA99293A486100524409 /* MyPetCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854EFA98293A486100524409 /* MyPetCollectionViewCell.swift */; };
+		8597C994294BAF7700709B1C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8597C993294BAF7700709B1C /* Extensions.swift */; };
 		85CCC84D2937C8FD00DE5EB0 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CCC84C2937C8FD00DE5EB0 /* Pet.swift */; };
 		85CCC84F2937F8FD00DE5EB0 /* PetDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CCC84E2937F8FD00DE5EB0 /* PetDetailViewController.swift */; };
 		85CCC857293819DC00DE5EB0 /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CCC856293819DC00DE5EB0 /* PersonTableViewCell.swift */; };
@@ -120,6 +121,7 @@
 		854D48F5294976DF004C43ED /* UserLiked.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLiked.swift; sourceTree = "<group>"; };
 		854D48F7294A4EBD004C43ED /* UserListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListTableViewController.swift; sourceTree = "<group>"; };
 		854EFA98293A486100524409 /* MyPetCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPetCollectionViewCell.swift; sourceTree = "<group>"; };
+		8597C993294BAF7700709B1C /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		85CCC84C2937C8FD00DE5EB0 /* Pet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
 		85CCC84E2937F8FD00DE5EB0 /* PetDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetDetailViewController.swift; sourceTree = "<group>"; };
 		85CCC856293819DC00DE5EB0 /* PersonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
@@ -267,6 +269,7 @@
 			isa = PBXGroup;
 			children = (
 				853C3AD0293FB13700A2F294 /* PetCollectionViewCell.swift */,
+				8597C993294BAF7700709B1C /* Extensions.swift */,
 				853C3AD1293FB13700A2F294 /* PetCollectionViewCell.xib */,
 			);
 			path = petImageCell;
@@ -688,6 +691,7 @@
 				854D48CB2947CB8A004C43ED /* PetListConfigurator.swift in Sources */,
 				854D48C92947CB80004C43ED /* PetDetailConfigurator.swift in Sources */,
 				853C3AC1293E797500A2F294 /* PetImage.swift in Sources */,
+				8597C994294BAF7700709B1C /* Extensions.swift in Sources */,
 				854D48D12947D13C004C43ED /* NewPetConfigurator.swift in Sources */,
 				854D48872947BBC2004C43ED /* PetDetailRouter.swift in Sources */,
 				853C3B5F2946ADCE00A2F294 /* PetImageResponse.swift in Sources */,

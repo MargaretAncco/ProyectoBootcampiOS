@@ -14,6 +14,9 @@ class UserListTableViewController: UITableViewController {
         super.viewDidLoad()
 
     }
+    @IBAction func close(_ sender: Any) {
+        dismiss(animated: true)
+    }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
