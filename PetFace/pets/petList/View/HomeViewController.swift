@@ -64,7 +64,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         let pet = resultsList[indexPath.row]
         petSelected = pet
         print("item at \(indexPath.section)/\(indexPath.item) \(pet.name) tapped")
-        self.performSegue(withIdentifier: "GoToPetDetailNavigation", sender: self)
+        navigationController?.pushViewController(PetDetailConfigurator.makePetDetail(with: petSelected!), animated: true)
 
      }
     
@@ -86,9 +86,6 @@ extension HomeViewController : UISearchResultsUpdating{
                 }
             }
             
-        }
-        for (index, item) in resultsList.enumerated(){
-            resultsList[index].peopleLiked = []
         }
         
         self.petCollectionView.reloadData()

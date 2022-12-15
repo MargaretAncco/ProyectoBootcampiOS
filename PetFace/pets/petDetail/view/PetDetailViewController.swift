@@ -8,7 +8,7 @@
 import UIKit
 
 protocol PetDetailViewProtocol{
-    
+    func showPetPhoto(_ petImage: [PetImage])
 }
 class PetDetailViewController: UIViewController {
     
@@ -26,6 +26,8 @@ class PetDetailViewController: UIViewController {
     @IBAction func closeDetail(_ sender: Any) {
         
     }
+    
+    var otherPhotoList: [PetImage] = []
     @IBAction func likePet(_ sender: Any) {
         if selectedPet.userLiked{
             selectedPet.likesCount -= 1
@@ -47,9 +49,11 @@ class PetDetailViewController: UIViewController {
         }
     }
     var selectedPet: PetImage!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUp(with: selectedPet)
+        presenter?.morePhotos(with: selectedPet.petId)
     }
     func setUp(with selectedPet: PetImage){
         title = selectedPet.name
@@ -80,14 +84,7 @@ class PetDetailViewController: UIViewController {
             destination.userList = selectedPet.peopleLiked
         }
         if let destination = segue.destination as? PetPhotoCollectionViewController{
-            destination.photoPetList = [
-                PetImage(name: "Paco", typePet: TypePet.rodent, likesCount: 23, subtype: "jerbo", imageUrl: ""),
-                PetImage(name: "Paloma", typePet: TypePet.bird, likesCount: 13, subtype: "paloma", imageUrl: ""),
-                PetImage(name: "Firulais", typePet: TypePet.dog, likesCount: 2, subtype: "salchicha", imageUrl: "", userLiked: true),
-                PetImage(name: "Firulais", typePet: TypePet.dog, likesCount: 2, subtype: "salchicha", imageUrl: ""),
-                PetImage(name: "Firulais", typePet: TypePet.dog, likesCount: 2, subtype: "salchicha", imageUrl: ""),
-                
-            ]
+            destination.photoPetList = otherPhotoList
         }
         // Pass the selected object to the new view controller.
     }
@@ -96,5 +93,9 @@ class PetDetailViewController: UIViewController {
 }
 
 extension PetDetailViewController : PetDetailViewProtocol{
+    func showPetPhoto(_ petImage: [PetImage]) {
+        otherPhotoList.append(contentsOf: petImage)
+    }
+    
     
 }

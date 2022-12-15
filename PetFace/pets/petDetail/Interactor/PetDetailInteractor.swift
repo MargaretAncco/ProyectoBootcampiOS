@@ -8,7 +8,7 @@
 import Foundation
 
 protocol PetDetailInteractorProtocol{
-    
+    func morePhotos(with petId: String)
 }
 
 class PetDetailInteractor : PetDetailInteractorProtocol{
@@ -17,5 +17,9 @@ class PetDetailInteractor : PetDetailInteractorProtocol{
     required init(presenter: PetDetailPresenterProtocol, api: RemoteRepository) {
         self.presenter = presenter
         self.api = api
+    }
+    
+    func morePhotos(with petId: String){
+        api.fetchFavoritePets(withPetId: petId, addPet: {self.presenter.addPetPhoto(with: [$0])})
     }
 }

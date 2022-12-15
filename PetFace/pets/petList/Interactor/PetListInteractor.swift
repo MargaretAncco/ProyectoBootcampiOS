@@ -11,14 +11,9 @@ import FirebaseDatabaseSwift
 
 protocol PetListInteractorProtocol{
     func favoritePetList(withPetId petId: String?)
-    func userLikedList(withPhotoId photoId: String)
 }
 class PetListInteractor : PetListInteractorProtocol{
-    func userLikedList(withPhotoId photoId: String) {
-        api.fetchPetPhotoUserList(petPhotoid: photoId, addUser: {
-            self.presenter.showUser(id: photoId, user: $0)
-        })
-    }
+    
     
     var presenter: PetListPresenterProtocol
     var api: RemoteRepository

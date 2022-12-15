@@ -12,6 +12,7 @@ protocol PetListPresenterProtocol{
     func viewDidLoad()
     func showFavoritePets(petList list: [PetImage])
     func showUser(id: String,user: UserLiked)
+    func showMorePets()
 }
 
 class PetListPresenter : PetListPresenterProtocol{
@@ -33,6 +34,10 @@ class PetListPresenter : PetListPresenterProtocol{
     
     func showFavoritePets(petList list: [PetImage]) {
         view?.showFavoritePets(petList: list)
+    }
+    
+    func showMorePets(){
+        router?.showMorePets()
     }
     
 

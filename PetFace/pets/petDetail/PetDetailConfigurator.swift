@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 class PetDetailConfigurator{
     
-    static func makePetDetail() -> UIViewController {
+    static func makePetDetail(with petSelected : PetImage) -> UIViewController {
         let presenter = PetDetailPresenter()
         let api = FirebaseApi()
         let interactor = PetDetailInteractor(presenter: presenter, api: api)
@@ -19,6 +19,8 @@ class PetDetailConfigurator{
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let view = storyboard.instantiateViewController(withIdentifier: "PetDetailViewController") as! PetDetailViewController
         view.presenter = presenter
+        view.selectedPet = petSelected
+        
         interactor.presenter = presenter
         router.presenter = presenter
         router.view = view

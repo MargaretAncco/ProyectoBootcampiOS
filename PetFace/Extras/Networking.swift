@@ -12,26 +12,9 @@ protocol RemoteRepository{
     func fetchMypets() -> [PetResponse]
     func fetchFavoritePets(addPet: @escaping(PetImage) -> Void?)
     func fetchPetPhotoList() -> [PetImageResponse]
-    func fetchPetPhotoUserList(petPhotoid: String,addUser: @escaping (UserLiked)->Void?)
     func fetchFavoritePets(withPetId petId: String, addPet: @escaping(PetImage) -> Void?)
 }
 class FirebaseApi : RemoteRepository{
-    func fetchPetPhotoUserList(petPhotoid: String, addUser: @escaping (UserLiked)->Void?) {
-        petRef.child(petPhotoid).getData(completion:  { error, snapshot in
-            guard error == nil else {
-                print(error!.localizedDescription)
-                return
-            }
-//            snapshot?.children.forEach{
-//                if let userLikedSnap = ($0 as? DataSnapshot){
-//                    let id = userLikedSnap.key
-//                    let name = userLikedSnap.value(forKey: "name") as! String
-//                    addUser(UserLiked(id: id, name: name))
-//
-//                }
-//            }
-        })
-    }
     
     func fetchFavoritePets(addPet: @escaping(PetImage) -> Void?){
         petRef.getData(completion:  { error, snapshot in
@@ -56,7 +39,6 @@ class FirebaseApi : RemoteRepository{
                         }
                         
                         petImage.id = petSnapShot.key
-                        self.fetchPetPhotoUserList(petPhotoid: petImage.id, addUser:{ petImage.peopleLiked.append($0.name)})
                         petImage.petId = petRaw["petId"] as! String
                         addPet(petImage)
                     }

@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 protocol PetListRouterProtocol{
-    
+    func showMorePets()
 }
 
 class PetListRouter : PetListRouterProtocol{
@@ -18,6 +18,9 @@ class PetListRouter : PetListRouterProtocol{
     
     required init(presenter: PetListPresenterProtocol) {
         self.presenter = presenter
+    }
+    func showMorePets(){
+        view?.present(PetPhototListConfigurator.makePetList(), animated: true)
     }
 }
 
