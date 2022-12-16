@@ -49,7 +49,8 @@ extension MyPetListViewController: UICollectionViewDataSource, UICollectionViewD
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedPet = myPetList[indexPath.row]
-        performSegue(withIdentifier: "GoToMyPetDetail", sender: nil)
+        let petDetailViewController = EditPetConfigurator.makeEditMyPet(with: selectedPet!, delegate: self)
+        navigationController?.pushViewController(petDetailViewController, animated: true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -80,6 +81,7 @@ extension MyPetListViewController: EditPetViewDelegate{
             myPetList[indexToUpload] = pet
             myPetListCollectionView.reloadData()
         }
+        self.showToast(message: "Se edito \(pet.name)", font: .systemFont(ofSize: 12.0))
     }
     
     func deletePet(_ viewController: EditPetViewController, didDeletePet pet: Pet) {

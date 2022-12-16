@@ -7,9 +7,15 @@
 
 import UIKit
 
+protocol EditPetViewProtocol{
+    
+}
+
 class EditPetViewController: UIViewController {
     var pet: Pet!
+    var newPet: Pet?
     var delegate: EditPetViewDelegate!
+    var presenter: EditPetPresenterProtocol?
     @IBOutlet weak var subtypeTextField: UITextField!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var setDateOfBirthSwitch: UISwitch!
@@ -44,13 +50,24 @@ class EditPetViewController: UIViewController {
         guard let petSubtype = subtypeTextField.text, !petSubtype.isEmpty else{
             return
         }
+        newPet = pet
         if setDateOfBirthSwitch.isOn {
-            pet.birthday = birthdayDatePicker.date
+            newPet?.birthday = birthdayDatePicker.date
         }
-        pet.name = petName
-        pet.subtype = petSubtype
-        delegate?.updatePet(self, didUpdatePet: pet)
+        newPet?.name = petName
+        newPet?.subtype = petSubtype
+        if let imageToupload = self.imageToupload{
+            presenter?.uploadImage(data: imageToupload)
+        }
+        else{
+            newPet?.imageUrl = pet.imageUrl
+            if let newPet = newPet{
+                presenter?.updatePet(newPet)
+            }
+        }
+        
     }
+    var imageToupload: Data?
     @IBAction func deletePet(_ sender: Any) {
         delegate?.deletePet(self, didDeletePet: pet)
     }
@@ -60,7 +77,7 @@ class EditPetViewController: UIViewController {
         imagePickerController.delegate = self
         imagePickerController.allowsEditing = true
         present(imagePickerController, animated: true)
-//        delegate?.uploadImage(self, didUpdateImage: )
+        imageToupload = previewImage.image?.jpegData(compressionQuality: 0.5)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "GoToMyPetImageList"{
@@ -101,5 +118,10 @@ extension EditPetViewController : UIImagePickerControllerDelegate, UINavigationC
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion:nil)
     }
+    
+}
+
+
+extension EditPetViewController : EditPetViewProtocol{
     
 }

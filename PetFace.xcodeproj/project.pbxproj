@@ -269,7 +269,6 @@
 			isa = PBXGroup;
 			children = (
 				853C3AD0293FB13700A2F294 /* PetCollectionViewCell.swift */,
-				8597C993294BAF7700709B1C /* Extensions.swift */,
 				853C3AD1293FB13700A2F294 /* PetCollectionViewCell.xib */,
 			);
 			path = petImageCell;
@@ -323,6 +322,7 @@
 		854B27CA293126F200D65718 /* PetFace */ = {
 			isa = PBXGroup;
 			children = (
+				8597C993294BAF7700709B1C /* Extensions.swift */,
 				853C3B592946AAE500A2F294 /* Extras */,
 				853C3B582946AAD900A2F294 /* Resources */,
 				853C3AD4293FFC0F00A2F294 /* customCells */,

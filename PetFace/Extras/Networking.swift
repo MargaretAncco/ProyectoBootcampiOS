@@ -7,12 +7,15 @@
 import Foundation
 import FirebaseDatabase
 import FirebaseDatabaseSwift
+import FirebaseStorage
 
 protocol RemoteRepository{
     func fetchMypets(with userID : String, addPet: @escaping(Pet) -> Void?)
     func fetchFavoritePets(addPet: @escaping(PetImage) -> Void?)
     func fetchPetPhotoList() -> [PetImageResponse]
     func fetchFavoritePets(withPetId petId: String, addPet: @escaping(PetImage) -> Void?)
+    func uploadImage(uploadData: Data, completion: @escaping (_ url: String?) -> Void)
+    func updatePet(with petId: String, _ pet: Pet, didUpdatePet: @escaping (Pet)-> Void)
 }
 class FirebaseApi : RemoteRepository{
     
@@ -96,16 +99,21 @@ class FirebaseApi : RemoteRepository{
                if let petSnapShot = ($0 as? DataSnapshot){
                    if let petRaw = petSnapShot.value as? NSDictionary{
                        if (petRaw["userId"] as! String) == userID{
-                           var petImage = Pet(name: petRaw["name"] as! String,
-                                                   typePet: TypePet.withLabel(petRaw["typePet"] as! String) ?? TypePet.other, likesCount: petRaw["likesCount"] as? Int ?? 0,
-                                                   subtype: petRaw["subtype"] as! String, imageUrl: petRaw["imageUrl"] as! String)
+                           var pet = Pet(
+                            name: petRaw["name"] as! String,
+                            typePet: TypePet.withLabel(petRaw["typePet"] as! String) ?? TypePet.other,
+                            likesCount: petRaw["likesCount"] as? Int ?? 0,
+                            subtype: petRaw["subtype"] as! String,
+                            imageUrl: petRaw["imageUrl"] as! String)
+                           pet.userName = petRaw["userName"] as! String
+                           pet.userId = petRaw["userId"] as! String
                            let dateFormatter = DateFormatter()
                            dateFormatter.dateFormat = "dd/MM/yyyy"
                            if let birthday = dateFormatter.date(from: petRaw["birthday"] as? String ?? ""){
-                                petImage.birthday = birthday
+                                pet.birthday = birthday
                            }
-                            petImage.id = petSnapShot.key
-                           addPet(petImage)
+                            pet.id = petSnapShot.key
+                           addPet(pet)
                            
                        }
                    }
@@ -121,6 +129,46 @@ class FirebaseApi : RemoteRepository{
     func fetchPetPhotoList() -> [PetImageResponse] {
         []
     }
+    func uploadImage(uploadData: Data, completion: @escaping (_ url: String?) -> Void) {
+
+       let storageRef = Storage.storage().reference().child("images")
+       
+       storageRef.putData(uploadData, metadata: nil) { (metadata, error) in
+           if error != nil {
+               completion(nil)
+           } else {
+
+               storageRef.downloadURL(completion: { (url, error) in
+                   print(url?.absoluteString ?? "no se tiene url de la imagen")
+                   completion(url?.absoluteString)
+               })
+
+           }
+       }
+   
+   }
     
+    func updatePet(with petId: String, _ pet: Pet, didUpdatePet: @escaping (Pet)-> Void){
+        
+        var petRequest = PetRequest(name: pet.name, typePet: pet.typePet.rawValue, subtype: pet.subtype, userId: pet.userId, userName: pet.userName, imageUrl: pet.imageUrl)
+
+        var petNewValues = ["name": pet.name, "typePet": pet.typePet.rawValue, "subtype": petRequest.subtype, "imageUrl": pet.imageUrl, "userName": pet.userName, "userId": pet.userId, ] as [String : String]
+        
+        if let birthday =  pet.birthday{
+            let formatter = DateFormatter()
+            formatter.dateFormat = "dd/MM/yyyy"
+            petNewValues["birthday"] = formatter.string(from: birthday)
+        }else{
+            petNewValues["birthday"] = nil
+        }
+        
+        ref.child("Pet").child(petId).setValue(petNewValues, withCompletionBlock: { (error, dataSnapshot) in
+            if error != nil{
+                print (error ?? "error")
+            }else{
+                didUpdatePet(pet)
+            }
+        })
+    }
     
 }

@@ -261,8 +261,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="s1S-PS-kVV">
-                                <rect key="frame" x="20" y="119" width="388" height="662"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="s1S-PS-kVV">
+                                <rect key="frame" x="20" y="91" width="388" height="752"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="j66-sA-ZWt">
                                     <size key="itemSize" width="180" height="216"/>
@@ -277,11 +277,11 @@
                         <viewLayoutGuide key="safeArea" id="2VA-8K-rRn"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="s1S-PS-kVV" firstAttribute="leading" secondItem="2VA-8K-rRn" secondAttribute="leading" constant="20" id="Aqc-LJ-pR2"/>
-                            <constraint firstItem="s1S-PS-kVV" firstAttribute="top" secondItem="2VA-8K-rRn" secondAttribute="top" constant="28" id="jml-uW-0J2"/>
-                            <constraint firstItem="s1S-PS-kVV" firstAttribute="top" secondItem="2VA-8K-rRn" secondAttribute="top" constant="113" id="mRG-kc-dGi"/>
-                            <constraint firstItem="2VA-8K-rRn" firstAttribute="trailing" secondItem="s1S-PS-kVV" secondAttribute="trailing" constant="20" id="o1D-yC-pUb"/>
-                            <constraint firstItem="2VA-8K-rRn" firstAttribute="bottom" secondItem="s1S-PS-kVV" secondAttribute="bottom" constant="62" id="tmP-iP-NWI"/>
+                            <constraint firstItem="2VA-8K-rRn" firstAttribute="trailing" secondItem="s1S-PS-kVV" secondAttribute="trailing" constant="20" id="2Xv-aq-idz"/>
+                            <constraint firstItem="s1S-PS-kVV" firstAttribute="leading" secondItem="2VA-8K-rRn" secondAttribute="leading" constant="20" id="GLE-aa-hs6"/>
+                            <constraint firstAttribute="trailing" secondItem="s1S-PS-kVV" secondAttribute="trailing" constant="20" id="QNe-bA-MdQ"/>
+                            <constraint firstItem="s1S-PS-kVV" firstAttribute="bottom" secondItem="2VA-8K-rRn" secondAttribute="bottom" id="U3I-xQ-hBv"/>
+                            <constraint firstItem="s1S-PS-kVV" firstAttribute="top" secondItem="2VA-8K-rRn" secondAttribute="top" id="vZj-Ad-1a7"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Ver mascotas" id="pjc-vA-isI"/>
@@ -780,7 +780,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="74o-Bw-ILi"/>
+        <segue reference="wZh-Va-56I"/>
         <segue reference="OXP-XB-xSf"/>
     </inferredMetricsTieBreakers>
     <resources>
