@@ -132,8 +132,9 @@ class FirebaseApi : RemoteRepository{
     func uploadImage(uploadData: Data, completion: @escaping (_ url: String?) -> Void) {
         let formatter = DateFormatter()
         formatter.dateFormat = "dd-MM-yyyy"
+        let userId = AppDelegate.userId
         let timeStamp = formatter.string(from: Date())
-        let storageRef = Storage.storage().reference().child("images").child("\(timeStamp).jpeg")
+        let storageRef = Storage.storage().reference().child("images").child(userId).child("\(timeStamp).jpeg")
         
         let metaData = StorageMetadata()
         metaData.contentType = "image/jpeg"

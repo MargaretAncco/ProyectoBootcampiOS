@@ -11,9 +11,12 @@ import FirebaseCore
 
  @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    static var userName: String = "Default User"
+    static var userId: String = UUID().uuidString
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
+        
         return true
     }
 
