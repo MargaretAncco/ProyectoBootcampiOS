@@ -29,7 +29,7 @@ class PetListInteractor : PetListInteractorProtocol{
                 
             })
         }else{
-            api.fetchFavoritePets(addPet: {
+            api.fetchFavoritePets(withPetId: nil, addPet: {
                 self.presenter.showFavoritePets(petList: [$0])
             })
         }

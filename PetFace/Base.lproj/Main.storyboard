@@ -299,7 +299,7 @@
             <objects>
                 <viewController storyboardIdentifier="PetDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="uDH-fz-fau" customClass="PetDetailViewController" customModule="PetFace" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZVV-Cu-2eL">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="869"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="dgq-3d-JFB">
@@ -623,7 +623,7 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="arrow.right" catalog="system" imagePlacement="trailing" title="Fotos de mi mascota"/>
                                                 <connections>
-                                                    <segue destination="S9f-lm-r6R" kind="show" identifier="GoToMyPetImageList" id="r7t-VE-8vb"/>
+                                                    <action selector="showImages:" destination="KSq-pu-nDP" eventType="touchUpInside" id="9Vb-O9-Jgo"/>
                                                 </connections>
                                             </button>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo.artframe" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ixA-Te-sHk">
@@ -707,7 +707,7 @@
         <!--My Pet Photo Collection View Controller-->
         <scene sceneID="0AX-jm-TQp">
             <objects>
-                <collectionViewController id="S9f-lm-r6R" customClass="MyPetPhotoCollectionViewController" customModule="PetFace" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="MyPetPhotoCollectionViewController" id="S9f-lm-r6R" customClass="MyPetPhotoCollectionViewController" customModule="PetFace" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="gww-H1-fhL">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -724,7 +724,13 @@
                             <outlet property="delegate" destination="S9f-lm-r6R" id="855-Dv-B3z"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="Bhv-eK-3Oq"/>
+                    <navigationItem key="navigationItem" id="Bhv-eK-3Oq">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Ts1-8M-0My">
+                            <connections>
+                                <action selector="addImagePet:" destination="S9f-lm-r6R" id="kEY-CG-wB3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="uDH-fz-fau" kind="show" id="74o-Bw-ILi"/>
                     </connections>
@@ -780,7 +786,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="wZh-Va-56I"/>
+        <segue reference="74o-Bw-ILi"/>
         <segue reference="OXP-XB-xSf"/>
     </inferredMetricsTieBreakers>
     <resources>

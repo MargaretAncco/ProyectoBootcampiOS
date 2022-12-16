@@ -8,7 +8,7 @@
 import Foundation
 
 protocol MyPetPhotoListInteractorProtocol{
-    
+    func addImagePet(image: Data, of pet: Pet, didUploadImage: @escaping (PetImage)-> Void)
 }
 
 class MyPetPhotoListInteractor{
@@ -20,5 +20,10 @@ class MyPetPhotoListInteractor{
     }
 }
 extension MyPetPhotoListInteractor: MyPetPhotoListInteractorProtocol{
+    func addImagePet(image: Data, of pet: Pet, didUploadImage: @escaping (PetImage) -> Void) {
+        api.uploadPetImage(image: image, of: pet, didUploadImage: didUploadImage)
+    }
+    
+    
     
 }

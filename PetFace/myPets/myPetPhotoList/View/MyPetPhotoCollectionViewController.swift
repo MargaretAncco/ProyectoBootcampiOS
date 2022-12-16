@@ -9,21 +9,37 @@ import UIKit
 
 private let reuseIdentifier = "Cell"
 protocol MyPetPhotoListViewProtocol{
-    
+    func addUploadedImage(image: PetImage)
 }
 
 class MyPetPhotoCollectionViewController: UICollectionViewController {
     
     var presenter: MyPetPhotoListPresenter?
-    var petId: Int = 0
+    var pet: Pet!
+    var petId: String = ""
     var imageList: [PetImage]!
     override func viewDidLoad() {
         super.viewDidLoad()
         let cellNib = UINib(nibName: "PetCollectionViewCell", bundle: nil)
+        petId = pet.id
         collectionView.register(cellNib, forCellWithReuseIdentifier: "PetCollectionViewCell")
 
     }
 
+    func addUploadedImage(image: PetImage){
+        imageList.append(image)
+        self.collectionView.reloadData()
+        
+    }
+    
+    @IBAction func addImagePet(_ sender: Any) {
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.sourceType = .photoLibrary
+        imagePickerController.delegate = self
+        imagePickerController.allowsEditing = true
+        
+        present(imagePickerController, animated: true)
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
@@ -104,6 +120,27 @@ extension MyPetPhotoCollectionViewController: UICollectionViewDelegateFlowLayout
     }
 }
 
+
 extension MyPetPhotoCollectionViewController : MyPetPhotoListViewProtocol{
+    func addImageUploaded(_ image: PetImage){
+        imageList.append(image)
+        self.collectionView.reloadData()
+    }
+}
+
+extension MyPetPhotoCollectionViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        if let pickedImage = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")] as? UIImage {
+            
+            let imageToupload = pickedImage.jpegData(compressionQuality: 0.5)
+            presenter?.addImagePet(image: imageToupload!, of: self.pet)
+        }
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion:nil)
+    }
     
 }

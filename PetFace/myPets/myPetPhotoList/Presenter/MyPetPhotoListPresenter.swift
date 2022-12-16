@@ -8,7 +8,7 @@
 import Foundation
 
 protocol MyPetPhotoListPresenterProtocol{
-    
+    func addImagePet(image: Data, of pet: Pet)
 }
 
 class MyPetPhotoListPresenter : MyPetPhotoListPresenterProtocol{
@@ -16,4 +16,11 @@ class MyPetPhotoListPresenter : MyPetPhotoListPresenterProtocol{
     var router: MyPetPhotoListRouterProtocol?
     var view: MyPetPhotoListViewProtocol?
 
+    func addImagePet(image: Data, of pet: Pet) {
+        interactor?.addImagePet(image: image, of: pet, didUploadImage: {
+            self.view?.addUploadedImage(image: $0)
+        })
+    }
+    
+    
 }

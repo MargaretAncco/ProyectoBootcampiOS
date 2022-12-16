@@ -13,15 +13,16 @@ protocol RemoteRepository{
     func fetchMypets(with userID : String, addPet: @escaping(Pet) -> Void?)
     func fetchFavoritePets(addPet: @escaping(PetImage) -> Void?)
     func fetchPetPhotoList() -> [PetImageResponse]
-    func fetchFavoritePets(withPetId petId: String, addPet: @escaping(PetImage) -> Void?)
+    func fetchFavoritePets(withPetId petId: String?, addPet: @escaping(PetImage) -> Void?)
     func uploadImage(uploadData: Data, completion: @escaping (_ url: String?) -> Void)
     func updatePet(with petId: String, _ pet: Pet, didUpdatePet: @escaping (Pet)-> Void)
+    func uploadPetImage(image: Data, of pet: Pet, didUploadImage : @escaping (PetImage)-> Void)
 }
 class FirebaseApi : RemoteRepository{
     
     func fetchFavoritePets(addPet: @escaping(PetImage) -> Void?){
-        petRef.getData(completion:  { error, snapshot in
-            guard error == nil else {
+        ref.child("PetImage").getData(completion:  { error, snapshot in
+            if error != nil {
                 print(error!.localizedDescription)
                 return
             }
@@ -53,7 +54,7 @@ class FirebaseApi : RemoteRepository{
             
         })
     }
-    func fetchFavoritePets(withPetId petId: String, addPet: @escaping(PetImage) -> Void?){
+    func fetchFavoritePets(withPetId petId: String?, addPet: @escaping(PetImage) -> Void?){
         petRef.getData(completion:  { error, snapshot in
             guard error == nil else {
                 print(error!.localizedDescription)
@@ -62,13 +63,22 @@ class FirebaseApi : RemoteRepository{
             snapshot?.children.forEach{
                 if let petSnapShot = ($0 as? DataSnapshot){
                     if let petRaw = petSnapShot.value as? NSDictionary{
-                        if petRaw["petId"] as! String == petId{
+                        if let petIdNotNil = petId {
+                            if petRaw["petId"] as! String == petIdNotNil{
+                                var petImage = PetImage(name: petRaw["name"] as! String,
+                                                        typePet: TypePet.withLabel(petRaw["typePet"] as! String) ?? TypePet.other, likesCount: petRaw["likesCount"] as? Int ?? 0,
+                                                        subtype: "", imageUrl: petRaw["imageUrl"] as! String)
+                                petImage.id = petSnapShot.key
+                                addPet(petImage)
+                                
+                            }
+                            
+                        }else{
                             var petImage = PetImage(name: petRaw["name"] as! String,
                                                     typePet: TypePet.withLabel(petRaw["typePet"] as! String) ?? TypePet.other, likesCount: petRaw["likesCount"] as? Int ?? 0,
                                                     subtype: "", imageUrl: petRaw["imageUrl"] as! String)
                             petImage.id = petSnapShot.key
                             addPet(petImage)
-                            
                         }
                     }
                 }
@@ -156,12 +166,11 @@ class FirebaseApi : RemoteRepository{
     func updatePet(with petId: String, _ pet: Pet, didUpdatePet: @escaping (Pet)-> Void){
         
         var petRequest = PetRequest(name: pet.name, typePet: pet.typePet.rawValue, subtype: pet.subtype, userId: pet.userId, userName: pet.userName, imageUrl: pet.imageUrl)
-        
-        var petNewValues = ["name": pet.name, "typePet": pet.typePet.rawValue, "subtype": petRequest.subtype, "imageUrl": pet.imageUrl, "userName": pet.userName, "userId": pet.userId, ] as [String : String]
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy"
+        var petNewValues = ["name": pet.name, "typePet": pet.typePet.rawValue, "subtype": petRequest.subtype, "imageUrl": pet.imageUrl, "userName": pet.userName, "userId": pet.userId, "petId": pet.id, "createdAt": (formatter.string(from: Date()))] as [String : String]
         
         if let birthday =  pet.birthday{
-            let formatter = DateFormatter()
-            formatter.dateFormat = "dd/MM/yyyy"
             petNewValues["birthday"] = formatter.string(from: birthday)
         }else{
             petNewValues["birthday"] = nil
@@ -176,4 +185,47 @@ class FirebaseApi : RemoteRepository{
         })
     }
     
+    
+    func uploadPetImage(image: Data, of pet: Pet, didUploadImage : @escaping (PetImage)-> Void){
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd-MM-yyyy"
+        let userId = AppDelegate.userId
+        let timeStamp = formatter.string(from: Date())
+        
+        let storageRef = Storage.storage().reference().child("images").child(userId).child("\(timeStamp).jpeg")
+        
+        let metaData = StorageMetadata()
+        metaData.contentType = "image/jpeg"
+        storageRef.putData(image, metadata: metaData) { (metadata, error) in
+            if error != nil {
+                print(error)
+            } else {
+                
+                storageRef.downloadURL(completion: { (url, error) in
+//                    print(url?.absoluteString ?? "no se tiene url de la imagen")
+                    var petWithImage: [String: String] = [
+                        "name": pet.name ,
+                        "userName": pet.userName ,
+                        "userId": pet.userId ,
+                        "typePet": pet.typePet.rawValue ,
+                        "subtype": pet.subtype,
+                        "imageUrl": url?.absoluteString ?? "",
+                        
+                    ]
+                    
+                    self.petRef.childByAutoId().updateChildValues(petWithImage, withCompletionBlock: { (error, dataSnapshot) in
+                        if error != nil{
+                            print (error ?? "error")
+                        }else{
+                            didUploadImage(PetImage(name: pet.name, typePet: TypePet(rawValue: pet.typePet.rawValue) ?? TypePet.other, likesCount: 0, subtype: pet.subtype, imageUrl: petWithImage["imageUrl"] as! String, userLiked: false))
+                      
+                        }
+                    })
+                })
+                
+            }
+        }
+        
+    }
+        
 }

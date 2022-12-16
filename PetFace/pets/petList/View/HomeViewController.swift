@@ -15,31 +15,46 @@ class HomeViewController: UIViewController {
     var presenter: PetListPresenterProtocol?
     var datasource: [PetImage] = []
     var resultsList: [PetImage] = []
-    
+    var refreshControl = UIRefreshControl()
     var petSelected: PetImage?
     var searchController: UISearchController!
     
     @IBOutlet weak private var petCollectionView: UICollectionView!
     
+    func setRefresh(){
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+        petCollectionView.refreshControl = refreshControl
+        
+    }
+    @objc func refresh(_ sender: AnyObject) {
+        datasource = []
+        presenter?.favoriteList(withPetId: nil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         petCollectionView.dataSource = self
         petCollectionView.delegate = self
+        
         searchController = UISearchController()
         navigationItem.searchController  = searchController
         searchController.searchResultsUpdater = self
+        
+        setRefresh()
+        petCollectionView.refreshControl = refreshControl
+        
         datasource.forEach{ resultsList.append($0)}
         let cellNib = UINib(nibName: "PetCollectionViewCell", bundle: nil)
         petCollectionView.register(cellNib, forCellWithReuseIdentifier: "PetCollectionViewCell")
         presenter?.favoriteList(withPetId: nil)
-
+        
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let petDetailViewController = segue.destination as? PetDetailViewController{
             petDetailViewController.selectedPet = petSelected
         }
     }
-
+    
 }
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -49,8 +64,8 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     
     private func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         
-      return CGSize(width: collectionView.frame.size.width/2, height: collectionView.frame.size.width/2)
-     }
+        return CGSize(width: collectionView.frame.size.width/2, height: collectionView.frame.size.width/2)
+    }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         var cell = UICollectionViewCell()
@@ -65,8 +80,8 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         petSelected = pet
         print("item at \(indexPath.section)/\(indexPath.item) \(pet.name) tapped")
         navigationController?.pushViewController(PetDetailConfigurator.makePetDetail(with: petSelected!), animated: true)
-
-     }
+        
+    }
     
 }
 
@@ -89,7 +104,7 @@ extension HomeViewController : UISearchResultsUpdating{
         }
         
         self.petCollectionView.reloadData()
-     
+        
     }
     
     

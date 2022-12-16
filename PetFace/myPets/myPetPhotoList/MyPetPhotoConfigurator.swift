@@ -10,7 +10,7 @@ import UIKit
 
 class MyPetPhotoConfigurator{
     
-    static func makeMyPetPhoto() -> UIViewController {
+    static func makeMyPetPhoto(pet: Pet, imageList: [PetImage]) -> UIViewController {
         let presenter = MyPetPhotoListPresenter()
         let api = FirebaseApi()
         let interactor = MyPetPhotoListInteractor(presenter: presenter, api: api)
@@ -18,6 +18,8 @@ class MyPetPhotoConfigurator{
     
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let view = storyboard.instantiateViewController(withIdentifier: "MyPetPhotoCollectionViewController") as! MyPetPhotoCollectionViewController
+        view.imageList = imageList
+        view.pet = pet
         view.presenter = presenter
         interactor.presenter = presenter
         router.presenter = presenter

@@ -18,6 +18,11 @@ class EditPetViewController: UIViewController {
     var delegate: EditPetViewDelegate!
     var presenter: EditPetPresenterProtocol?
     
+    @IBAction func showImages(_ sender: Any) {
+        let moreImages = MyPetPhotoConfigurator.makeMyPetPhoto(pet: pet, imageList: photoList)
+        navigationController?.pushViewController(moreImages, animated: true)
+        
+    }
     @IBOutlet weak var subtypeTextField: UITextField!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var setDateOfBirthSwitch: UISwitch!
@@ -85,10 +90,12 @@ class EditPetViewController: UIViewController {
         imagePickerController.allowsEditing = true
         present(imagePickerController, animated: true)
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "GoToMyPetImageList"{
             let destination = segue.destination as? MyPetPhotoCollectionViewController
             
+            destination?.pet = pet
             destination?.imageList = photoList
         }
         if let destination = segue.destination as? TypePetTableViewController{
