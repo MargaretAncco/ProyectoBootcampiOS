@@ -10,5 +10,5 @@ import Foundation
 protocol EditPetViewDelegate{
     func updatePet(_ viewController: EditPetViewController, didUpdatePet pet: Pet)
     func deletePet(_ viewController: EditPetViewController, didDeletePet pet: Pet)
-    func uploadImage(_ viewController: EditPetViewController, didUpdateImage imagePath: String)
+    func uploadImage(_ viewController: EditPetViewController, didUpdateImage imagePath: Data)
 }

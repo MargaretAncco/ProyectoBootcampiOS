@@ -8,7 +8,7 @@
 import Foundation
 
 protocol EditPetPresenterProtocol{
-    func uploadImage(data: Data)
+    func uploadImage(data: Data, pet: Pet)
     func updatePet(_ pet: Pet)
     
 }
@@ -21,8 +21,8 @@ class EditPetPresenter : EditPetPresenterProtocol{
     var router: EditPetRouterProtocol?
     var view: EditPetViewProtocol?
 
-    func uploadImage(data: Data) {
-        
+    func uploadImage(data: Data, pet: Pet) {
+        interactor?.uploadImage(data: data, pet: pet,didUpdatePet: { self.router?.didUpdatedPet($0) })
     }
     
     

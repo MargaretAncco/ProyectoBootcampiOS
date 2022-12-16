@@ -48,7 +48,7 @@ class FirebaseApi : RemoteRepository{
                 }
                 
             }
-
+            
             
             
         })
@@ -79,7 +79,7 @@ class FirebaseApi : RemoteRepository{
         })
     }
     
-
+    
     var ref: DatabaseReference
     var petRef: DatabaseReference
     
@@ -89,40 +89,40 @@ class FirebaseApi : RemoteRepository{
     }
     
     
-   func fetchMypets(with userID : String , addPet: @escaping(Pet) -> Void?) {
-       ref.child("Pet").getData(completion:  { error, snapshot in
-           guard error == nil else {
-               print(error!.localizedDescription)
-               return
-           }
-           snapshot?.children.forEach{
-               if let petSnapShot = ($0 as? DataSnapshot){
-                   if let petRaw = petSnapShot.value as? NSDictionary{
-                       if (petRaw["userId"] as! String) == userID{
-                           var pet = Pet(
-                            name: petRaw["name"] as! String,
-                            typePet: TypePet.withLabel(petRaw["typePet"] as! String) ?? TypePet.other,
-                            likesCount: petRaw["likesCount"] as? Int ?? 0,
-                            subtype: petRaw["subtype"] as! String,
-                            imageUrl: petRaw["imageUrl"] as! String)
-                           pet.userName = petRaw["userName"] as! String
-                           pet.userId = petRaw["userId"] as! String
-                           let dateFormatter = DateFormatter()
-                           dateFormatter.dateFormat = "dd/MM/yyyy"
-                           if let birthday = dateFormatter.date(from: petRaw["birthday"] as? String ?? ""){
+    func fetchMypets(with userID : String , addPet: @escaping(Pet) -> Void?) {
+        ref.child("Pet").getData(completion:  { error, snapshot in
+            guard error == nil else {
+                print(error!.localizedDescription)
+                return
+            }
+            snapshot?.children.forEach{
+                if let petSnapShot = ($0 as? DataSnapshot){
+                    if let petRaw = petSnapShot.value as? NSDictionary{
+                        if (petRaw["userId"] as! String) == userID{
+                            var pet = Pet(
+                                name: petRaw["name"] as! String,
+                                typePet: TypePet.withLabel(petRaw["typePet"] as! String) ?? TypePet.other,
+                                likesCount: petRaw["likesCount"] as? Int ?? 0,
+                                subtype: petRaw["subtype"] as! String,
+                                imageUrl: petRaw["imageUrl"] as! String)
+                            pet.userName = petRaw["userName"] as! String
+                            pet.userId = petRaw["userId"] as! String
+                            let dateFormatter = DateFormatter()
+                            dateFormatter.dateFormat = "dd/MM/yyyy"
+                            if let birthday = dateFormatter.date(from: petRaw["birthday"] as? String ?? ""){
                                 pet.birthday = birthday
-                           }
+                            }
                             pet.id = petSnapShot.key
-                           addPet(pet)
-                           
-                       }
-                   }
-               }
-               
-           }
-           
-           
-       })
+                            addPet(pet)
+                            
+                        }
+                    }
+                }
+                
+            }
+            
+            
+        })
         
     }
     
@@ -130,28 +130,32 @@ class FirebaseApi : RemoteRepository{
         []
     }
     func uploadImage(uploadData: Data, completion: @escaping (_ url: String?) -> Void) {
-
-       let storageRef = Storage.storage().reference().child("images")
-       
-       storageRef.putData(uploadData, metadata: nil) { (metadata, error) in
-           if error != nil {
-               completion(nil)
-           } else {
-
-               storageRef.downloadURL(completion: { (url, error) in
-                   print(url?.absoluteString ?? "no se tiene url de la imagen")
-                   completion(url?.absoluteString)
-               })
-
-           }
-       }
-   
-   }
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd-MM-yyyy"
+        let timeStamp = formatter.string(from: Date())
+        let storageRef = Storage.storage().reference().child("images").child("\(timeStamp).jpeg")
+        
+        let metaData = StorageMetadata()
+        metaData.contentType = "image/jpeg"
+        storageRef.putData(uploadData, metadata: metaData) { (metadata, error) in
+            if error != nil {
+                completion(nil)
+            } else {
+                
+                storageRef.downloadURL(completion: { (url, error) in
+                    print(url?.absoluteString ?? "no se tiene url de la imagen")
+                    completion(url?.absoluteString)
+                })
+                
+            }
+        }
+        
+    }
     
     func updatePet(with petId: String, _ pet: Pet, didUpdatePet: @escaping (Pet)-> Void){
         
         var petRequest = PetRequest(name: pet.name, typePet: pet.typePet.rawValue, subtype: pet.subtype, userId: pet.userId, userName: pet.userName, imageUrl: pet.imageUrl)
-
+        
         var petNewValues = ["name": pet.name, "typePet": pet.typePet.rawValue, "subtype": petRequest.subtype, "imageUrl": pet.imageUrl, "userName": pet.userName, "userId": pet.userId, ] as [String : String]
         
         if let birthday =  pet.birthday{

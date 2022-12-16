@@ -20,7 +20,6 @@ class EditPetRouter: EditPetRouterProtocol{
     func didUpdatedPet(_ newPet: Pet){
         self.view?.delegate.updatePet(self.view!, didUpdatePet: newPet)
         view?.navigationController?.popViewController(animated: true)
-        print(":c")
         
     }
     

@@ -91,7 +91,7 @@ extension MyPetListViewController: EditPetViewDelegate{
         }
     }
     
-    func uploadImage(_ viewController: EditPetViewController, didUpdateImage imagePath: String) {
+    func uploadImage(_ viewController: EditPetViewController, didUpdateImage imagePath: Data) {
         
     }
     

@@ -31,7 +31,6 @@ class PetListInteractor : PetListInteractorProtocol{
         }else{
             api.fetchFavoritePets(addPet: {
                 self.presenter.showFavoritePets(petList: [$0])
-                
             })
         }
     }

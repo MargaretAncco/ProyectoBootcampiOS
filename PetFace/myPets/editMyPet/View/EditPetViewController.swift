@@ -57,7 +57,10 @@ class EditPetViewController: UIViewController {
         newPet?.name = petName
         newPet?.subtype = petSubtype
         if let imageToupload = self.imageToupload{
-            presenter?.uploadImage(data: imageToupload)
+            if let newPet = newPet{
+            presenter?.uploadImage(data: imageToupload, pet: newPet)
+            }
+            
         }
         else{
             newPet?.imageUrl = pet.imageUrl
@@ -77,7 +80,6 @@ class EditPetViewController: UIViewController {
         imagePickerController.delegate = self
         imagePickerController.allowsEditing = true
         present(imagePickerController, animated: true)
-        imageToupload = previewImage.image?.jpegData(compressionQuality: 0.5)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "GoToMyPetImageList"{
@@ -111,6 +113,7 @@ extension EditPetViewController : UIImagePickerControllerDelegate, UINavigationC
 
         if let pickedImage = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")] as? UIImage {
             previewImage.image = pickedImage
+            imageToupload = previewImage.image?.jpegData(compressionQuality: 0.5)
         }
         dismiss(animated: true, completion: nil)
     }

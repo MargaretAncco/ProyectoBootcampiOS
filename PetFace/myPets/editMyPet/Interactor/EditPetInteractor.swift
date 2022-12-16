@@ -9,7 +9,7 @@ import Foundation
 
 
 protocol EditPetInteractorProtocol{
-    func uploadImage(data: Data, pet: Pet)
+    func uploadImage(data: Data, pet: Pet, didUpdatePet: @escaping (Pet) -> Void)
     func updatePet(_ pet: Pet, didUpdatePet: @escaping (Pet) -> Void)
 }
 class EditPetInteractor : EditPetInteractorProtocol{
@@ -20,10 +20,11 @@ class EditPetInteractor : EditPetInteractorProtocol{
         self.api = api
     }
     
-    
-    func uploadImage(data: Data, pet: Pet) {
+    func uploadImage(data: Data, pet: Pet, didUpdatePet: @escaping (Pet) -> Void) {
         api.uploadImage(uploadData: data, completion: {url in
-            print("Success \(url!)")
+            var petWithImage = pet
+            petWithImage.imageUrl = url ?? ""
+            self.updatePet(petWithImage, didUpdatePet: didUpdatePet)
         })
     }
     func updatePet(_ pet: Pet, didUpdatePet: @escaping (Pet) -> Void) {
