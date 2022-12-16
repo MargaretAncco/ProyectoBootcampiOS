@@ -11,6 +11,7 @@ import Foundation
 protocol EditPetInteractorProtocol{
     func uploadImage(data: Data, pet: Pet, didUpdatePet: @escaping (Pet) -> Void)
     func updatePet(_ pet: Pet, didUpdatePet: @escaping (Pet) -> Void)
+    func morePhotos(with petId: String)
 }
 class EditPetInteractor : EditPetInteractorProtocol{
     var presenter: EditPetPresenterProtocol
@@ -29,6 +30,9 @@ class EditPetInteractor : EditPetInteractorProtocol{
     }
     func updatePet(_ pet: Pet, didUpdatePet: @escaping (Pet) -> Void) {
         api.updatePet(with: pet.id, pet, didUpdatePet: {didUpdatePet($0) })
+    }
+    func morePhotos(with petId: String){
+        api.fetchFavoritePets(withPetId: petId, addPet: {self.presenter.addPetPhoto(with: [$0])})
     }
     
     

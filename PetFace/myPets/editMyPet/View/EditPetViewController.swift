@@ -8,14 +8,16 @@
 import UIKit
 
 protocol EditPetViewProtocol{
-    
+    func showPetPhoto(_ petImage: [PetImage])
 }
 
 class EditPetViewController: UIViewController {
     var pet: Pet!
     var newPet: Pet?
+    var photoList: [PetImage] = []
     var delegate: EditPetViewDelegate!
     var presenter: EditPetPresenterProtocol?
+    
     @IBOutlet weak var subtypeTextField: UITextField!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var setDateOfBirthSwitch: UISwitch!
@@ -26,7 +28,9 @@ class EditPetViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUp()
+        presenter?.morePhotos(with: pet.id)
     }
+    
     func setUp(){
         
         typeButton.setTitle(pet.typePet.rawValue , for: .normal)
@@ -58,7 +62,7 @@ class EditPetViewController: UIViewController {
         newPet?.subtype = petSubtype
         if let imageToupload = self.imageToupload{
             if let newPet = newPet{
-            presenter?.uploadImage(data: imageToupload, pet: newPet)
+                presenter?.uploadImage(data: imageToupload, pet: newPet)
             }
             
         }
@@ -85,13 +89,7 @@ class EditPetViewController: UIViewController {
         if segue.identifier == "GoToMyPetImageList"{
             let destination = segue.destination as? MyPetPhotoCollectionViewController
             
-            destination?.imageList = [
-                PetImage(name: "Paco", typePet: TypePet.rodent, likesCount: 23, subtype: "jerbo", imageUrl: ""),
-                PetImage(name: "Paloma", typePet: TypePet.bird, likesCount: 13, subtype: "paloma", imageUrl: ""),
-                PetImage(name: "Firulais", typePet: TypePet.dog, likesCount: 2, subtype: "salchicha", imageUrl: "", userLiked: true),
-                PetImage(name: "Firulais", typePet: TypePet.dog, likesCount: 2, subtype: "salchicha", imageUrl: ""),
-                PetImage(name: "Firulais", typePet: TypePet.dog, likesCount: 2, subtype: "salchicha", imageUrl: ""),
-            ]
+            destination?.imageList = photoList
         }
         if let destination = segue.destination as? TypePetTableViewController{
             destination.delegate = self
@@ -110,14 +108,14 @@ extension EditPetViewController : TypePetDelegate{
 
 extension EditPetViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-
+        
         if let pickedImage = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")] as? UIImage {
             previewImage.image = pickedImage
             imageToupload = previewImage.image?.jpegData(compressionQuality: 0.5)
         }
         dismiss(animated: true, completion: nil)
     }
-
+    
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion:nil)
     }
@@ -126,5 +124,7 @@ extension EditPetViewController : UIImagePickerControllerDelegate, UINavigationC
 
 
 extension EditPetViewController : EditPetViewProtocol{
-    
+    func showPetPhoto(_ petImage: [PetImage]) {
+        photoList.append(contentsOf: petImage)
+    }
 }

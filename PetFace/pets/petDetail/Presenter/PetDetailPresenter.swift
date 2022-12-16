@@ -12,14 +12,14 @@ protocol PetDetailPresenterProtocol{
 }
 
 class PetDetailPresenter : PetDetailPresenterProtocol{
-    func addPetPhoto(with list: [PetImage]) {
-        view?.showPetPhoto(list)
-    }
-    
     var interactor: PetDetailInteractorProtocol?
     var router: PetDetailRouterProtocol?
     var view: PetDetailViewProtocol?
 
+    
+    func addPetPhoto(with list: [PetImage]) {
+        view?.showPetPhoto(list)
+    }
     
     func morePhotos(with petId: String){
         interactor?.morePhotos(with: petId)
