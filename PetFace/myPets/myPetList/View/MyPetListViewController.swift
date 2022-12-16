@@ -14,6 +14,13 @@ protocol MyPetListViewProtocol{
 class MyPetListViewController: UIViewController {
     var presenter: MyPetListPresenterProtocol?
     @IBOutlet weak var myPetListCollectionView: UICollectionView!
+    
+    
+    @IBAction func addNewPet(_ sender: Any) {
+        let addPetView = NewPetConfigurator.makeNewMyPet()
+        present(addPetView, animated: true)
+    }
+    
     var myPetList: [Pet] = []
     var selectedPet: Pet?
     override func viewDidLoad() {
