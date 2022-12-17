@@ -34,7 +34,13 @@ class NewPetViewController: UIViewController {
         
         newPet.birthday = includeBirthdaySwitch.isOn ? dateOfBirthDatePicker.date : nil
         newPet.imageUrl = ""
-        delegate?.newPetViewController(self, didAddPet: newPet)
+        guard let imageToupload = previewImage.image?.jpegData(compressionQuality: 0.5) else {
+            self.showToast(message: "Tiene que adjuntar una imagen", font:.preferredFont(forTextStyle: .headline))
+            return
+            
+        }
+        presenter?.addNewPet(imageData: imageToupload, with: newPet)
+        
         
     }
     @IBAction func selectImage(_ sender: Any) {

@@ -94,19 +94,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fk0-BU-EE4">
-                                <rect key="frame" x="20" y="75" width="401" height="792"/>
+                                <rect key="frame" x="20" y="75" width="388" height="792"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Yh2-pW-TSu">
-                                        <rect key="frame" x="0.0" y="0.0" width="401" height="514"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="388" height="514"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6z9-Gt-8as">
-                                                <rect key="frame" x="0.0" y="0.0" width="401" height="20.333333333333332"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="388" height="20.333333333333332"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="im5-8I-bgQ">
-                                                <rect key="frame" x="0.0" y="20.333333333333329" width="401" height="55"/>
+                                                <rect key="frame" x="0.0" y="20.333333333333329" width="388" height="55"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="55" id="aGh-tB-Tvi"/>
                                                 </constraints>
@@ -114,7 +114,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JL3-vh-BMt">
-                                                <rect key="frame" x="0.0" y="75.333333333333343" width="401" height="55"/>
+                                                <rect key="frame" x="0.0" y="75.333333333333343" width="388" height="55"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="55" id="TnF-wU-9G2"/>
                                                 </constraints>
@@ -127,27 +127,27 @@
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ax5-4I-zIC">
-                                                <rect key="frame" x="0.0" y="130.33333333333334" width="401" height="31"/>
+                                                <rect key="frame" x="0.0" y="130.33333333333334" width="388" height="31"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Colocar fecha" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ayj-Xo-7bD">
-                                                        <rect key="frame" x="0.0" y="0.0" width="352" height="31"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="339" height="31"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PlO-7g-DIu">
-                                                        <rect key="frame" x="352" y="0.0" width="51" height="31"/>
+                                                        <rect key="frame" x="339" y="0.0" width="51" height="31"/>
                                                     </switch>
                                                 </subviews>
                                             </stackView>
                                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="9oN-Cd-ybX">
-                                                <rect key="frame" x="0.0" y="161.33333333333334" width="401" height="35"/>
+                                                <rect key="frame" x="0.0" y="161.33333333333334" width="388" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="1GH-4Z-a72"/>
                                                 </constraints>
                                             </datePicker>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo.artframe" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="zs0-aT-C6b">
-                                                <rect key="frame" x="0.0" y="198" width="401" height="201.00000000000003"/>
+                                                <rect key="frame" x="0.0" y="198" width="388" height="201.00000000000003"/>
                                                 <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="130" id="OYX-dZ-kmt"/>
@@ -155,10 +155,10 @@
                                                 </constraints>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oX4-nP-EBo">
-                                                <rect key="frame" x="0.0" y="400.33333333333331" width="401" height="58.666666666666686"/>
+                                                <rect key="frame" x="0.0" y="400.33333333333331" width="388" height="58.666666666666686"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D4i-7B-trh">
-                                                        <rect key="frame" x="0.0" y="0.0" width="200.66666666666666" height="58.666666666666664"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="194" height="58.666666666666664"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" image="camera.fill" catalog="system" imagePlacement="top" title="Añadir imagen" imagePadding="4" titleAlignment="center">
                                                             <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="large"/>
@@ -168,7 +168,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xn5-7Z-tch">
-                                                        <rect key="frame" x="200.66666666666663" y="0.0" width="200.33333333333337" height="58.666666666666664"/>
+                                                        <rect key="frame" x="194" y="0.0" width="194" height="58.666666666666664"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" image="trash.fill" catalog="system" imagePlacement="top" title="Borrar" imagePadding="4" titleAlignment="center">
                                                             <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="large"/>
@@ -177,7 +177,7 @@
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DXV-nR-ZN9">
-                                                <rect key="frame" x="0.0" y="459" width="401" height="55"/>
+                                                <rect key="frame" x="0.0" y="459" width="388" height="55"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="55" id="d0K-by-3DY"/>
                                                 </constraints>
@@ -787,7 +787,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="74o-Bw-ILi"/>
-        <segue reference="OXP-XB-xSf"/>
+        <segue reference="FNp-Mg-gSS"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.forward" catalog="system" width="128" height="95"/>
@@ -802,7 +802,7 @@
         <image name="photo.artframe" catalog="system" width="128" height="93"/>
         <image name="trash.fill" catalog="system" width="119" height="128"/>
         <namedColor name="AccentColor">
-            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.79199999570846558" blue="0.15700000524520874" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

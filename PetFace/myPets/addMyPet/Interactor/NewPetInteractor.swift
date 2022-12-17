@@ -8,7 +8,8 @@
 import Foundation
 
 protocol NewPetInteractorProtocol{
-    
+    func updateNewPet(pet: Pet)
+    func uploadNewPet(imageData imageToupload: Data, with newPet: Pet,didUploadNewPet: (Pet)-> Void)
 }
 
 class NewPetInteractor{
@@ -22,5 +23,16 @@ class NewPetInteractor{
 }
 
 extension NewPetInteractor : NewPetInteractorProtocol{
-    
+    func updateNewPet(pet: Pet){
+        api?.addNewPet(pet: pet, didUpdatePet: { newPet in
+            self.presenter?.addedNewPet(pet: newPet)
+        })
+    }
+    func uploadNewPet(imageData imageToupload: Data, with newPet: Pet,didUploadNewPet: (Pet)-> Void){
+        api?.uploadImage(uploadData: imageToupload, completion: {url in
+            var petWithImage = newPet
+            petWithImage.imageUrl = url ?? ""
+            self.updateNewPet(pet: petWithImage)
+        })
+    }
 }

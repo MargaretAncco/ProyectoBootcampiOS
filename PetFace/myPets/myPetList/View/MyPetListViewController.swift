@@ -17,7 +17,7 @@ class MyPetListViewController: UIViewController {
     
     
     @IBAction func addNewPet(_ sender: Any) {
-        let addPetView = NewPetConfigurator.makeNewMyPet()
+        let addPetView = NewPetConfigurator.makeNewMyPet(delegate: self)
         present(addPetView, animated: true)
     }
     

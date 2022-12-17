@@ -8,7 +8,7 @@
 import Foundation
 
 protocol NewPetRouterProtocol{
-    
+    func didUploadPet(_ pet: Pet)
 }
 
 class NewPetRouter{
@@ -21,5 +21,7 @@ class NewPetRouter{
 }
 
 extension NewPetRouter:NewPetRouterProtocol{
-
+    func didUploadPet(_ pet: Pet){
+        view?.delegate.newPetViewController(view!, didAddPet: pet)
+    }
 }

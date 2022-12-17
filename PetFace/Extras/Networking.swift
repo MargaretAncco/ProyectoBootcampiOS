@@ -17,8 +17,29 @@ protocol RemoteRepository{
     func uploadImage(uploadData: Data, completion: @escaping (_ url: String?) -> Void)
     func updatePet(with petId: String, _ pet: Pet, didUpdatePet: @escaping (Pet)-> Void)
     func uploadPetImage(image: Data, of pet: Pet, didUploadImage : @escaping (PetImage)-> Void)
+    func addNewPet(pet: Pet, didUpdatePet:  @escaping (Pet)-> Void)
 }
 class FirebaseApi : RemoteRepository{
+    func addNewPet(pet: Pet, didUpdatePet: @escaping (Pet) -> Void) {
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd-MM-yyyy"
+        
+        var newPet = ["name" : pet.name, "typePet" : pet.typePet.rawValue,  "subtype" : pet.subtype,
+                      "imageUrl" : pet.imageUrl, "userName": pet.userName, "userId": pet.userId]
+        if let timeStamp = pet.birthday{
+            newPet["birthday"] = formatter.string(from: timeStamp)
+        }
+        
+        ref.child("Pet").childByAutoId().updateChildValues(newPet, withCompletionBlock: { (error, dataSnapshot) in
+            if error != nil{
+                print (error ?? "error")
+            }else{
+                didUpdatePet(pet)
+            }
+        })
+    }
+    
     
     func fetchFavoritePets(addPet: @escaping(PetImage) -> Void?){
         ref.child("PetImage").getData(completion:  { error, snapshot in
@@ -68,7 +89,15 @@ class FirebaseApi : RemoteRepository{
                                 var petImage = PetImage(name: petRaw["name"] as! String,
                                                         typePet: TypePet.withLabel(petRaw["typePet"] as! String) ?? TypePet.other, likesCount: petRaw["likesCount"] as? Int ?? 0,
                                                         subtype: "", imageUrl: petRaw["imageUrl"] as! String)
+                                petSnapShot.childSnapshot(forPath: "peopleLiked").children.forEach {
+                                    if let user = ($0 as? DataSnapshot)?.value as? NSDictionary{
+                                        let userLiked = user["name"] as! String
+                                        print(userLiked)
+                                        petImage.peopleLiked.append(userLiked)
+                                    }
+                                }
                                 petImage.id = petSnapShot.key
+                                petImage.petId = petRaw["petId"] as! String
                                 addPet(petImage)
                                 
                             }
@@ -77,7 +106,15 @@ class FirebaseApi : RemoteRepository{
                             var petImage = PetImage(name: petRaw["name"] as! String,
                                                     typePet: TypePet.withLabel(petRaw["typePet"] as! String) ?? TypePet.other, likesCount: petRaw["likesCount"] as? Int ?? 0,
                                                     subtype: "", imageUrl: petRaw["imageUrl"] as! String)
+                            petSnapShot.childSnapshot(forPath: "peopleLiked").children.forEach {
+                                if let user = ($0 as? DataSnapshot)?.value as? NSDictionary{
+                                    let userLiked = user["name"] as! String
+                                    print(userLiked)
+                                    petImage.peopleLiked.append(userLiked)
+                                }
+                            }
                             petImage.id = petSnapShot.key
+                            petImage.petId = petRaw["petId"] as! String
                             addPet(petImage)
                         }
                     }
@@ -141,7 +178,7 @@ class FirebaseApi : RemoteRepository{
     }
     func uploadImage(uploadData: Data, completion: @escaping (_ url: String?) -> Void) {
         let formatter = DateFormatter()
-        formatter.dateFormat = "dd-MM-yyyy"
+        formatter.dateFormat = "dd-MM-yyyy-HH:mm"
         let userId = AppDelegate.userId
         let timeStamp = formatter.string(from: Date())
         let storageRef = Storage.storage().reference().child("images").child(userId).child("\(timeStamp).jpeg")
@@ -188,7 +225,7 @@ class FirebaseApi : RemoteRepository{
     
     func uploadPetImage(image: Data, of pet: Pet, didUploadImage : @escaping (PetImage)-> Void){
         let formatter = DateFormatter()
-        formatter.dateFormat = "dd-MM-yyyy"
+        formatter.dateFormat = "dd-MM-yyyy-HH:mm"
         let userId = AppDelegate.userId
         let timeStamp = formatter.string(from: Date())
         
@@ -203,7 +240,7 @@ class FirebaseApi : RemoteRepository{
                 
                 storageRef.downloadURL(completion: { (url, error) in
 //                    print(url?.absoluteString ?? "no se tiene url de la imagen")
-                    var petWithImage: [String: String] = [
+                    let petWithImage: [String: String] = [
                         "name": pet.name ,
                         "userName": pet.userName ,
                         "userId": pet.userId ,
