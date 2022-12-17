@@ -7,11 +7,11 @@
 
 import Foundation
 
-protocol PetPhotoInteractorProtocol{
+protocol PetPhotoInteractorProtocol: AnyObject{
     
 }
 class PetPhotoInteractor : PetPhotoInteractorProtocol{
-    var presenter: PetPhotoPresenterProtocol
+    unowned var presenter: PetPhotoPresenterProtocol
     var api: RemoteRepository
     required init(presenter: PetPhotoPresenterProtocol, api: RemoteRepository) {
         self.presenter = presenter

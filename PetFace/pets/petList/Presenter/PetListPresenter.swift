@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol PetListPresenterProtocol{
+protocol PetListPresenterProtocol : AnyObject{
     func favoriteList(withPetId petId: String?)
     func viewDidLoad()
     func showFavoritePets(petList list: [PetImage])
@@ -17,8 +17,8 @@ protocol PetListPresenterProtocol{
 
 class PetListPresenter : PetListPresenterProtocol{
     var interactor: PetListInteractorProtocol?
-    var router: PetListRouterProtocol?
-    var view: PetListViewProtocol?
+    weak var router: PetListRouterProtocol?
+    weak var view: PetListViewProtocol?
     
     func showUser(id: String,user: UserLiked) {
         view?.showUser(id: id,user: user)

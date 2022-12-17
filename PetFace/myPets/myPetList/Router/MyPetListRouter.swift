@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-protocol MyPetListRouterProtocol{
+protocol MyPetListRouterProtocol: AnyObject{
     
 }
 

@@ -26,7 +26,7 @@ class FirebaseApi : RemoteRepository{
         formatter.dateFormat = "dd-MM-yyyy"
         
         var newPet = ["name" : pet.name, "typePet" : pet.typePet.rawValue,  "subtype" : pet.subtype,
-                      "imageUrl" : pet.imageUrl, "userName": pet.userName, "userId": pet.userId]
+                      "imageUrl" : pet.imageUrl, "userName": AppDelegate.userName, "userId": AppDelegate.userId]
         if let timeStamp = pet.birthday{
             newPet["birthday"] = formatter.string(from: timeStamp)
         }
@@ -202,10 +202,10 @@ class FirebaseApi : RemoteRepository{
     
     func updatePet(with petId: String, _ pet: Pet, didUpdatePet: @escaping (Pet)-> Void){
         
-        var petRequest = PetRequest(name: pet.name, typePet: pet.typePet.rawValue, subtype: pet.subtype, userId: pet.userId, userName: pet.userName, imageUrl: pet.imageUrl)
+        var petRequest = PetRequest(name: pet.name, typePet: pet.typePet.rawValue, subtype: pet.subtype, userId: AppDelegate.userId, userName: AppDelegate.userName, imageUrl: pet.imageUrl)
         let formatter = DateFormatter()
         formatter.dateFormat = "dd/MM/yyyy"
-        var petNewValues = ["name": pet.name, "typePet": pet.typePet.rawValue, "subtype": petRequest.subtype, "imageUrl": pet.imageUrl, "userName": pet.userName, "userId": pet.userId, "petId": pet.id, "createdAt": (formatter.string(from: Date()))] as [String : String]
+        var petNewValues = ["name": pet.name, "typePet": pet.typePet.rawValue, "subtype": petRequest.subtype, "imageUrl": pet.imageUrl, "userName": AppDelegate.userName, "userId": AppDelegate.userId, "petId": pet.id, "createdAt": (formatter.string(from: Date()))] as [String : String]
         
         if let birthday =  pet.birthday{
             petNewValues["birthday"] = formatter.string(from: birthday)

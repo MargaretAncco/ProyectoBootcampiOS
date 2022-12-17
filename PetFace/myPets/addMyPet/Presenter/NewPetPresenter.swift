@@ -7,13 +7,13 @@
 
 import Foundation
 
-protocol NewPetPresenterProtocol{
+protocol NewPetPresenterProtocol: AnyObject{
     func addNewPet(pet: Pet)
     func addedNewPet(pet: Pet)
     func addNewPet(imageData imageToupload: Data, with newPet: Pet)
 }
 class NewPetPresenter{
-    var view: NewPetViewProtocol?
+    weak var view: NewPetViewProtocol?
     var router: NewPetRouterProtocol?
     var interactor: NewPetInteractorProtocol?
     

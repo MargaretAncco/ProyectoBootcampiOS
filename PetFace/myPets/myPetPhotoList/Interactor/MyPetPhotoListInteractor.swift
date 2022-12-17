@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol MyPetPhotoListInteractorProtocol{
+protocol MyPetPhotoListInteractorProtocol: AnyObject{
     func addImagePet(image: Data, of pet: Pet, didUploadImage: @escaping (PetImage)-> Void)
 }
 

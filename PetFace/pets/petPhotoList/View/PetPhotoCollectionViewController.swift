@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol PetPhotoViewProtocol{
+protocol PetPhotoViewProtocol: AnyObject{
     
 }
 

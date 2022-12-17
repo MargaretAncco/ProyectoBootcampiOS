@@ -8,13 +8,13 @@
 import Foundation
 import UIKit
 
-protocol PetPhotoRouterProtocol{
+protocol PetPhotoRouterProtocol: AnyObject{
     
 }
 
 class PetPhotoRouter : PetPhotoRouterProtocol{
-    var presenter: PetPhotoPresenterProtocol?
-    var view: UIViewController?
+    unowned var presenter: PetPhotoPresenterProtocol
+    weak var view: UIViewController?
     
     required init(presenter: PetPhotoPresenterProtocol) {
         self.presenter = presenter

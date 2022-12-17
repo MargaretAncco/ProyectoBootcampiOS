@@ -9,13 +9,13 @@ import Foundation
 import Foundation
 import UIKit
 
-protocol PetDetailRouterProtocol{
+protocol PetDetailRouterProtocol : AnyObject{
     
 }
 
 class PetDetailRouter : PetDetailRouterProtocol{
-    var presenter: PetDetailPresenterProtocol?
-    var view: UIViewController?
+    unowned var presenter: PetDetailPresenterProtocol
+    weak var view: UIViewController?
     
     required init(presenter: PetDetailPresenterProtocol) {
         self.presenter = presenter

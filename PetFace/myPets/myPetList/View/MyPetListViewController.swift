@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol MyPetListViewProtocol{
+protocol MyPetListViewProtocol: AnyObject{
     func showMyPet(_ pet: Pet)
 }
 

@@ -7,10 +7,10 @@
 
 import UIKit
 
-protocol NewPetViewProtocol{
+protocol NewPetViewProtocol: AnyObject{
     
 }
-protocol NewPetViewDelegate{
+protocol NewPetViewDelegate: AnyObject{
     func newPetViewController(_ viewController: NewPetViewController, didAddPet newPet: Pet)
 }
 class NewPetViewController: UIViewController {

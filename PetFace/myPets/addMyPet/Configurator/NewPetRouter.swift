@@ -7,13 +7,13 @@
 
 import Foundation
 
-protocol NewPetRouterProtocol{
+protocol NewPetRouterProtocol: AnyObject{
     func didUploadPet(_ pet: Pet)
 }
 
 class NewPetRouter{
-    var presenter: NewPetPresenterProtocol?
-    var view: NewPetViewController?
+    unowned var presenter: NewPetPresenterProtocol
+    weak var view: NewPetViewController?
     
     required init(presenter: NewPetPresenterProtocol) {
         self.presenter = presenter

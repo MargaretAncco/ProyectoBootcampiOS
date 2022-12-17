@@ -7,13 +7,13 @@
 
 import Foundation
 
-protocol MyPetPhotoListRouterProtocol{
+protocol MyPetPhotoListRouterProtocol: AnyObject{
     
 }
 
 class MyPetPhotoListRouter: MyPetPhotoListRouterProtocol{
-    var presenter: MyPetPhotoListPresenterProtocol?
-    var view: MyPetPhotoCollectionViewController?
+    unowned var presenter: MyPetPhotoListPresenterProtocol
+    weak var view: MyPetPhotoCollectionViewController?
     
     required init(presenter: MyPetPhotoListPresenterProtocol) {
         self.presenter = presenter

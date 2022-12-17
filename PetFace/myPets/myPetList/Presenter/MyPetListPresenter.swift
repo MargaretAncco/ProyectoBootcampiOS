@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol MyPetListPresenterProtocol{
+protocol MyPetListPresenterProtocol: AnyObject{
     func addMyPet(_ pet: Pet)
     func loadMyPets()
 }
