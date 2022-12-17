@@ -26,7 +26,7 @@ class FirebaseApi : RemoteRepository{
         formatter.dateFormat = "dd-MM-yyyy"
         
         var newPet = ["name" : pet.name, "typePet" : pet.typePet.rawValue,  "subtype" : pet.subtype,
-                      "imageUrl" : pet.imageUrl, "userName": pet.userName, "userId": pet.userId]
+                      "imageUrl" : pet.imageUrl, "userName": AppDelegate.userName, "userId": AppDelegate.userId]
         if let timeStamp = pet.birthday{
             newPet["birthday"] = formatter.string(from: timeStamp)
         }
@@ -85,7 +85,7 @@ class FirebaseApi : RemoteRepository{
                 if let petSnapShot = ($0 as? DataSnapshot){
                     if let petRaw = petSnapShot.value as? NSDictionary{
                         if let petIdNotNil = petId {
-                            if petRaw["petId"] as! String == petIdNotNil{
+                            if petRaw["petId"] as? String == petIdNotNil{
                                 var petImage = PetImage(name: petRaw["name"] as! String,
                                                         typePet: TypePet.withLabel(petRaw["typePet"] as! String) ?? TypePet.other, likesCount: petRaw["likesCount"] as? Int ?? 0,
                                                         subtype: "", imageUrl: petRaw["imageUrl"] as! String)
@@ -114,7 +114,7 @@ class FirebaseApi : RemoteRepository{
                                 }
                             }
                             petImage.id = petSnapShot.key
-                            petImage.petId = petRaw["petId"] as! String
+                            petImage.petId = petRaw["petId"] as? String ?? ""
                             addPet(petImage)
                         }
                     }
@@ -202,24 +202,39 @@ class FirebaseApi : RemoteRepository{
     
     func updatePet(with petId: String, _ pet: Pet, didUpdatePet: @escaping (Pet)-> Void){
         
-        var petRequest = PetRequest(name: pet.name, typePet: pet.typePet.rawValue, subtype: pet.subtype, userId: pet.userId, userName: pet.userName, imageUrl: pet.imageUrl)
+        var petRequest = PetRequest(name: pet.name, typePet: pet.typePet.rawValue, subtype: pet.subtype, userId: AppDelegate.userId, userName: AppDelegate.userName, imageUrl: pet.imageUrl)
         let formatter = DateFormatter()
         formatter.dateFormat = "dd/MM/yyyy"
-        var petNewValues = ["name": pet.name, "typePet": pet.typePet.rawValue, "subtype": petRequest.subtype, "imageUrl": pet.imageUrl, "userName": pet.userName, "userId": pet.userId, "petId": pet.id, "createdAt": (formatter.string(from: Date()))] as [String : String]
+        var petNewValues = ["name": pet.name, "typePet": pet.typePet.rawValue, "subtype": petRequest.subtype, "imageUrl": pet.imageUrl, "userName": AppDelegate.userName, "userId": AppDelegate.userId, "petId": pet.id, "createdAt": (formatter.string(from: Date()))] as [String : String]
         
         if let birthday =  pet.birthday{
             petNewValues["birthday"] = formatter.string(from: birthday)
         }else{
             petNewValues["birthday"] = nil
         }
-        
-        ref.child("Pet").child(petId).setValue(petNewValues, withCompletionBlock: { (error, dataSnapshot) in
-            if error != nil{
-                print (error ?? "error")
-            }else{
-                didUpdatePet(pet)
-            }
-        })
+        if petId == AppDelegate.userId{
+            ref.child("Pet").childByAutoId().setValue(petNewValues, withCompletionBlock: { (error, dataSnapshot) in
+                if error != nil{
+                    print (error ?? "error")
+                }else{
+                    var newPet = pet
+                    newPet.id = dataSnapshot.key ?? ""
+                    newPet.userId = petRequest.userId
+                    newPet.userName = petRequest.userName
+                    didUpdatePet(newPet)
+                }
+            })
+
+        }else{
+            ref.child("Pet").child(petId).setValue(petNewValues, withCompletionBlock: { (error, dataSnapshot) in
+                if error != nil{
+                    print (error ?? "error")
+                }else{
+                    didUpdatePet(pet)
+                }
+            })
+                
+        }
     }
     
     
@@ -227,6 +242,7 @@ class FirebaseApi : RemoteRepository{
         let formatter = DateFormatter()
         formatter.dateFormat = "dd-MM-yyyy-HH:mm"
         let userId = AppDelegate.userId
+        let userName = AppDelegate.userName
         let timeStamp = formatter.string(from: Date())
         
         let storageRef = Storage.storage().reference().child("images").child(userId).child("\(timeStamp).jpeg")
@@ -242,8 +258,9 @@ class FirebaseApi : RemoteRepository{
 //                    print(url?.absoluteString ?? "no se tiene url de la imagen")
                     let petWithImage: [String: String] = [
                         "name": pet.name ,
-                        "userName": pet.userName ,
-                        "userId": pet.userId ,
+                        "userName":  userName,
+                        "userId": userId ,
+                        "petId": pet.id ,
                         "typePet": pet.typePet.rawValue ,
                         "subtype": pet.subtype,
                         "imageUrl": url?.absoluteString ?? "",

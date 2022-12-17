@@ -8,13 +8,13 @@
 import Foundation
 import UIKit
 
-protocol PetListRouterProtocol{
+protocol PetListRouterProtocol: AnyObject{
     func showMorePets()
 }
 
 class PetListRouter : PetListRouterProtocol{
-    var presenter: PetListPresenterProtocol?
-    var view: UIViewController?
+    unowned var presenter: PetListPresenterProtocol?
+    weak var view: UIViewController?
     
     required init(presenter: PetListPresenterProtocol) {
         self.presenter = presenter

@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol PetListViewProtocol{
+protocol PetListViewProtocol: AnyObject{
     func showFavoritePets(petList list: [PetImage])
     func showUser(id: String ,user: UserLiked)
 }
@@ -30,6 +30,7 @@ class HomeViewController: UIViewController {
     @objc func refresh(_ sender: AnyObject) {
         datasource = []
         presenter?.favoriteList(withPetId: nil)
+        resultsList = datasource
     }
     override func viewDidLoad() {
         super.viewDidLoad()

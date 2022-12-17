@@ -6,15 +6,15 @@
 //
 
 import Foundation
-protocol PetDetailPresenterProtocol{
+protocol PetDetailPresenterProtocol: AnyObject {
     func morePhotos(with petId: String)
     func addPetPhoto(with list: [PetImage])
 }
 
 class PetDetailPresenter : PetDetailPresenterProtocol{
     var interactor: PetDetailInteractorProtocol?
-    var router: PetDetailRouterProtocol?
-    var view: PetDetailViewProtocol?
+    weak var router: PetDetailRouterProtocol?
+    weak var view: PetDetailViewProtocol?
 
     
     func addPetPhoto(with list: [PetImage]) {

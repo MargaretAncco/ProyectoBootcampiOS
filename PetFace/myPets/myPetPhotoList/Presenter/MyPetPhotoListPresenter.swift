@@ -7,14 +7,14 @@
 
 import Foundation
 
-protocol MyPetPhotoListPresenterProtocol{
+protocol MyPetPhotoListPresenterProtocol: AnyObject{
     func addImagePet(image: Data, of pet: Pet)
 }
 
 class MyPetPhotoListPresenter : MyPetPhotoListPresenterProtocol{
     var interactor: MyPetPhotoListInteractorProtocol?
-    var router: MyPetPhotoListRouterProtocol?
-    var view: MyPetPhotoListViewProtocol?
+    weak var router: MyPetPhotoListRouterProtocol?
+    weak var view: MyPetPhotoListViewProtocol?
 
     func addImagePet(image: Data, of pet: Pet) {
         interactor?.addImagePet(image: image, of: pet, didUploadImage: {

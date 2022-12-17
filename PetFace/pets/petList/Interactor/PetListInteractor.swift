@@ -9,13 +9,13 @@ import Foundation
 import FirebaseDatabase
 import FirebaseDatabaseSwift
 
-protocol PetListInteractorProtocol{
+protocol PetListInteractorProtocol: AnyObject{
     func favoritePetList(withPetId petId: String?)
 }
 class PetListInteractor : PetListInteractorProtocol{
     
     
-    var presenter: PetListPresenterProtocol
+    unowned var presenter: PetListPresenterProtocol
     var api: RemoteRepository
     required init(presenter: PetListPresenterProtocol, api: RemoteRepository) {
         self.presenter = presenter

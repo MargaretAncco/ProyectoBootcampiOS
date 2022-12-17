@@ -7,13 +7,13 @@
 
 import Foundation
 
-protocol PetPhotoPresenterProtocol{
+protocol PetPhotoPresenterProtocol: AnyObject{
     
 }
 
 class PetPhotoPresenter : PetPhotoPresenterProtocol{
     var interactor: PetPhotoInteractorProtocol?
-    var router: PetPhotoRouterProtocol?
-    var view: PetPhotoViewProtocol?
+    weak var router: PetPhotoRouterProtocol?
+    weak var view: PetPhotoViewProtocol?
 
 }

@@ -8,7 +8,7 @@
 import UIKit
 
 private let reuseIdentifier = "Cell"
-protocol MyPetPhotoListViewProtocol{
+protocol MyPetPhotoListViewProtocol: AnyObject{
     func addUploadedImage(image: PetImage)
 }
 

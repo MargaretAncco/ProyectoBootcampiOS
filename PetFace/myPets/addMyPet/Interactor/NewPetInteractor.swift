@@ -7,13 +7,13 @@
 
 import Foundation
 
-protocol NewPetInteractorProtocol{
+protocol NewPetInteractorProtocol: AnyObject{
     func updateNewPet(pet: Pet)
     func uploadNewPet(imageData imageToupload: Data, with newPet: Pet,didUploadNewPet: (Pet)-> Void)
 }
 
 class NewPetInteractor{
-    var presenter: NewPetPresenterProtocol?
+    unowned var presenter: NewPetPresenterProtocol?
     var api: RemoteRepository?
 
     required init(presenter: NewPetPresenterProtocol, api: RemoteRepository) {

@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol MyPetListInteractorProtocol{
+protocol MyPetListInteractorProtocol : AnyObject{
     func showMyPets()
 }
 class MyPetListInteractor : MyPetListInteractorProtocol{
@@ -18,7 +18,7 @@ class MyPetListInteractor : MyPetListInteractorProtocol{
         self.api = api
     }
     func showMyPets(){
-        api.fetchMypets(with: "1", addPet: {
+        api.fetchMypets(with: AppDelegate.userId, addPet: {
             self.presenter.addMyPet($0)
         })
     }

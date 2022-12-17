@@ -7,12 +7,12 @@
 
 import UIKit
 
-protocol PetDetailViewProtocol{
+protocol PetDetailViewProtocol: AnyObject{
     func showPetPhoto(_ petImage: [PetImage])
 }
 class PetDetailViewController: UIViewController {
     
-    var presenter: PetDetailPresenter?
+    weak var presenter: PetDetailPresenter?
     
     @IBOutlet weak var petImage: UIImageView!
     @IBOutlet weak var isFavoriteButton: UIButton!

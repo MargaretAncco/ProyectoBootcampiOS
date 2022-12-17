@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol PetDetailInteractorProtocol{
+protocol PetDetailInteractorProtocol: AnyObject{
     func morePhotos(with petId: String)
 }
 
