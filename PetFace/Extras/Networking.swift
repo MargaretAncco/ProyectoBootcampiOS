@@ -242,6 +242,7 @@ class FirebaseApi : RemoteRepository{
         let formatter = DateFormatter()
         formatter.dateFormat = "dd-MM-yyyy-HH:mm"
         let userId = AppDelegate.userId
+        let userName = AppDelegate.userName
         let timeStamp = formatter.string(from: Date())
         
         let storageRef = Storage.storage().reference().child("images").child(userId).child("\(timeStamp).jpeg")
@@ -257,8 +258,9 @@ class FirebaseApi : RemoteRepository{
 //                    print(url?.absoluteString ?? "no se tiene url de la imagen")
                     let petWithImage: [String: String] = [
                         "name": pet.name ,
-                        "userName": pet.userName ,
-                        "userId": pet.userId ,
+                        "userName":  userName,
+                        "userId": userId ,
+                        "petId": pet.id ,
                         "typePet": pet.typePet.rawValue ,
                         "subtype": pet.subtype,
                         "imageUrl": url?.absoluteString ?? "",
