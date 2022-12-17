@@ -6,14 +6,17 @@
 //
 
 import UIKit
+import FirebaseCore
+//import FirebaseAuth
 
-@main
+ @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
-
+    static var userName: String = "Default User"
+    static var userId: String = UUID().uuidString
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        FirebaseApp.configure()
+        
         return true
     }
 
