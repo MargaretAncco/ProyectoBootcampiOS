@@ -12,7 +12,7 @@ protocol PetPhotoPresenterProtocol: AnyObject{
 }
 
 class PetPhotoPresenter : PetPhotoPresenterProtocol{
-    weak var interactor: PetPhotoInteractorProtocol?
+    var interactor: PetPhotoInteractorProtocol?
     weak var router: PetPhotoRouterProtocol?
     weak var view: PetPhotoViewProtocol?
 

@@ -12,7 +12,7 @@ protocol PetDetailPresenterProtocol: AnyObject {
 }
 
 class PetDetailPresenter : PetDetailPresenterProtocol{
-    weak var interactor: PetDetailInteractorProtocol?
+    var interactor: PetDetailInteractorProtocol?
     weak var router: PetDetailRouterProtocol?
     weak var view: PetDetailViewProtocol?
 

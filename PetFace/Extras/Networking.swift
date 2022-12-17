@@ -85,7 +85,7 @@ class FirebaseApi : RemoteRepository{
                 if let petSnapShot = ($0 as? DataSnapshot){
                     if let petRaw = petSnapShot.value as? NSDictionary{
                         if let petIdNotNil = petId {
-                            if petRaw["petId"] as! String == petIdNotNil{
+                            if petRaw["petId"] as? String == petIdNotNil{
                                 var petImage = PetImage(name: petRaw["name"] as! String,
                                                         typePet: TypePet.withLabel(petRaw["typePet"] as! String) ?? TypePet.other, likesCount: petRaw["likesCount"] as? Int ?? 0,
                                                         subtype: "", imageUrl: petRaw["imageUrl"] as! String)
@@ -114,7 +114,7 @@ class FirebaseApi : RemoteRepository{
                                 }
                             }
                             petImage.id = petSnapShot.key
-                            petImage.petId = petRaw["petId"] as! String
+                            petImage.petId = petRaw["petId"] as? String ?? ""
                             addPet(petImage)
                         }
                     }
@@ -212,14 +212,29 @@ class FirebaseApi : RemoteRepository{
         }else{
             petNewValues["birthday"] = nil
         }
-        
-        ref.child("Pet").child(petId).setValue(petNewValues, withCompletionBlock: { (error, dataSnapshot) in
-            if error != nil{
-                print (error ?? "error")
-            }else{
-                didUpdatePet(pet)
-            }
-        })
+        if petId == AppDelegate.userId{
+            ref.child("Pet").childByAutoId().setValue(petNewValues, withCompletionBlock: { (error, dataSnapshot) in
+                if error != nil{
+                    print (error ?? "error")
+                }else{
+                    var newPet = pet
+                    newPet.id = dataSnapshot.key ?? ""
+                    newPet.userId = petRequest.userId
+                    newPet.userName = petRequest.userName
+                    didUpdatePet(newPet)
+                }
+            })
+
+        }else{
+            ref.child("Pet").child(petId).setValue(petNewValues, withCompletionBlock: { (error, dataSnapshot) in
+                if error != nil{
+                    print (error ?? "error")
+                }else{
+                    didUpdatePet(pet)
+                }
+            })
+                
+        }
     }
     
     
